@@ -1,5 +1,4 @@
 = Base = 
-  * [[tasks]] -- all the tasks
   * [[vim]] -- vim tips
   * [[shell]] -- shell tips
   * [[javascript]] -- javascript tips
