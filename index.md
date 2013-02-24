@@ -8,3 +8,5 @@
   * [[css]] -- css tips
   * [[work_current]] -- current work stuff
   * [[work_tasks]] -- current work tasks
+  * [[life]] -- about life
+  * [[todo]] -- todos
