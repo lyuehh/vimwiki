@@ -3,6 +3,9 @@
 ## mac 锁屏快捷键
 `CTRL + SHIFT + Power`
 
+## mac退出程序,下次不自动打开
+退出程序时使用option+command+q而不是command+q，相当于关闭所有文件并退出程序，下次打开时，这些文件就不会自动打开了。
+
 ## iterm 历史记录
 ```
 cmd + shift + h : 最近几次的命令记录
@@ -25,8 +28,25 @@ lsof -P | grep ':3000'
 `tidy`命令用来校验, 矫正, 格式化XML和HTML文件.
 
 ## uniq命令
+`uniq` 命令只处理连续重复的行
 `uniq -d` 去除重复的行(只剩1行)
 `uniq -u` 去除重复的行(1行不剩)
+`sort -u` 去除重复的行,不管连不连续
+
+
+## tab转空格命令
+expand 将tab转化为空格
+unexpand 将空格转化为tab
+
+## 列出pkg包包含的文件
+```
+pkgutil --pkgs
+pkgutil --files com.amazon.SendToKindleMacInstaller.pkg
+plutil -p  /private/var/db/receipts/支付宝安全控件.pkg.plist
+```
+
+
+
 
 
 
