@@ -11,3 +11,17 @@
 * 比如`jsonpCallback: bb` 会生成`?callback=bb`
 * 以上2个参数需要根据服务器的要求修改,有些服务器返回的格式不是标准的`bb({})`的形式,就不能用jquery封装后的jsonp请求,
 * 比如服务端返回`bb && bb({})`, jquery就不能正确处理,这时就需要自己手工写jsonp请求.
+
+## map 和 parseInt
+```javascript
+["0", "0", "0"].map(parseInt);
+// -> [0, NaN, 0]
+```
+
+原因:
+map方法接收的函数参数会接收到3个参数,分别为item, index, array,
+分别为当前元素, 当前元素的索引, 整个array;
+而parseInt方法接收2个参数, str, radix,
+所以当map方法接受的参数为parseInt时,会调用
+`parseInt("0", 0, ["0","0","0"]); // -> 0`
+`parseInt("0", 1, ["0", "0", "0"]); // -> NaN`
