@@ -25,3 +25,17 @@ map方法接收的函数参数会接收到3个参数,分别为item, index, array
 所以当map方法接受的参数为parseInt时,会调用
 `parseInt("0", 0, ["0","0","0"]); // -> 0`
 `parseInt("0", 1, ["0", "0", "0"]); // -> NaN`
+
+## jQuery的$用法
+From: http://api.jquery.com/jQuery/
+```javascript
+jQuery( selector [, context ] ); // 在context里选中带有selector的元素
+jQuery( element ); // 将element wrap为jQuery对象
+jQuery( elementArray ); // An array containing a set of DOM elements to wrap in a jQuery object.
+jQuery( object ); // A plain object to wrap in a jQuery object.
+jQuery( jQuery object ); // An existing jQuery object to clone.
+jQuery(); // 什么都不做...
+jQuery( html [, ownerDocument ] ); // A string of HTML to create on the fly. Note that this parses HTML, not XML.
+jQuery( html, attributes ); // 根据attribute创建html
+jQuery( callback ); // exec the callback when dom is ready
+```
