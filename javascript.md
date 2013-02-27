@@ -39,3 +39,6 @@ jQuery( html [, ownerDocument ] ); // A string of HTML to create on the fly. Not
 jQuery( html, attributes ); // 根据attribute创建html
 jQuery( callback ); // exec the callback when dom is ready
 ```
+
+## window.open 的参数
+`window.open('http://www.qq.com','aa','height=400,width=400,location=no,resizable=no,menubar=no,scrollbars=no,status=no,toolbar=no,fullscreen=no,top=300,left=300')`
