@@ -48,6 +48,9 @@ plutil -p  /private/var/db/receipts/支付宝安全控件.pkg.plist
 ## virtualvox 克隆虚拟磁盘
 `VBoxManage.exe clonehd "F:\VirtualBox\XP\win_xp.vdi" "F:\xp.vmdk " -format VMDK`
 
+## 开启4指双击切换space功能
+`defaults write com.apple.dock double-tap-jump-back -bool TRUE`
+
 
 
 
