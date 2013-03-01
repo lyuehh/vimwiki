@@ -26,3 +26,32 @@ end
 =end
 ```
 
+## Proc.new vs Lambda in ruby
+```ruby
+def foo
+  f = Proc.new { return "return from foo from inside proc" }
+  f.call # control leaves foo here
+  return "return from foo" 
+end
+
+def bar
+  f = lambda { return "return from lambda" }
+  f.call # control does not leave bar here
+  return "return from bar" 
+end
+
+puts foo # prints "return from foo from inside proc" 
+puts bar # prints "return from bar" 
+```
+
+## Lazy Enumerator
+`(0..Float::INFINITY).lazy.map{|i| ((-1) ** i) / (2*i + 1).to_f}.take(655360).reduce(:+) * 4`
+
+## inject
+```ruby
+def fib(n)
+  (0..n).inject([1,0]) { |(a,b), _| [b, a+b] }[0]
+end
+```
+[1,0]
+

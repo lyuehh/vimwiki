@@ -42,3 +42,7 @@ jQuery( callback ); // exec the callback when dom is ready
 
 ## window.open 的参数
 `window.open('http://www.qq.com','aa','height=400,width=400,location=no,resizable=no,menubar=no,scrollbars=no,status=no,toolbar=no,fullscreen=no,top=300,left=300')`
+
+## https下资源加载
+https下加载http的资源时,浏览器一般都会有提示,或者会默认阻止,  
+只要是https资源加载就没问题, 不管是不是本域的.
