@@ -46,3 +46,13 @@ jQuery( callback ); // exec the callback when dom is ready
 ## https下资源加载
 https下加载http的资源时,浏览器一般都会有提示,或者会默认阻止,  
 只要是https资源加载就没问题, 不管是不是本域的.
+
+## jQuery 2.0
+```
+<!--[if lt IE 9]>
+    <script src="jquery-1.9.1.js"></script>
+<![endif]-->
+<!--[if gte IE 9]><!-->
+    <script src="jquery-2.0.0b2.js"></script>
+<!--<![endif]-->
+```

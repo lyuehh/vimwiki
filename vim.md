@@ -36,3 +36,13 @@ I 是否显示隐藏文件
   if *x>3 {                 ysW(        if ( x>3 ) {
   my $str = *whee!;         vllllS'     my $str = 'whee!';
 ```
+
+## Tabularize
+<https://github.com/godlygeek/tabular>
+```
+:Tabularize /:
+:Tabularize /=
+:Tab /:
+:Tab /:\zs
+:Tab /|
+```
