@@ -6,8 +6,5 @@
   * [[ruby]] -- ruby tips
   * [[git]] -- git tips
   * [[css]] -- css tips
-  * [[work_current]] -- current work stuff
-  * [[work_tasks]] -- current work tasks
-  * [[work_tips]] -- tips..
   * [[life]] -- about life
-  * [[todo]] -- todos
+  * [[algorithms]] -- about algorithms
