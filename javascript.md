@@ -56,3 +56,8 @@ https下加载http的资源时,浏览器一般都会有提示,或者会默认阻
     <script src="jquery-2.0.0b2.js"></script>
 <!--<![endif]-->
 ```
+
+## csrf
+1. 第三方页面使用form 会附带cookie，可以提交成功，但是拿不到post的响应，如果用iframe，那么iframe的domain是厂商的，没有权限访问到其中的内容
+2. 如果使用ajax发送post请求，浏览器不会附带cookie，不会通过后台的认证
+3. get请求的响应和post响应 只有受害者能看到，而攻击者看不到，get如果不更改后台的状态，可以不认证，post都要认证

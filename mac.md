@@ -51,6 +51,14 @@ plutil -p  /private/var/db/receipts/支付宝安全控件.pkg.plist
 ## 开启4指双击切换space功能
 `defaults write com.apple.dock double-tap-jump-back -bool TRUE`
 
+## mysql Error loading MySQLdb module: dlopen 错误
+
+```
+export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/:$DYLd_LIBRARY_PATH
+sudo pip install MySQL-python
+sudo ln -s /usr/local/mysql/lib/libmysqlclient.18.dylib /usr/lib/libmysqlclient.18.dylib
+sudo ln -s /usr/local/mysql/lib /usr/local/mysql/lib/mysql
+```
 
 
 
