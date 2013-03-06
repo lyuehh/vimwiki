@@ -61,3 +61,19 @@ https下加载http的资源时,浏览器一般都会有提示,或者会默认阻
 1. 第三方页面使用form 会附带cookie，可以提交成功，但是拿不到post的响应，如果用iframe，那么iframe的domain是厂商的，没有权限访问到其中的内容
 2. 如果使用ajax发送post请求，浏览器不会附带cookie，不会通过后台的认证
 3. get请求的响应和post响应 只有受害者能看到，而攻击者看不到，get如果不更改后台的状态，可以不认证，post都要认证
+
+## why use apply
+```javascript
+var a = [1,2,3,4,5];
+console.log(Math.max(a)); // -> NaN
+console.log(Math.max.apply(null, a)); // -> 5 // This is what you want
+// ---
+function foo(value1, value2, value3) {
+    alert("Value 1 is "+value1+".");
+    alert("Value 2 is "+value2+".");
+    alert("Value 3 is "+value3+".");
+}
+var anArray=[1, 2, 3];
+foo(anArray); // This will not work. value1 will be anArray, and value 2 and 3 will be undefined.
+foo.apply(this, anArray); // This works, as anArray will be the arguments to foo.
+```
