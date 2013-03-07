@@ -40,9 +40,15 @@ I 是否显示隐藏文件
 ## Tabularize
 <https://github.com/godlygeek/tabular>
 ```
+;Hit Cmd-Shift-A then type a character you want to align by
+nmap <D-A> :Tabularize /
+vmap <D-A> :Tabularize /
+```
+```
 :Tabularize /:
 :Tabularize /=
 :Tab /:
 :Tab /:\zs
 :Tab /|
 ```
+

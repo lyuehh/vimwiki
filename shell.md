@@ -28,3 +28,33 @@ chsh -s /bin/zsh
 password: vagrant
 ```
 
+## 创建目录树
+`mkdir -p project/{lib/ext,bin,src,doc/{html,info,pdf},demo/stat/a}`
+会在project下创建如下的目录树
+```
+├── bin
+├── demo
+│   └── stat
+│       └── a
+├── doc
+│   ├── html
+│   ├── info
+│   └── pdf
+├── lib
+│   └── ext
+└── src
+```
+
+## 使用-C命令解压文件
+`tar xvf -C tmp/a/b/c newarc.tar.gz`
+
+## 仅当另一个命令返回零退出状态时才运行某个命令
+`cd tmp/a/b/c && tar xvf ~/archive.tar`
+
+## 仅当另一个命令返回非零退出状态时才运行某个命令
+`cd tmp/a/b/c || mkdir -p tmp/a/b/c`
+
+## 将命令与控制操作符组合使用
+`cd tmp/a/b/c || mkdir -p tmp/a/b/c && tar xvf -C tmp/a/b/c ~/archive.tar`
+
+## 
