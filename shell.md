@@ -57,4 +57,12 @@ password: vagrant
 ## 将命令与控制操作符组合使用
 `cd tmp/a/b/c || mkdir -p tmp/a/b/c && tar xvf -C tmp/a/b/c ~/archive.tar`
 
+##  在子shell执行命令, 在当前shell执行命令
+```
+# 在子shell执行命令
+(cd ~/bin; ll)
+# 在当前shell执行命令
+{ cd ~/bin; ll }
+```
+
 ## 

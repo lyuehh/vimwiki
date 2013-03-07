@@ -77,3 +77,18 @@ var anArray=[1, 2, 3];
 foo(anArray); // This will not work. value1 will be anArray, and value 2 and 3 will be undefined.
 foo.apply(this, anArray); // This works, as anArray will be the arguments to foo.
 ```
+
+## substr和substring的区别
+```javascript
+var message = "Hello world!";
+
+message.substring(1, 4) -> "ell"
+message.substr(1,4)     -> "ello"
+
+string.substring(indexA[, indexB])
+string.substr(start[, length])
+
+substring和substr的区别
+substring不包含indexB,substr包含indexB
+substr的第1个参数可以是负的,substring的参数不能为负的
+```

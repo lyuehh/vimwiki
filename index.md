@@ -8,4 +8,5 @@
   * [[css]] -- css tips
   * [[life]] -- about life
   * [[algorithms]] -- about algorithms
+  * [[web]]
   * [[temp]] -- temp
