@@ -65,4 +65,6 @@ password: vagrant
 { cd ~/bin; ll }
 ```
 
-## 
+##  使用git clone googlecode项目
+`git svn clone http://ccons.googlecode.com/svn -T trunk -b branches -t tags`
+将`ccons`替换为其他项目名称即可
