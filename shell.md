@@ -68,3 +68,8 @@ password: vagrant
 ##  使用git clone googlecode项目
 `git svn clone http://ccons.googlecode.com/svn -T trunk -b branches -t tags`
 将`ccons`替换为其他项目名称即可
+
+## awk if判断
+```
+ret=`echo $1 | awk '{if(index($1,".")==0) {print 0;} else {print 1;}}'`
+```
