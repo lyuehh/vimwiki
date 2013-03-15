@@ -29,18 +29,12 @@ task 'preview' do
   `open /tmp/#{file}.html`
 end
 
-desc 'deploy md file to github'
-task :deploy do
-  #puts `ls -1 | grep 'md'`
-  all_md = Dir.entries('.').select {|d| d.include?('md')}
-end
-
 desc 'gen gh-pags'
 task :page do
   p = ENV['p']
   raise 'need p, try p=p1 rake page' unless p
 
-  # 1 get all problems
+  # 1 get all page
   ps = Dir.entries('.')
     .select{|d| d.include?('md')}
     .map{|d| d.split('.')[0]}
@@ -52,7 +46,7 @@ task :page do
 
   p_content = `cat #{p}.md | marked`
 
-  # 5 write html to file
+  # 3 write html to file
   Dir.chdir('gh-pages/items/');
   File.open("#{p}.html", "w") do |f|
     f.puts eruby.result(binding())
@@ -73,7 +67,7 @@ end
 desc 're gen pages'
 task :allpage do
 
-  # 1 get all problems
+  # 1 get all pages
   ps = Dir.entries('.')
     .select{|d| d.include?('md')}
     .map{|d| d.split('.')[0]}
