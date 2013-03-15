@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset='utf-8' />
+<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+<meta name="description" content="Project Euler : " />
+<link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/stylesheet.css">
+<title>All the problems of Project Euler</title>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header_wrap" class="outer">
+  <header class="inner">
+    <a id="forkme_banner" href="https://github.com/lyuehh/Project_Euler">View on GitHub</a>
+
+    <h1 id="project_title"><a href="../index.html">Project Euler</a></h1>
+    <h2 id="project_tagline"></h2>
+
+    <section id="downloads">
+      <a class="zip_download_link" href="https://github.com/lyuehh/Project_Euler/zipball/master">Download this project as a .zip file</a>
+      <a class="tar_download_link" href="https://github.com/lyuehh/Project_Euler/tarball/master">Download this project as a tar.gz file</a>
+    </section>
+  </header>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="main_content_wrap" class="outer">
+  <section id="main_content" class="inner">
+    <article>
+      <h1>vim tips</h1>
+<h2>NERD tree 快捷键</h2>
+<p>o 在当前tab打开
+t 在新tab打开
+T 在新tab后台打开</p>
+<p>p 切换到parrent
+P 切换到root
+C 已当前选择文件夹为root
+u 将root切换为此文件夹的parent 文件夹
+R 刷新root下所有文件夹
+cd 将pwd切换到所选文件夹
+I 是否显示隐藏文件</p>
+<h2>替换^M</h2>
+<p>:%s/^M//g 将全部的^M替换成空
+需要用ctrl+v 接下来ctrl+m 输入^M</p>
+<h2>visual mode下替换文本</h2>
+<p>先使用<code>v</code>,或者<code>V</code>,或者<code>Ctrl+v</code>选择文本,
+然后按<code>:</code>,然后输入<code>s/xxx/yyy/g</code>即可,
+最后的<code>g</code>表示替换所有匹配,如果去掉则表示只替换第1次匹配</p>
+<h2>屏幕左右滚动</h2>
+<p><code>zh, zl, zH, zL</code></p>
+<h2>surround</h2>
+<p><a href="https://github.com/tpope/vim-surround">https://github.com/tpope/vim-surround</a></p>
+<pre><code>   Old text               Command     New text ~
+  &quot;Hello *world!&quot;           ds&quot;         Hello world!
+  [123+4*56]/2              cs])        (123+456)/2
+  &quot;Look ma, I&#39;m *HTML!&quot;     cs&quot;&lt;q&gt;      &lt;q&gt;Look ma, I&#39;m HTML!&lt;/q&gt;
+  if *x&gt;3 {                 ysW(        if ( x&gt;3 ) {
+  my $str = *whee!;         vllllS&#39;     my $str = &#39;whee!&#39;;</code></pre>
+<h2>Tabularize</h2>
+<p><a href="https://github.com/godlygeek/tabular">https://github.com/godlygeek/tabular</a></p>
+<pre><code>;Hit Cmd-Shift-A then type a character you want to align by
+nmap &lt;D-A&gt; :Tabularize /
+vmap &lt;D-A&gt; :Tabularize /</code></pre>
+<pre><code>:Tabularize /:
+:Tabularize /=
+:Tab /:
+:Tab /:\zs
+:Tab /|</code></pre>
+
+
+    </article>
+    <aside>
+      <ul>
+          <li><a href="algorithms.html">algorithms</a></li>
+          <li><a href="css.html">css</a></li>
+          <li><a href="data.html">data</a></li>
+          <li><a href="javascript.html">javascript</a></li>
+          <li><a href="life.html">life</a></li>
+          <li><a href="mac.html">mac</a></li>
+          <li><a href="ruby.html">ruby</a></li>
+          <li><a href="shell.html">shell</a></li>
+          <li><a href="temp.html">temp</a></li>
+          <li><a href="vim.html">vim</a></li>
+          <li><a href="web.html">web</a></li>
+      </ul>
+    </aside>
+    <div class="cb"></div>
+  </section>
+</div>
+
+<!-- FOOTER  -->
+<div id="footer_wrap" class="outer">
+  <footer class="inner">
+    <p class="copyright">Project Euler maintained by <a href="https://github.com/lyuehh">lyuehh</a></p>
+    <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+  </footer>
+</div>
+<script type='text/javascript' src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+</body>
+</html>

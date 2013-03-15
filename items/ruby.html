@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset='utf-8' />
+<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+<meta name="description" content="Project Euler : " />
+<link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/stylesheet.css">
+<title>All the problems of Project Euler</title>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header_wrap" class="outer">
+  <header class="inner">
+    <a id="forkme_banner" href="https://github.com/lyuehh/Project_Euler">View on GitHub</a>
+
+    <h1 id="project_title"><a href="../index.html">Project Euler</a></h1>
+    <h2 id="project_tagline"></h2>
+
+    <section id="downloads">
+      <a class="zip_download_link" href="https://github.com/lyuehh/Project_Euler/zipball/master">Download this project as a .zip file</a>
+      <a class="tar_download_link" href="https://github.com/lyuehh/Project_Euler/tarball/master">Download this project as a tar.gz file</a>
+    </section>
+  </header>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="main_content_wrap" class="outer">
+  <section id="main_content" class="inner">
+    <article>
+      <h1>ruby tips</h1>
+<h2>rake参数</h2>
+<pre><code class="lang-ruby">task :test, :p1 do |t, args|
+  puts args[:p1]
+end
+rake test[&quot;test&quot;]  # -&gt; &quot;test&quot;</code></pre>
+<p>更好的方式
+<code>$ ver=20130101 rake test</code></p>
+<pre><code class="lang-ruby">ver = ENV[&#39;ver&#39;] # -&gt; &#39;20130101&#39;</code></pre>
+<h2>更新vagrant 虚拟机中的vbox guest 版本</h2>
+<p><code>gem install vagrant-vbguest</code></p>
+<h2>多行注释</h2>
+<pre><code class="lang-ruby">=begin
+def a
+  puts &#39;a&#39;
+end
+=end</code></pre>
+<h2>Proc.new vs Lambda in ruby</h2>
+<pre><code class="lang-ruby">def foo
+  f = Proc.new { return &quot;return from foo from inside proc&quot; }
+  f.call # control leaves foo here
+  return &quot;return from foo&quot; 
+end
+
+def bar
+  f = lambda { return &quot;return from lambda&quot; }
+  f.call # control does not leave bar here
+  return &quot;return from bar&quot; 
+end
+
+puts foo # prints &quot;return from foo from inside proc&quot; 
+puts bar # prints &quot;return from bar&quot;</code></pre>
+<h2>Lazy Enumerator</h2>
+<p><code>(0..Float::INFINITY).lazy.map{|i| ((-1) ** i) / (2*i + 1).to_f}.take(655360).reduce(:+) * 4</code></p>
+<h2>inject</h2>
+<pre><code class="lang-ruby">def fib(n)
+  (0..n).inject([1,0]) { |(a,b), _| [b, a+b] }[0]
+end</code></pre>
+<p>[1,0]</p>
+
+
+    </article>
+    <aside>
+      <ul>
+          <li><a href="algorithms.html">algorithms</a></li>
+          <li><a href="css.html">css</a></li>
+          <li><a href="data.html">data</a></li>
+          <li><a href="javascript.html">javascript</a></li>
+          <li><a href="life.html">life</a></li>
+          <li><a href="mac.html">mac</a></li>
+          <li><a href="ruby.html">ruby</a></li>
+          <li><a href="shell.html">shell</a></li>
+          <li><a href="temp.html">temp</a></li>
+          <li><a href="vim.html">vim</a></li>
+          <li><a href="web.html">web</a></li>
+      </ul>
+    </aside>
+    <div class="cb"></div>
+  </section>
+</div>
+
+<!-- FOOTER  -->
+<div id="footer_wrap" class="outer">
+  <footer class="inner">
+    <p class="copyright">Project Euler maintained by <a href="https://github.com/lyuehh">lyuehh</a></p>
+    <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+  </footer>
+</div>
+<script type='text/javascript' src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+</body>
+</html>

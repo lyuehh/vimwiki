@@ -429,3 +429,7 @@ Small Device Styles
   }
 
 }
+.inner article {display: inline-block;width: 521px;}
+.inner aside {float:right;}
+.cb {clear: both;}
+
