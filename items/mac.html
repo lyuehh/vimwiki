@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset='utf-8' />
+<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+<meta name="description" content="Project Euler : " />
+<link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/stylesheet.css">
+<title>All the problems of Project Euler</title>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header_wrap" class="outer">
+  <header class="inner">
+    <a id="forkme_banner" href="https://github.com/lyuehh/Project_Euler">View on GitHub</a>
+
+    <h1 id="project_title"><a href="../index.html">Project Euler</a></h1>
+    <h2 id="project_tagline"></h2>
+
+    <section id="downloads">
+      <a class="zip_download_link" href="https://github.com/lyuehh/Project_Euler/zipball/master">Download this project as a .zip file</a>
+      <a class="tar_download_link" href="https://github.com/lyuehh/Project_Euler/tarball/master">Download this project as a tar.gz file</a>
+    </section>
+  </header>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="main_content_wrap" class="outer">
+  <section id="main_content" class="inner">
+    <article>
+      <h1>mac</h1>
+<h2>mac 锁屏快捷键</h2>
+<p><code>CTRL + SHIFT + Power</code></p>
+<h2>mac退出程序,下次不自动打开</h2>
+<p>退出程序时使用option+command+q而不是command+q，相当于关闭所有文件并退出程序，下次打开时，这些文件就不会自动打开了。</p>
+<h2>iterm 历史记录</h2>
+<pre><code>cmd + shift + h : 最近几次的命令记录
+cmd + ;         : 输入一些字母后,cmd+; 会自动不全
+Exposé所有Tab
+command+option+e,并且可以搜索</code></pre>
+<h2>查看占用mac 端口的程序</h2>
+<pre><code>netstat -anp tcp | grep 3000
+lsof -i tcp:3000
+lsof -P | grep &#39;:3000&#39;</code></pre>
+<h2>导出用户头像图片</h2>
+<p><code>dscl . -read /Users/weiwei JPEGPhoto | tail -1 | xxd -r -p &gt; ~/aaa.jpg</code></p>
+<h2>tidy命令</h2>
+<p><code>tidy</code>命令用来校验, 矫正, 格式化XML和HTML文件.</p>
+<h2>uniq命令</h2>
+<p><code>uniq</code> 命令只处理连续重复的行
+<code>uniq -d</code> 去除重复的行(只剩1行)
+<code>uniq -u</code> 去除重复的行(1行不剩)
+<code>sort -u</code> 去除重复的行,不管连不连续</p>
+<h2>tab转空格命令</h2>
+<p>expand 将tab转化为空格
+unexpand 将空格转化为tab</p>
+<h2>列出pkg包包含的文件</h2>
+<pre><code>pkgutil --pkgs
+pkgutil --files com.amazon.SendToKindleMacInstaller.pkg
+plutil -p  /private/var/db/receipts/支付宝安全控件.pkg.plist</code></pre>
+<h2>virtualvox 克隆虚拟磁盘</h2>
+<p><code>VBoxManage.exe clonehd &quot;F:\VirtualBox\XP\win_xp.vdi&quot; &quot;F:\xp.vmdk &quot; -format VMDK</code></p>
+<h2>开启4指双击切换space功能</h2>
+<p><code>defaults write com.apple.dock double-tap-jump-back -bool TRUE</code></p>
+<h2>mysql Error loading MySQLdb module: dlopen 错误</h2>
+<pre><code>export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/:$DYLd_LIBRARY_PATH
+sudo pip install MySQL-python
+sudo ln -s /usr/local/mysql/lib/libmysqlclient.18.dylib /usr/lib/libmysqlclient.18.dylib
+sudo ln -s /usr/local/mysql/lib /usr/local/mysql/lib/mysql</code></pre>
+
+
+    </article>
+    <aside>
+      <ul>
+          <li><a href="algorithms.html">algorithms</a></li>
+          <li><a href="css.html">css</a></li>
+          <li><a href="data.html">data</a></li>
+          <li><a href="javascript.html">javascript</a></li>
+          <li><a href="life.html">life</a></li>
+          <li><a href="mac.html">mac</a></li>
+          <li><a href="ruby.html">ruby</a></li>
+          <li><a href="shell.html">shell</a></li>
+          <li><a href="temp.html">temp</a></li>
+          <li><a href="vim.html">vim</a></li>
+          <li><a href="web.html">web</a></li>
+      </ul>
+    </aside>
+    <div class="cb"></div>
+  </section>
+</div>
+
+<!-- FOOTER  -->
+<div id="footer_wrap" class="outer">
+  <footer class="inner">
+    <p class="copyright">Project Euler maintained by <a href="https://github.com/lyuehh">lyuehh</a></p>
+    <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+  </footer>
+</div>
+<script type='text/javascript' src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+</body>
+</html>

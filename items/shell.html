@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset='utf-8' />
+<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+<meta name="description" content="Project Euler : " />
+<link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/stylesheet.css">
+<title>All the problems of Project Euler</title>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header_wrap" class="outer">
+  <header class="inner">
+    <a id="forkme_banner" href="https://github.com/lyuehh/Project_Euler">View on GitHub</a>
+
+    <h1 id="project_title"><a href="../index.html">Project Euler</a></h1>
+    <h2 id="project_tagline"></h2>
+
+    <section id="downloads">
+      <a class="zip_download_link" href="https://github.com/lyuehh/Project_Euler/zipball/master">Download this project as a .zip file</a>
+      <a class="tar_download_link" href="https://github.com/lyuehh/Project_Euler/tarball/master">Download this project as a tar.gz file</a>
+    </section>
+  </header>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="main_content_wrap" class="outer">
+  <section id="main_content" class="inner">
+    <article>
+      <h1>shell tips</h1>
+<h2>文件是否存在</h2>
+<p><code>[[ -f ~/.ssh/id_rsa.pub ]] || ssh-keygen -t rsa</code></p>
+<h2>复制文本</h2>
+<p><code>[[ -f ~/.ssh/id_rsa.pub ]] &amp;&amp; cat ~/.ssh/id_rsa.pub | pbcopy ;# only on mac</code></p>
+<h2>install ruby on ubuntu</h2>
+<pre><code>sudo vi /etc/apt/source.list
+:%s/us/cn/g
+
+sudo apt-get update
+sudo apt-get install git-core
+sudo apt-get install curl
+sudo apt-get install build-essential zlib1g zlib1g-dev libreadline5 libreadline5-dev libssl-dev
+curl -L https://get.rvm.io | bash -s stable
+source /home/vagrant/.rvm/scripts/rvm
+rvm install 1.9.3
+sudo apt-get install zsh
+
+git clone https://github.com/skwp/dotfiles ~/.yadr
+cd ~/.yadr &amp;&amp; rake install
+
+chsh -s /bin/zsh
+password: vagrant</code></pre>
+<h2>创建目录树</h2>
+<p><code>mkdir -p project/{lib/ext,bin,src,doc/{html,info,pdf},demo/stat/a}</code>
+会在project下创建如下的目录树</p>
+<pre><code>├── bin
+├── demo
+│   └── stat
+│       └── a
+├── doc
+│   ├── html
+│   ├── info
+│   └── pdf
+├── lib
+│   └── ext
+└── src</code></pre>
+<h2>使用-C命令解压文件</h2>
+<p><code>tar xvf -C tmp/a/b/c newarc.tar.gz</code></p>
+<h2>仅当另一个命令返回零退出状态时才运行某个命令</h2>
+<p><code>cd tmp/a/b/c &amp;&amp; tar xvf ~/archive.tar</code></p>
+<h2>仅当另一个命令返回非零退出状态时才运行某个命令</h2>
+<p><code>cd tmp/a/b/c || mkdir -p tmp/a/b/c</code></p>
+<h2>将命令与控制操作符组合使用</h2>
+<p><code>cd tmp/a/b/c || mkdir -p tmp/a/b/c &amp;&amp; tar xvf -C tmp/a/b/c ~/archive.tar</code></p>
+<h2>在子shell执行命令, 在当前shell执行命令</h2>
+<pre><code># 在子shell执行命令
+(cd ~/bin; ll)
+# 在当前shell执行命令
+{ cd ~/bin; ll }</code></pre>
+<h2>使用git clone googlecode项目</h2>
+<p><code>git svn clone http://ccons.googlecode.com/svn -T trunk -b branches -t tags</code>
+将<code>ccons</code>替换为其他项目名称即可</p>
+<h2>awk if判断</h2>
+<pre><code>ret=`echo $1 | awk &#39;{if(index($1,&quot;.&quot;)==0) {print 0;} else {print 1;}}&#39;`</code></pre>
+
+
+    </article>
+    <aside>
+      <ul>
+          <li><a href="algorithms.html">algorithms</a></li>
+          <li><a href="css.html">css</a></li>
+          <li><a href="data.html">data</a></li>
+          <li><a href="javascript.html">javascript</a></li>
+          <li><a href="life.html">life</a></li>
+          <li><a href="mac.html">mac</a></li>
+          <li><a href="ruby.html">ruby</a></li>
+          <li><a href="shell.html">shell</a></li>
+          <li><a href="temp.html">temp</a></li>
+          <li><a href="vim.html">vim</a></li>
+          <li><a href="web.html">web</a></li>
+      </ul>
+    </aside>
+    <div class="cb"></div>
+  </section>
+</div>
+
+<!-- FOOTER  -->
+<div id="footer_wrap" class="outer">
+  <footer class="inner">
+    <p class="copyright">Project Euler maintained by <a href="https://github.com/lyuehh">lyuehh</a></p>
+    <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+  </footer>
+</div>
+<script type='text/javascript' src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+</body>
+</html>
