@@ -69,6 +69,10 @@ plutil -p  /private/var/db/receipts/支付宝安全控件.pkg.plist</code></pre>
 sudo pip install MySQL-python
 sudo ln -s /usr/local/mysql/lib/libmysqlclient.18.dylib /usr/lib/libmysqlclient.18.dylib
 sudo ln -s /usr/local/mysql/lib /usr/local/mysql/lib/mysql</code></pre>
+<h2>移除 Console 中的 launchd.peruser.501 报错</h2>
+<pre><code>launchctl list
+launchctl list | grep skitch
+launchctl remove J8RPQ294UB.com.skitch.SkitchHelper</code></pre>
 
 
     </article>
