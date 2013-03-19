@@ -93,3 +93,36 @@ echo (( 3+2 ))
 echo ((3+2))
 # 以上3种方式均可
 ```
+
+## awk 语法
+```
+if (expression) statement [ else statement ]
+while (expression) statement
+for (expression; expression; expression) statement
+for (var in array) statement
+do statement while (expression)
+break
+continue
+{ [ statement ... ] }
+expression
+print [ expression-list ] [ > expression ]
+printf format [ , expression-list ] [ > expression ]
+return [ expression ]
+next
+nextfile
+delete array[expression]
+delete array
+exit [ expression ]
+```
+## awk 特殊变量
+```
+$0          当前行
+$na         第n个域
+FILENAME    当前文件名
+NR          当前行的行号,从1开始
+NF          当前行有多少个域
+RS          输入记录的分隔符,默认为换行
+ORS         输出记录的分隔符,默认也是换行
+FS          域分隔符,默认是空格或TAB
+OFS         输出域分隔符,默认是空格
+```
