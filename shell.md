@@ -6,7 +6,15 @@
 ## 复制文本
 `[[ -f ~/.ssh/id_rsa.pub ]] && cat ~/.ssh/id_rsa.pub | pbcopy ;# only on mac`
 
-
+## 参数相关
+```
+$1 第1个参数
+$2 第2个参数
+...
+$? 最后一条命令的结果
+$# 参数的个数
+$@ 所有的参数列表
+```
 ## install ruby on ubuntu
 ```
 sudo vi /etc/apt/source.list
@@ -72,4 +80,16 @@ password: vagrant
 ## awk if判断
 ```
 ret=`echo $1 | awk '{if(index($1,".")==0) {print 0;} else {print 1;}}'`
+```
+
+## shell 算数运算
+```
+expr 3 + 2   # 中间必须要有空格
+expr 3 \* 20 # *号必须转义
+expr 1.2 + 2.2 # error expr只能计算整数
+
+echo (( 3 + 2 ))
+echo (( 3+2 ))
+echo ((3+2))
+# 以上3种方式均可
 ```
