@@ -60,6 +60,12 @@ sudo ln -s /usr/local/mysql/lib/libmysqlclient.18.dylib /usr/lib/libmysqlclient.
 sudo ln -s /usr/local/mysql/lib /usr/local/mysql/lib/mysql
 ```
 
+## 移除 Console 中的 launchd.peruser.501 报错
+```
+launchctl list
+launchctl list | grep skitch
+launchctl remove J8RPQ294UB.com.skitch.SkitchHelper
+```
 
 
 
