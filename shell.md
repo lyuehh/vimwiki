@@ -126,3 +126,9 @@ ORS         输出记录的分隔符,默认也是换行
 FS          域分隔符,默认是空格或TAB
 OFS         输出域分隔符,默认是空格
 ```
+
+## curl使用代理
+curl -x 127.0.0.1:8087 http://ip.taobao.com/service/getIpInfo.php\?ip\=218.195.250.123
+
+## wget使用代理
+wget -e "http_proxy=127.0.0.1:8087" http://www.taobao.com
