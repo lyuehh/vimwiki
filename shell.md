@@ -1,5 +1,8 @@
 # shell tips
 
+# bash, ksh, zsh语法比较
+<http://hyperpolyglot.org/unix-shells#group-cmd>
+
 ## 文件是否存在
 `[[ -f ~/.ssh/id_rsa.pub ]] || ssh-keygen -t rsa`
 
