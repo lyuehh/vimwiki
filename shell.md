@@ -138,3 +138,27 @@ wget -e "http_proxy=127.0.0.1:8087" http://www.taobao.com
 
 ## imagemagick 批量压缩图片
 `ls -1 | xargs -I {} convert -quality 20% {} ../2/{}`
+
+## shell算数运算
+`$(( 1 + 1 ))` bash, ksh, zsh均支持
+`$(( 1.1 + 1.1 ))` 只有ksh, zsh支持
+
+## shell 数组
+bash:
+```
+a=(a b c)
+a[0]="a"
+a[1]="b"
+a[2]="c"
+```
+zsh:
+```
+a=(a b c)
+a[1]="a"
+a[2]="b"
+a[3]="c"
+```
+
+## 查看Makefile 的所有target
+类似`rake -T`
+`env -i make -nRrp | grep -v '^#'`
