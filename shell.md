@@ -132,3 +132,6 @@ curl -x 127.0.0.1:8087 http://ip.taobao.com/service/getIpInfo.php\?ip\=218.195.2
 
 ## wget使用代理
 wget -e "http_proxy=127.0.0.1:8087" http://www.taobao.com
+
+## imagemagick 批量压缩图片
+`ls -1 | xargs -I {} convert -quality 20% {} ../2/{}`

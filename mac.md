@@ -66,6 +66,8 @@ launchctl list
 launchctl list | grep skitch
 launchctl remove J8RPQ294UB.com.skitch.SkitchHelper
 ```
+## 显示~/Library文件夹
+`chflags nohidden ~/library/`
 
 
 
