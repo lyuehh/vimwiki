@@ -31,6 +31,8 @@
   <section id="main_content" class="inner">
     <article>
       <h1>shell tips</h1>
+<h1>bash, ksh, zsh语法比较</h1>
+<p><a href="http://hyperpolyglot.org/unix-shells#group-cmd">http://hyperpolyglot.org/unix-shells#group-cmd</a></p>
 <h2>文件是否存在</h2>
 <p><code>[[ -f ~/.ssh/id_rsa.pub ]] || ssh-keygen -t rsa</code></p>
 <h2>复制文本</h2>
@@ -101,6 +103,40 @@ echo (( 3 + 2 ))
 echo (( 3+2 ))
 echo ((3+2))
 # 以上3种方式均可</code></pre>
+<h2>awk 语法</h2>
+<pre><code>if (expression) statement [ else statement ]
+while (expression) statement
+for (expression; expression; expression) statement
+for (var in array) statement
+do statement while (expression)
+break
+continue
+{ [ statement ... ] }
+expression
+print [ expression-list ] [ &gt; expression ]
+printf format [ , expression-list ] [ &gt; expression ]
+return [ expression ]
+next
+nextfile
+delete array[expression]
+delete array
+exit [ expression ]</code></pre>
+<h2>awk 特殊变量</h2>
+<pre><code>$0          当前行
+$na         第n个域
+FILENAME    当前文件名
+NR          当前行的行号,从1开始
+NF          当前行有多少个域
+RS          输入记录的分隔符,默认为换行
+ORS         输出记录的分隔符,默认也是换行
+FS          域分隔符,默认是空格或TAB
+OFS         输出域分隔符,默认是空格</code></pre>
+<h2>curl使用代理</h2>
+<p>curl -x 127.0.0.1:8087 <a href="http://ip.taobao.com/service/getIpInfo.php\?ip\=218.195.250.123">http://ip.taobao.com/service/getIpInfo.php\?ip\=218.195.250.123</a></p>
+<h2>wget使用代理</h2>
+<p>wget -e &quot;http_proxy=127.0.0.1:8087&quot; <a href="http://www.taobao.com">http://www.taobao.com</a></p>
+<h2>imagemagick 批量压缩图片</h2>
+<p><code>ls -1 | xargs -I {} convert -quality 20% {} ../2/{}</code></p>
 
 
     </article>

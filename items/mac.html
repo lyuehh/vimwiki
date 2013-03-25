@@ -50,8 +50,8 @@ lsof -P | grep &#39;:3000&#39;</code></pre>
 <p><code>tidy</code>命令用来校验, 矫正, 格式化XML和HTML文件.</p>
 <h2>uniq命令</h2>
 <p><code>uniq</code> 命令只处理连续重复的行
-<code>uniq -d</code> 去除重复的行(只剩1行)
-<code>uniq -u</code> 去除重复的行(1行不剩)
+<code>uniq -d</code> 去除重复的行(只显示重复的行..)
+<code>uniq -u</code> 去除重复的行(只显示不重复的行..)
 <code>sort -u</code> 去除重复的行,不管连不连续</p>
 <h2>tab转空格命令</h2>
 <p>expand 将tab转化为空格
@@ -73,6 +73,8 @@ sudo ln -s /usr/local/mysql/lib /usr/local/mysql/lib/mysql</code></pre>
 <pre><code>launchctl list
 launchctl list | grep skitch
 launchctl remove J8RPQ294UB.com.skitch.SkitchHelper</code></pre>
+<h2>显示~/Library文件夹</h2>
+<p><code>chflags nohidden ~/library/</code></p>
 
 
     </article>
