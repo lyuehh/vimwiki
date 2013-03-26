@@ -12,3 +12,4 @@
   * [[temp]] -- temp
   * [[data]]
   * [[nodejs]] -- nodej
+  * [[haskell]] --haskell
