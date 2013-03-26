@@ -137,6 +137,23 @@ OFS         输出域分隔符,默认是空格</code></pre>
 <p>wget -e &quot;http_proxy=127.0.0.1:8087&quot; <a href="http://www.taobao.com">http://www.taobao.com</a></p>
 <h2>imagemagick 批量压缩图片</h2>
 <p><code>ls -1 | xargs -I {} convert -quality 20% {} ../2/{}</code></p>
+<h2>shell算数运算</h2>
+<p><code>$(( 1 + 1 ))</code> bash, ksh, zsh均支持
+<code>$(( 1.1 + 1.1 ))</code> 只有ksh, zsh支持</p>
+<h2>shell 数组</h2>
+<p>bash:</p>
+<pre><code>a=(a b c)
+a[0]=&quot;a&quot;
+a[1]=&quot;b&quot;
+a[2]=&quot;c&quot;</code></pre>
+<p>zsh:</p>
+<pre><code>a=(a b c)
+a[1]=&quot;a&quot;
+a[2]=&quot;b&quot;
+a[3]=&quot;c&quot;</code></pre>
+<h2>查看Makefile 的所有target</h2>
+<p>类似<code>rake -T</code>
+<code>env -i make -nRrp | grep -v &#39;^#&#39;</code></p>
 
 
     </article>
@@ -145,9 +162,12 @@ OFS         输出域分隔符,默认是空格</code></pre>
           <li><a href="algorithms.html">algorithms</a></li>
           <li><a href="css.html">css</a></li>
           <li><a href="data.html">data</a></li>
+          <li><a href="emacs.html">emacs</a></li>
+          <li><a href="haskell.html">haskell</a></li>
           <li><a href="javascript.html">javascript</a></li>
           <li><a href="life.html">life</a></li>
           <li><a href="mac.html">mac</a></li>
+          <li><a href="nodejs.html">nodejs</a></li>
           <li><a href="ruby.html">ruby</a></li>
           <li><a href="shell.html">shell</a></li>
           <li><a href="temp.html">temp</a></li>
