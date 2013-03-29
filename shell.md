@@ -162,3 +162,6 @@ a[3]="c"
 ## 查看Makefile 的所有target
 类似`rake -T`
 `env -i make -nRrp | grep -v '^#'`
+
+## rot13 使用tr
+`echo 'abc' | tr A-Za-z N-ZA-Mn-za-m`
