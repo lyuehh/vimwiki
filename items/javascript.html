@@ -67,7 +67,8 @@ jQuery( callback ); // exec the callback when dom is ready</code></pre>
 <h2>window.open 的参数</h2>
 <p><code>window.open(&#39;http://www.qq.com&#39;,&#39;aa&#39;,&#39;height=400,width=400,location=no,resizable=no,menubar=no,scrollbars=no,status=no,toolbar=no,fullscreen=no,top=300,left=300&#39;)</code></p>
 <h2>https下资源加载</h2>
-<p>https下加载http的资源时,浏览器一般都会有提示,或者会默认阻止,<br>只要是https资源加载就没问题, 不管是不是本域的.</p>
+<p>https下加载http的资源时,浏览器一般都会有提示,或者会默认阻止,
+只要是https资源加载就没问题, 不管是不是本域的.</p>
 <h2>jQuery 2.0</h2>
 <pre><code>&lt;!--[if lt IE 9]&gt;
     &lt;script src=&quot;jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
@@ -94,18 +95,66 @@ function foo(value1, value2, value3) {
 var anArray=[1, 2, 3];
 foo(anArray); // This will not work. value1 will be anArray, and value 2 and 3 will be undefined.
 foo.apply(this, anArray); // This works, as anArray will be the arguments to foo.</code></pre>
-<h2>substr和substring的区别</h2>
+<h2>substr和substring和slice的区别</h2>
 <pre><code class="lang-javascript">var message = &quot;Hello world!&quot;;
 
-message.substring(1, 4) -&gt; &quot;ell&quot;
-message.substr(1,4)     -&gt; &quot;ello&quot;
+message.substring(1, 4)   -&gt; &quot;ell&quot;
+message.substring(1)      -&gt; &quot;ello world&quot;
+message.substring(1, -4)  -&gt; &quot;H&quot;
+message.substring(-1)     -&gt; &quot;Hello world&quot;
+message.substring(-1,-4)  -&gt; &quot;&quot;
+
+message.substr(1,4)      -&gt; &quot;ello&quot;
+message.substr(1)        -&gt; &quot;ello world&quot;
+message.substr(1, -4)    -&gt; &quot;&quot;
+message.substr(-1)       -&gt; &quot;d&quot;
+message.substr(-1,-4)    -&gt; &quot;&quot;
+
+message.slice(1,4)       -&gt; &quot;ell&quot;
+message.slice(1)         -&gt; &quot;ello world&quot;
+message.slice(1, -4)     -&gt; &quot;ello w&quot;
+message.slice(-1)        -&gt; &quot;d&quot;
+message.slice(-1,-4)     -&gt; &quot;&quot;
 
 string.substring(indexA[, indexB])
 string.substr(start[, length])
+string.slice(beginslice[, endSlice])
 
 substring和substr的区别
 substring不包含indexB,substr包含indexB
 substr的第1个参数可以是负的,substring的参数不能为负的</code></pre>
+<h2>+ -</h2>
+<pre><code>1 + &#39;1&#39; -&gt; &quot;11&quot;
+1 - &#39;1&#39; -&gt; 0
+01 + &#39;01&#39; -&gt; &#39;101&#39;
+010 + &#39;010&#39; -&gt; &quot;8010&quot; // 0开头的是八进制
+Number.MAX_VALUE -&gt; 1.7976931348623157e+308
+Number.MIN_VALUE -&gt; 5e-324</code></pre>
+<h2>underscore include ,  indexOf</h2>
+<p>underscore的include和indexOf都是给数组用的, 不是给字符串用的
+需要判断是否包含字符串, 需要使用str.indexOf</p>
+<h2>js关闭窗口</h2>
+<script type="text/javascript">
+function CloseWebPage() {
+  if (navigator.userAgent.indexOf(&quot;MSIE&quot;) &gt; 0) {
+    if (navigator.userAgent.indexOf(&quot;MSIE 6.0&quot;) &gt; 0) {
+      window.opener = null; window.close();
+    }
+    else {
+      window.open(&#39;&#39;, &#39;_top&#39;); window.top.close();
+    }
+  }
+  else if (navigator.userAgent.indexOf(&quot;Firefox&quot;) &gt; 0) {
+    window.location.href = &#39;about:blank &#39;; //火狐默认状态非window.open的页面window.close是无效的
+    //window.history.go(-2);
+  }
+  else {
+    window.opener = null;
+    window.open(&#39;&#39;, &#39;_self&#39;, &#39;&#39;);
+    window.close();
+  }
+}
+</script>
 
 
     </article>

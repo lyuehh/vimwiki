@@ -31,6 +31,8 @@
   <section id="main_content" class="inner">
     <article>
       <h1>mac</h1>
+<h2>mac技巧</h2>
+<p><code>http://lri.me/osx.html</code></p>
 <h2>mac 锁屏快捷键</h2>
 <p><code>CTRL + SHIFT + Power</code></p>
 <h2>mac退出程序,下次不自动打开</h2>
@@ -75,6 +77,9 @@ launchctl list | grep skitch
 launchctl remove J8RPQ294UB.com.skitch.SkitchHelper</code></pre>
 <h2>显示~/Library文件夹</h2>
 <p><code>chflags nohidden ~/library/</code></p>
+<h2>危险!慎用</h2>
+<p><code>`
+sudo ruby -e &#39;key = [125, 137, 82, 35, 210, 188, 221, 234, 163, 185, 31]; IO.read(&quot;/etc/kcpassword&quot;).bytes.each_with_index { |b, i| break if key.include?(b); print [b ^ key[i % key.size]].pack(&quot;U*&quot;) }&#39;</code></p>
 
 
     </article>
