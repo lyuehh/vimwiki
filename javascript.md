@@ -44,7 +44,7 @@ jQuery( callback ); // exec the callback when dom is ready
 `window.open('http://www.qq.com','aa','height=400,width=400,location=no,resizable=no,menubar=no,scrollbars=no,status=no,toolbar=no,fullscreen=no,top=300,left=300')`
 
 ## https下资源加载
-https下加载http的资源时,浏览器一般都会有提示,或者会默认阻止,  
+https下加载http的资源时,浏览器一般都会有提示,或者会默认阻止,
 只要是https资源加载就没问题, 不管是不是本域的.
 
 ## jQuery 2.0
@@ -78,17 +78,70 @@ foo(anArray); // This will not work. value1 will be anArray, and value 2 and 3 w
 foo.apply(this, anArray); // This works, as anArray will be the arguments to foo.
 ```
 
-## substr和substring的区别
+## substr和substring和slice的区别
 ```javascript
 var message = "Hello world!";
 
-message.substring(1, 4) -> "ell"
-message.substr(1,4)     -> "ello"
+message.substring(1, 4)   -> "ell"
+message.substring(1)      -> "ello world"
+message.substring(1, -4)  -> "H"
+message.substring(-1)     -> "Hello world"
+message.substring(-1,-4)  -> ""
+
+message.substr(1,4)      -> "ello"
+message.substr(1)        -> "ello world"
+message.substr(1, -4)    -> ""
+message.substr(-1)       -> "d"
+message.substr(-1,-4)    -> ""
+
+message.slice(1,4)       -> "ell"
+message.slice(1)         -> "ello world"
+message.slice(1, -4)     -> "ello w"
+message.slice(-1)        -> "d"
+message.slice(-1,-4)     -> ""
 
 string.substring(indexA[, indexB])
 string.substr(start[, length])
+string.slice(beginslice[, endSlice])
 
 substring和substr的区别
 substring不包含indexB,substr包含indexB
 substr的第1个参数可以是负的,substring的参数不能为负的
 ```
+
+## + -
+```
+1 + '1' -> "11"
+1 - '1' -> 0
+01 + '01' -> '101'
+010 + '010' -> "8010" // 0开头的是八进制
+Number.MAX_VALUE -> 1.7976931348623157e+308
+Number.MIN_VALUE -> 5e-324
+```
+
+## underscore include ,  indexOf
+underscore的include和indexOf都是给数组用的, 不是给字符串用的
+需要判断是否包含字符串, 需要使用str.indexOf
+
+## js关闭窗口
+<script type="text/javascript">
+function CloseWebPage() {
+  if (navigator.userAgent.indexOf("MSIE") > 0) {
+    if (navigator.userAgent.indexOf("MSIE 6.0") > 0) {
+      window.opener = null; window.close();
+    }
+    else {
+      window.open('', '_top'); window.top.close();
+    }
+  }
+  else if (navigator.userAgent.indexOf("Firefox") > 0) {
+    window.location.href = 'about:blank '; //火狐默认状态非window.open的页面window.close是无效的
+    //window.history.go(-2);
+  }
+  else {
+    window.opener = null;
+    window.open('', '_self', '');
+    window.close();
+  }
+}
+</script>

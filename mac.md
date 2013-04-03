@@ -1,5 +1,8 @@
 # mac
 
+## mac技巧
+`http://lri.me/osx.html`
+
 ## mac 锁屏快捷键
 `CTRL + SHIFT + Power`
 
@@ -68,6 +71,11 @@ launchctl remove J8RPQ294UB.com.skitch.SkitchHelper
 ```
 ## 显示~/Library文件夹
 `chflags nohidden ~/library/`
+
+## 危险!慎用
+````
+sudo ruby -e 'key = [125, 137, 82, 35, 210, 188, 221, 234, 163, 185, 31]; IO.read("/etc/kcpassword").bytes.each_with_index { |b, i| break if key.include?(b); print [b ^ key[i % key.size]].pack("U*") }'
+```
 
 
 

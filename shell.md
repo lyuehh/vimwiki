@@ -1,5 +1,8 @@
 # shell tips
 
+## shell 技巧
+<http://lri.me/shell.txt>
+
 # bash, ksh, zsh语法比较
 <http://hyperpolyglot.org/unix-shells#group-cmd>
 
