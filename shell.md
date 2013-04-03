@@ -168,3 +168,13 @@ a[3]="c"
 
 ## rot13 使用tr
 `echo 'abc' | tr A-Za-z N-ZA-Mn-za-m`
+
+## 错误重定向
+`$ kill -1 1234 >killouterr.txt 2>&1`
+将标准输出重定向到文件, 将标准错误输出重定向到和标准输出相同的地方
+如果顺序有误, 不会按照预期那样工作
+`$ kill -1 1234 > /de/null 2>&1`
+抛弃所有输出
+
+## 查看进程名字
+`$ ps –xo comm | sort | uniq | more`
