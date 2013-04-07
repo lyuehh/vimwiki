@@ -77,6 +77,8 @@ launchctl remove J8RPQ294UB.com.skitch.SkitchHelper
 sudo ruby -e 'key = [125, 137, 82, 35, 210, 188, 221, 234, 163, 185, 31]; IO.read("/etc/kcpassword").bytes.each_with_index { |b, i| break if key.include?(b); print [b ^ key[i % key.size]].pack("U*") }'
 ```
 
+## 命令行播放MP3文件
+`afplay aaa.mp3`
 
 
 
