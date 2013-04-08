@@ -158,6 +158,14 @@ a[3]=&quot;c&quot;</code></pre>
 <code>env -i make -nRrp | grep -v &#39;^#&#39;</code></p>
 <h2>rot13 使用tr</h2>
 <p><code>echo &#39;abc&#39; | tr A-Za-z N-ZA-Mn-za-m</code></p>
+<h2>错误重定向</h2>
+<p><code>$ kill -1 1234 &gt;killouterr.txt 2&gt;&amp;1</code>
+将标准输出重定向到文件, 将标准错误输出重定向到和标准输出相同的地方
+如果顺序有误, 不会按照预期那样工作
+<code>$ kill -1 1234 &gt; /de/null 2&gt;&amp;1</code>
+抛弃所有输出</p>
+<h2>查看进程名字</h2>
+<p><code>$ ps –xo comm | sort | uniq | more</code></p>
 
 
     </article>
