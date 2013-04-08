@@ -145,3 +145,18 @@ function CloseWebPage() {
   }
 }
 </script>
+
+## Event
+1. currentTarget 等于this, 是绑定事件的对象, 而target则是事件真正的目标
+2. IE取消默认行为, returnValue = false, 相当于其他浏览器的 preventDefault()方法
+3. IE阻止事件冒泡, calcelBubble = true, 相当于其他浏览器的stopPropagation()方法
+4. mousewheel事件, wheelDelta的值为负, 表示向下滚动 -> 正常浏览器
+  DOMMouseScroll事件, detail的值为正表示向下滚动 -> 火狐
+5. beforeunload事件, 提示用户的信息, ie和火狐中放在 event.returnValue中,safari和chrome
+  中作为函数的返回值返回
+6. DOMContentLoaded事件, 在DOM树形成之后触发, 而不管图像js,css等其他资源.IE8以及以前的
+  版本不支持此事件
+7. readystatechange事件, 很不稳定, 一般监听readystatechange事件,然后判断
+  document.readyState,为interactive时表示DOM树加载完毕,IE,firefox 4+, opera支持此事件
+8. 除非把动态的元素添加到页面中,否则浏览器不会开始下载外部资源.
+
