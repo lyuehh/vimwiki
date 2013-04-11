@@ -51,4 +51,14 @@ vmap <D-A> :Tabularize /
 :Tab /:\zs
 :Tab /|
 ```
+## vundle
+```
+Using Vundle:
+
+Just add this 2 lines to your ~/.vimrc:
+
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
+And run :BundleInstall inside Vim.
+```
 
