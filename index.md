@@ -14,3 +14,4 @@
   * [[nodejs]] -- nodej
   * [[haskell]] --haskell
   * [[emacs]] -- emacs
+  * [[java]]
