@@ -160,3 +160,7 @@ function CloseWebPage() {
   document.readyState,为interactive时表示DOM树加载完毕,IE,firefox 4+, opera支持此事件
 8. 除非把动态的元素添加到页面中,否则浏览器不会开始下载外部资源.
 
+## 格式化json
+`curl -s 'http://geci.me/api/lyric/part of me' | python -mjson.tool`
+`curl -s 'http://geci.me/api/lyric/part of me' | json_reformat`
+`json_reformat`在`yajl`包中, `brew install yajl`
