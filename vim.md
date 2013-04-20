@@ -61,4 +61,6 @@ Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 And run :BundleInstall inside Vim.
 ```
-
+## 删除选中行中符合正则的行
+首先使用`v` 后者`V` 进入选择模式, 然后使用`j` `k` 选中行,然后按`:`, 然后输入命令:
+`g/\.$/d` 即可删除选中行中最后一个字符为`.`的行
