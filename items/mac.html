@@ -82,6 +82,15 @@ launchctl remove J8RPQ294UB.com.skitch.SkitchHelper</code></pre>
 sudo ruby -e &#39;key = [125, 137, 82, 35, 210, 188, 221, 234, 163, 185, 31]; IO.read(&quot;/etc/kcpassword&quot;).bytes.each_with_index { |b, i| break if key.include?(b); print [b ^ key[i % key.size]].pack(&quot;U*&quot;) }&#39;</code></p>
 <h2>命令行播放MP3文件</h2>
 <p><code>afplay aaa.mp3</code></p>
+<h2>mac sshd config</h2>
+<p>mac下的sshd配置文件
+/etc/sshd_config</p>
+<p>启动
+sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist </p>
+<p>停止
+sudo launchctl unload -w /System/Library/LaunchDaemons/ssh.plist</p>
+<p>查看
+   sudo launchctl list | grep ssh</p>
 
 
     </article>
