@@ -80,6 +80,16 @@ sudo ruby -e 'key = [125, 137, 82, 35, 210, 188, 221, 234, 163, 185, 31]; IO.rea
 ## 命令行播放MP3文件
 `afplay aaa.mp3`
 
+## mac sshd config
+mac下的sshd配置文件
+/etc/sshd_config
 
+启动
+sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist 
 
+停止
+sudo launchctl unload -w /System/Library/LaunchDaemons/ssh.plist
+
+查看
+   sudo launchctl list | grep ssh
 
