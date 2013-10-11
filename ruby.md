@@ -1,5 +1,3 @@
-# ruby tips
-
 ## rake参数
 ```ruby
 task :test, :p1 do |t, args|
@@ -55,3 +53,8 @@ end
 ```
 [1,0]
 
+## FileUtil
+```ruby
+FileUtils.rm_rf '/tmp/home'
+FileUtils.mkdir '/tmp/home'
+```

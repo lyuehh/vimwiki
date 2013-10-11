@@ -1,5 +1,34 @@
 # shell tips
 
+## ab测试
+`ab -q -c 50 -n 1000 http://www.qq.com`
+
+## awk split
+`awk '{split($0,a,"/")`
+
+## zmv
+`zmv -W '*.cgi' '*.jpg'`
+`zmv *.txt.xml *.xml`
+
+## sed 替换chrome书签
+`sed 's/ICON=.*"/ICON=""/g' bookmarks_13-9-13.html > bookmark.html`
+
+## convert 水平方向拼接图片
+`convert +append 1.jpg 2.jpg 3.jpg .... 0.jpg`
+
+## convert 垂直方向拼接图片
+`convert -append 1.jpg 2.jpg 3.jpg .... 0.jpg`
+
+## zsh tips
+```
+ll -l **/README
+chmod 700 **/(.) # Only files
+chmod 700 **/(/) # Only directories
+ls -l **/*.(js|css)
+```
+
+## 
+
 ## shell 技巧
 <http://lri.me/shell.txt>
 
@@ -134,17 +163,17 @@ OFS         输出域分隔符,默认是空格
 ```
 
 ## curl使用代理
-curl -x 127.0.0.1:8087 http://ip.taobao.com/service/getIpInfo.php\?ip\=218.195.250.123
+`curl -x 127.0.0.1:8087 http://ip.taobao.com/service/getIpInfo.php\?ip\=218.195.250.123`
 
 ## wget使用代理
-wget -e "http_proxy=127.0.0.1:8087" http://www.taobao.com
+`wget -e "http_proxy=127.0.0.1:8087" http://www.taobao.com`
 
 ## imagemagick 批量压缩图片
-`ls -1 | xargs -I {} convert -quality 20% {} ../2/{}`
+`ls -1 | xargs -I {} convert -quality 20% {} ../2/{}`  
 `convert favicon.png favicon.ico`
 
 ## shell算数运算
-`$(( 1 + 1 ))` bash, ksh, zsh均支持
+`$(( 1 + 1 ))` bash, ksh, zsh均支持  
 `$(( 1.1 + 1.1 ))` 只有ksh, zsh支持
 
 ## shell 数组
@@ -164,18 +193,27 @@ a[3]="c"
 ```
 
 ## 查看Makefile 的所有target
-类似`rake -T`
+类似`rake -T`  
 `env -i make -nRrp | grep -v '^#'`
 
 ## rot13 使用tr
 `echo 'abc' | tr A-Za-z N-ZA-Mn-za-m`
 
 ## 错误重定向
-`$ kill -1 1234 >killouterr.txt 2>&1`
-将标准输出重定向到文件, 将标准错误输出重定向到和标准输出相同的地方
-如果顺序有误, 不会按照预期那样工作
-`$ kill -1 1234 > /de/null 2>&1`
+`$ kill -1 1234 >killouterr.txt 2>&1`  
+将标准输出重定向到文件, 将标准错误输出重定向到和标准输出相同的地方  
+如果顺序有误, 不会按照预期那样工作  
+`$ kill -1 1234 > /de/null 2>&1`  
 抛弃所有输出
 
 ## 查看进程名字
 `$ ps –xo comm | sort | uniq | more`
+
+## here doc
+```
+cat <<-EOF
+this is
+a
+test
+EOF
+```
