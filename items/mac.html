@@ -30,13 +30,44 @@
 <div id="main_content_wrap" class="outer">
   <section id="main_content" class="inner">
     <article>
-      <h1>mac</h1>
+      <h2>zsh</h2>
+<p>after <code>brew install zsh</code>, add <code>/usr/local/bin/zsh</code> to <code>/etc/shells</code>,
+and then <code>chsh -s /usr/local/bin/zsh</code></p>
+<h2>about mac</h2>
+<pre><code>http://lyuehh.com/mac/2012/11/01/soft-of-mac.html
+http://www.douban.com/note/290330877/
+http://www.douban.com/note/290437635/
+http://www.douban.com/note/291323218/
+http://www.douban.com/note/291330107/
+http://v2ex.com/?tab=apple
+http://www.isofts.org/
+http://www.waerfa.com/category/mac-app
+http://www.macx.cn/</code></pre>
+<h2>uninstall winshark</h2>
+<ol>
+<li>Remove /Applications/Wireshark</li>
+<li>Remove /Library/Wireshark</li>
+<li>Remove /Library/StartupItems/ChmodBPF</li>
+<li>Remove the access_bpf group.</li>
+</ol>
+<h2>remove a group</h2>
+<p><code>sudo dscl . -delete /Groups/access_bpf</code></p>
+<h2>mac退出程序</h2>
+<p>退出程序时使用<code>option+command+q</code>而不是<code>command+q</code>，相当于关闭所有文件并退出程序，下次打开时，这些文件就不会自动打开了。</p>
+<h2>移动硬盘禁止建立索引</h2>
+<p>在根目录下 <code>touch .metadata_never_index</code></p>
+<h2>查看可执行文件载入了那些动态链接库</h2>
+<p><code>otool -L /usr/local/bin/git</code></p>
+<h2>语法高亮</h2>
+<p><code>pygmentize -l ruby ghi L</code></p>
+<h2>imagemmagick</h2>
+<p><code>convert eng_resume.jpg -crop 440x400 eng_resume.jpg</code></p>
 <h2>mac技巧</h2>
 <p><code>http://lri.me/osx.html</code></p>
+<h2>mac下的sed原地替换</h2>
+<p><code>sed -i &#39;&#39; a.txt</code></p>
 <h2>mac 锁屏快捷键</h2>
 <p><code>CTRL + SHIFT + Power</code></p>
-<h2>mac退出程序,下次不自动打开</h2>
-<p>退出程序时使用option+command+q而不是command+q，相当于关闭所有文件并退出程序，下次打开时，这些文件就不会自动打开了。</p>
 <h2>iterm 历史记录</h2>
 <pre><code>cmd + shift + h : 最近几次的命令记录
 cmd + ;         : 输入一些字母后,cmd+; 会自动不全
@@ -51,13 +82,12 @@ lsof -P | grep &#39;:3000&#39;</code></pre>
 <h2>tidy命令</h2>
 <p><code>tidy</code>命令用来校验, 矫正, 格式化XML和HTML文件.</p>
 <h2>uniq命令</h2>
-<p><code>uniq</code> 命令只处理连续重复的行
-<code>uniq -d</code> 去除重复的行(只显示重复的行..)
-<code>uniq -u</code> 去除重复的行(只显示不重复的行..)
-<code>sort -u</code> 去除重复的行,不管连不连续</p>
+<pre><code>`uniq` 命令只处理连续重复的行
+`uniq -d` 去除重复的行(只显示重复的行..)
+`uniq -u` 去除重复的行(只显示不重复的行..)
+`sort -u` 去除重复的行,不管连不连续</code></pre>
 <h2>tab转空格命令</h2>
-<p>expand 将tab转化为空格
-unexpand 将空格转化为tab</p>
+<p>expand 将tab转化为空格<br>unexpand 将空格转化为tab</p>
 <h2>列出pkg包包含的文件</h2>
 <pre><code>pkgutil --pkgs
 pkgutil --files com.amazon.SendToKindleMacInstaller.pkg
@@ -78,19 +108,20 @@ launchctl remove J8RPQ294UB.com.skitch.SkitchHelper</code></pre>
 <h2>显示~/Library文件夹</h2>
 <p><code>chflags nohidden ~/library/</code></p>
 <h2>危险!慎用</h2>
-<p><code>`
-sudo ruby -e &#39;key = [125, 137, 82, 35, 210, 188, 221, 234, 163, 185, 31]; IO.read(&quot;/etc/kcpassword&quot;).bytes.each_with_index { |b, i| break if key.include?(b); print [b ^ key[i % key.size]].pack(&quot;U*&quot;) }&#39;</code></p>
+<pre><code class="lang-`">sudo ruby -e &#39;key = [125, 137, 82, 35, 210, 188, 221, 234, 163, 185, 31]; IO.read(&quot;/etc/kcpassword&quot;).bytes.each_with_index { |b, i| break if key.include?(b); print [b ^ key[i % key.size]].pack(&quot;U*&quot;) }&#39;</code></pre>
 <h2>命令行播放MP3文件</h2>
 <p><code>afplay aaa.mp3</code></p>
 <h2>mac sshd config</h2>
-<p>mac下的sshd配置文件
-/etc/sshd_config</p>
-<p>启动
-sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist </p>
-<p>停止
-sudo launchctl unload -w /System/Library/LaunchDaemons/ssh.plist</p>
-<p>查看
-   sudo launchctl list | grep ssh</p>
+<p>mac下的sshd配置文件<br>/etc/sshd_config</p>
+<h2>开机启动管理</h2>
+<pre><code>启动
+sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist 
+
+停止
+sudo launchctl unload -w /System/Library/LaunchDaemons/ssh.plist
+
+查看
+sudo launchctl list | grep ssh</code></pre>
 
 
     </article>
@@ -104,11 +135,13 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/ssh.plist</p>
           <li><a href="java.html">java</a></li>
           <li><a href="javascript.html">javascript</a></li>
           <li><a href="life.html">life</a></li>
-          <li><a href="mac.html">mac</a></li>
+          <li><a href="Mac.html">Mac</a></li>
           <li><a href="nodejs.html">nodejs</a></li>
+          <li><a href="Python.html">Python</a></li>
           <li><a href="ruby.html">ruby</a></li>
           <li><a href="shell.html">shell</a></li>
           <li><a href="temp.html">temp</a></li>
+          <li><a href="Tips.html">Tips</a></li>
           <li><a href="vim.html">vim</a></li>
           <li><a href="web.html">web</a></li>
       </ul>

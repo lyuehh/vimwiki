@@ -31,6 +31,25 @@
   <section id="main_content" class="inner">
     <article>
       <h1>shell tips</h1>
+<h2>ab测试</h2>
+<p><code>ab -q -c 50 -n 1000 http://www.qq.com</code></p>
+<h2>awk split</h2>
+<p><code>awk &#39;{split($0,a,&quot;/&quot;)</code></p>
+<h2>zmv</h2>
+<p><code>zmv -W &#39;*.cgi&#39; &#39;*.jpg&#39;</code>
+<code>zmv *.txt.xml *.xml</code></p>
+<h2>sed 替换chrome书签</h2>
+<p><code>sed &#39;s/ICON=.*&quot;/ICON=&quot;&quot;/g&#39; bookmarks_13-9-13.html &gt; bookmark.html</code></p>
+<h2>convert 水平方向拼接图片</h2>
+<p><code>convert +append 1.jpg 2.jpg 3.jpg .... 0.jpg</code></p>
+<h2>convert 垂直方向拼接图片</h2>
+<p><code>convert -append 1.jpg 2.jpg 3.jpg .... 0.jpg</code></p>
+<h2>zsh tips</h2>
+<pre><code>ll -l **/README
+chmod 700 **/(.) # Only files
+chmod 700 **/(/) # Only directories
+ls -l **/*.(js|css)</code></pre>
+<h2> </h2>
 <h2>shell 技巧</h2>
 <p><a href="http://lri.me/shell.txt">http://lri.me/shell.txt</a></p>
 <h1>bash, ksh, zsh语法比较</h1>
@@ -134,15 +153,13 @@ ORS         输出记录的分隔符,默认也是换行
 FS          域分隔符,默认是空格或TAB
 OFS         输出域分隔符,默认是空格</code></pre>
 <h2>curl使用代理</h2>
-<p>curl -x 127.0.0.1:8087 <a href="http://ip.taobao.com/service/getIpInfo.php\?ip\=218.195.250.123">http://ip.taobao.com/service/getIpInfo.php\?ip\=218.195.250.123</a></p>
+<p><code>curl -x 127.0.0.1:8087 http://ip.taobao.com/service/getIpInfo.php\?ip\=218.195.250.123</code></p>
 <h2>wget使用代理</h2>
-<p>wget -e &quot;http_proxy=127.0.0.1:8087&quot; <a href="http://www.taobao.com">http://www.taobao.com</a></p>
+<p><code>wget -e &quot;http_proxy=127.0.0.1:8087&quot; http://www.taobao.com</code></p>
 <h2>imagemagick 批量压缩图片</h2>
-<p><code>ls -1 | xargs -I {} convert -quality 20% {} ../2/{}</code>
-<code>convert favicon.png favicon.ico</code></p>
+<p><code>ls -1 | xargs -I {} convert -quality 20% {} ../2/{}</code><br><code>convert favicon.png favicon.ico</code></p>
 <h2>shell算数运算</h2>
-<p><code>$(( 1 + 1 ))</code> bash, ksh, zsh均支持
-<code>$(( 1.1 + 1.1 ))</code> 只有ksh, zsh支持</p>
+<p><code>$(( 1 + 1 ))</code> bash, ksh, zsh均支持<br><code>$(( 1.1 + 1.1 ))</code> 只有ksh, zsh支持</p>
 <h2>shell 数组</h2>
 <p>bash:</p>
 <pre><code>a=(a b c)
@@ -155,18 +172,19 @@ a[1]=&quot;a&quot;
 a[2]=&quot;b&quot;
 a[3]=&quot;c&quot;</code></pre>
 <h2>查看Makefile 的所有target</h2>
-<p>类似<code>rake -T</code>
-<code>env -i make -nRrp | grep -v &#39;^#&#39;</code></p>
+<p>类似<code>rake -T</code><br><code>env -i make -nRrp | grep -v &#39;^#&#39;</code></p>
 <h2>rot13 使用tr</h2>
 <p><code>echo &#39;abc&#39; | tr A-Za-z N-ZA-Mn-za-m</code></p>
 <h2>错误重定向</h2>
-<p><code>$ kill -1 1234 &gt;killouterr.txt 2&gt;&amp;1</code>
-将标准输出重定向到文件, 将标准错误输出重定向到和标准输出相同的地方
-如果顺序有误, 不会按照预期那样工作
-<code>$ kill -1 1234 &gt; /de/null 2&gt;&amp;1</code>
-抛弃所有输出</p>
+<p><code>$ kill -1 1234 &gt;killouterr.txt 2&gt;&amp;1</code><br>将标准输出重定向到文件, 将标准错误输出重定向到和标准输出相同的地方<br>如果顺序有误, 不会按照预期那样工作<br><code>$ kill -1 1234 &gt; /de/null 2&gt;&amp;1</code><br>抛弃所有输出</p>
 <h2>查看进程名字</h2>
 <p><code>$ ps –xo comm | sort | uniq | more</code></p>
+<h2>here doc</h2>
+<pre><code>cat &lt;&lt;-EOF
+this is
+a
+test
+EOF</code></pre>
 
 
     </article>
@@ -180,11 +198,13 @@ a[3]=&quot;c&quot;</code></pre>
           <li><a href="java.html">java</a></li>
           <li><a href="javascript.html">javascript</a></li>
           <li><a href="life.html">life</a></li>
-          <li><a href="mac.html">mac</a></li>
+          <li><a href="Mac.html">Mac</a></li>
           <li><a href="nodejs.html">nodejs</a></li>
+          <li><a href="Python.html">Python</a></li>
           <li><a href="ruby.html">ruby</a></li>
           <li><a href="shell.html">shell</a></li>
           <li><a href="temp.html">temp</a></li>
+          <li><a href="Tips.html">Tips</a></li>
           <li><a href="vim.html">vim</a></li>
           <li><a href="web.html">web</a></li>
       </ul>

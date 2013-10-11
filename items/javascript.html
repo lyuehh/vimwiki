@@ -136,21 +136,21 @@ Number.MIN_VALUE -&gt; 5e-324</code></pre>
 <h2>js关闭窗口</h2>
 <script type="text/javascript">
 function CloseWebPage() {
-  if (navigator.userAgent.indexOf(&quot;MSIE&quot;) &gt; 0) {
-    if (navigator.userAgent.indexOf(&quot;MSIE 6.0&quot;) &gt; 0) {
+  if (navigator.userAgent.indexOf("MSIE") > 0) {
+    if (navigator.userAgent.indexOf("MSIE 6.0") > 0) {
       window.opener = null; window.close();
     }
     else {
-      window.open(&#39;&#39;, &#39;_top&#39;); window.top.close();
+      window.open('', '_top'); window.top.close();
     }
   }
-  else if (navigator.userAgent.indexOf(&quot;Firefox&quot;) &gt; 0) {
-    window.location.href = &#39;about:blank &#39;; //火狐默认状态非window.open的页面window.close是无效的
+  else if (navigator.userAgent.indexOf("Firefox") > 0) {
+    window.location.href = 'about:blank '; //火狐默认状态非window.open的页面window.close是无效的
     //window.history.go(-2);
   }
   else {
     window.opener = null;
-    window.open(&#39;&#39;, &#39;_self&#39;, &#39;&#39;);
+    window.open('', '_self', '');
     window.close();
   }
 }
@@ -188,11 +188,13 @@ document.readyState,为interactive时表示DOM树加载完毕,IE,firefox 4+, ope
           <li><a href="java.html">java</a></li>
           <li><a href="javascript.html">javascript</a></li>
           <li><a href="life.html">life</a></li>
-          <li><a href="mac.html">mac</a></li>
+          <li><a href="Mac.html">Mac</a></li>
           <li><a href="nodejs.html">nodejs</a></li>
+          <li><a href="Python.html">Python</a></li>
           <li><a href="ruby.html">ruby</a></li>
           <li><a href="shell.html">shell</a></li>
           <li><a href="temp.html">temp</a></li>
+          <li><a href="Tips.html">Tips</a></li>
           <li><a href="vim.html">vim</a></li>
           <li><a href="web.html">web</a></li>
       </ul>

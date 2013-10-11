@@ -30,8 +30,7 @@
 <div id="main_content_wrap" class="outer">
   <section id="main_content" class="inner">
     <article>
-      <h1>ruby tips</h1>
-<h2>rake参数</h2>
+      <h2>rake参数</h2>
 <pre><code class="lang-ruby">task :test, :p1 do |t, args|
   puts args[:p1]
 end
@@ -69,6 +68,9 @@ puts bar # prints &quot;return from bar&quot;</code></pre>
   (0..n).inject([1,0]) { |(a,b), _| [b, a+b] }[0]
 end</code></pre>
 <p>[1,0]</p>
+<h2>FileUtil</h2>
+<pre><code class="lang-ruby">FileUtils.rm_rf &#39;/tmp/home&#39;
+FileUtils.mkdir &#39;/tmp/home&#39;</code></pre>
 
 
     </article>
@@ -82,11 +84,13 @@ end</code></pre>
           <li><a href="java.html">java</a></li>
           <li><a href="javascript.html">javascript</a></li>
           <li><a href="life.html">life</a></li>
-          <li><a href="mac.html">mac</a></li>
+          <li><a href="Mac.html">Mac</a></li>
           <li><a href="nodejs.html">nodejs</a></li>
+          <li><a href="Python.html">Python</a></li>
           <li><a href="ruby.html">ruby</a></li>
           <li><a href="shell.html">shell</a></li>
           <li><a href="temp.html">temp</a></li>
+          <li><a href="Tips.html">Tips</a></li>
           <li><a href="vim.html">vim</a></li>
           <li><a href="web.html">web</a></li>
       </ul>
