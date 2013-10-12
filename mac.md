@@ -139,3 +139,18 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/ssh.plist
 查看
 sudo launchctl list | grep ssh
 ```
+
+## CalendarAgent/Google Calendar Issue
+
+```
+
+In System Preferences, delete the account that’s throwing errors
+In Calendar.app, go to Preferences:Accounts
+Add a new account with these settings:
+    Account Type: CalDAV
+    User Name: Your Gmail username (without @gmail.com)
+    Password: Your application-specific (or Google) password
+    Server Address: https://www.google.com/calendar/dav/<yourname>@gmail.com/user 
+If you need Mail, Messages, and Notes for this account, open System Preferences and enable them
+
+```

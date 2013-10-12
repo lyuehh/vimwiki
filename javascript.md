@@ -1,5 +1,8 @@
 # javascript tips
 
+## 常用类库
+* modernizr
+
 ## jquery json的参数
 
 * `dataType` 参数需要设置为`jsonp`

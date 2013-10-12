@@ -58,3 +58,11 @@ end
 FileUtils.rm_rf '/tmp/home'
 FileUtils.mkdir '/tmp/home'
 ```
+
+## nokogiri
+```ruby
+page = Nokogiri::HTML(open(PAGE_URL))
+news_links = page.css("a").select{|link| link['data-category'] == "news"}
+news_links.each{|link| puts link['href'] }
+page.css('p').css("a[data-category=news]").css("strong")
+```
