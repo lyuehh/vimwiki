@@ -2,6 +2,8 @@
 
 ## 常用类库
 * modernizr
+* momentjs
+* bower
 
 ## jquery json的参数
 
