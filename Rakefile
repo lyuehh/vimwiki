@@ -47,7 +47,7 @@ task :page do
   p_content = `cat #{p}.md | marked`
 
   # 3 write html to file
-  Dir.chdir('gh-pages/items/');
+  Dir.chdir('gh-pages/');
   File.open("#{p}.html", "w") do |f|
     f.puts eruby.result(binding())
   end
