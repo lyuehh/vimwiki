@@ -30,80 +30,69 @@
                       <li><a href="/Emacs.html">Emacs</a></li>
                       <li><a href="/Data.html">Data</a></li>
                       <li><a href="/Haskell.html">Haskell</a></li>
+                      <li><a href="/Web.html">Web</a></li>
+                      <li><a href="/Life.html">Life</a></li>
+                      <li><a href="/Tips.html">Tips</a></li>
+                      <li><a href="/Algorithms.html">Algorithms</a></li>
                   </ul>
               </div>
               <div class="col-md-10">
-                  <h1>shell tips</h1>
-<ul>
-<li><p>ab测试
-<code>ab -q -c 50 -n 1000 http://www.qq.com</code></p>
-</li>
-<li><p>awk split
-<code>awk &#39;{split($0,a,&quot;/&quot;)</code></p>
-</li>
-<li><p>zmv
-<code>zmv -W &#39;*.cgi&#39; &#39;*.jpg&#39;</code>
+                  <h2>Shell</h2>
+<h3>ab测试</h3>
+<p><code>ab -q -c 50 -n 1000 http://www.qq.com</code></p>
+<h3>awk split</h3>
+<p><code>awk &#39;{split($0,a,&quot;/&quot;)</code></p>
+<h3>zmv</h3>
+<p><code>zmv -W &#39;*.cgi&#39; &#39;*.jpg&#39;</code>
 <code>zmv *.txt.xml *.xml</code></p>
-</li>
-<li><p>sed 替换chrome书签
-<code>sed &#39;s/ICON=.*&quot;/ICON=&quot;&quot;/g&#39; bookmarks_13-9-13.html &gt; bookmark.html</code></p>
-</li>
-<li><p>convert 水平方向拼接图片
-<code>convert +append 1.jpg 2.jpg 3.jpg .... 0.jpg</code></p>
-</li>
-<li><p>convert 垂直方向拼接图片
-<code>convert -append 1.jpg 2.jpg 3.jpg .... 0.jpg</code></p>
-</li>
-<li><p>zsh tips</p>
+<h3>sed 替换chrome书签</h3>
+<p><code>sed &#39;s/ICON=.*&quot;/ICON=&quot;&quot;/g&#39; bookmarks_13-9-13.html &gt; bookmark.html</code></p>
+<h3>convert 水平方向拼接图片</h3>
+<p><code>convert +append 1.jpg 2.jpg 3.jpg .... 0.jpg</code></p>
+<h3>convert 垂直方向拼接图片</h3>
+<p><code>convert -append 1.jpg 2.jpg 3.jpg .... 0.jpg</code></p>
+<h3>zsh tips</h3>
 <pre><code>ll -l **/README
 chmod 700 **/(.) # Only files
 chmod 700 **/(/) # Only directories
 ls -l **/*.(js|css)</code></pre>
-</li>
-<li></li>
-<li><p>shell 技巧
-<a href="http://lri.me/shell.txt">http://lri.me/shell.txt</a></p>
-</li>
-</ul>
-<h1>bash, ksh, zsh语法比较</h1>
+<h3>shell 技巧</h3>
+<p><a href="http://lri.me/shell.txt">http://lri.me/shell.txt</a></p>
+<h3>bash, ksh, zsh语法比较</h3>
 <p><a href="http://hyperpolyglot.org/unix-shells#group-cmd">http://hyperpolyglot.org/unix-shells#group-cmd</a></p>
-<ul>
-<li><p>文件是否存在
-<code>[[ -f ~/.ssh/id_rsa.pub ]] || ssh-keygen -t rsa</code></p>
-</li>
-<li><p>复制文本
-<code>[[ -f ~/.ssh/id_rsa.pub ]] &amp;&amp; cat ~/.ssh/id_rsa.pub | pbcopy ;# only on mac</code></p>
-</li>
-<li><p>参数相关</p>
+<h3>文件是否存在</h3>
+<p><code>[[ -f ~/.ssh/id_rsa.pub ]] || ssh-keygen -t rsa</code></p>
+<h3>复制文本</h3>
+<p><code>[[ -f ~/.ssh/id_rsa.pub ]] &amp;&amp; cat ~/.ssh/id_rsa.pub | pbcopy ;# only on mac</code></p>
+<h3>参数相关</h3>
 <pre><code>$1 第1个参数
 $2 第2个参数
 ...
 $? 最后一条命令的结果
 $# 参数的个数
 $@ 所有的参数列表</code></pre>
-</li>
-<li>install ruby on ubuntu
-```
-sudo vi /etc/apt/source.list
-:%s/us/cn/g</li>
-</ul>
-<p>sudo apt-get update
+<h3>install ruby on ubuntu</h3>
+<pre><code>sudo vi /etc/apt/source.list
+:%s/us/cn/g
+
+sudo apt-get update
 sudo apt-get install git-core
 sudo apt-get install curl
 sudo apt-get install build-essential zlib1g zlib1g-dev libreadline5 libreadline5-dev libssl-dev
-curl -L <a href="https://get.rvm.io">https://get.rvm.io</a> | bash -s stable
+curl -L https://get.rvm.io | bash -s stable
 source /home/vagrant/.rvm/scripts/rvm
 rvm install 1.9.3
-sudo apt-get install zsh</p>
-<p>git clone <a href="https://github.com/skwp/dotfiles">https://github.com/skwp/dotfiles</a> ~/.yadr
-cd ~/.yadr &amp;&amp; rake install</p>
-<p>chsh -s /bin/zsh
-password: vagrant</p>
-<pre><code>
-* 创建目录树
-`mkdir -p project/{lib/ext,bin,src,doc/{html,info,pdf},demo/stat/a}`
-会在project下创建如下的目录树</code></pre>
-<p>├── bin
+sudo apt-get install zsh
+
+git clone https://github.com/skwp/dotfiles ~/.yadr
+cd ~/.yadr &amp;&amp; rake install
+
+chsh -s /bin/zsh
+password: vagrant</code></pre>
+<h3>创建目录树</h3>
+<p><code>mkdir -p project/{lib/ext,bin,src,doc/{html,info,pdf},demo/stat/a}</code>
+会在project下创建如下的目录树</p>
+<pre><code>├── bin
 ├── demo
 │   └── stat
 │       └── a
@@ -113,44 +102,36 @@ password: vagrant</p>
 │   └── pdf
 ├── lib
 │   └── ext
-└── src</p>
-<pre><code>
-* 使用-C命令解压文件
-`tar xvf -C tmp/a/b/c newarc.tar.gz`
+└── src</code></pre>
+<h3>使用-C命令解压文件</h3>
+<p><code>tar xvf -C tmp/a/b/c newarc.tar.gz</code></p>
+<h3>仅当另一个命令返回零退出状态时才运行某个命令</h3>
+<p><code>cd tmp/a/b/c &amp;&amp; tar xvf ~/archive.tar</code></p>
+<h3>仅当另一个命令返回非零退出状态时才运行某个命令</h3>
+<p><code>cd tmp/a/b/c || mkdir -p tmp/a/b/c</code></p>
+<h3>将命令与控制操作符组合使用</h3>
+<p><code>cd tmp/a/b/c || mkdir -p tmp/a/b/c &amp;&amp; tar xvf -C tmp/a/b/c ~/archive.tar</code></p>
+<h3>在子shell执行命令, 在当前shell执行命令</h3>
+<pre><code># 在子shell执行命令
+(cd ~/bin; ll)
+# 在当前shell执行命令
+{ cd ~/bin; ll }</code></pre>
+<h3>使用git clone googlecode项目</h3>
+<p><code>git svn clone http://ccons.googlecode.com/svn -T trunk -b branches -t tags</code>
+将<code>ccons</code>替换为其他项目名称即可</p>
+<h3>awk if判断</h3>
+<pre><code>ret=`echo $1 | awk &#39;{if(index($1,&quot;.&quot;)==0) {print 0;} else {print 1;}}&#39;`</code></pre>
+<h3>shell 算数运算</h3>
+<pre><code>expr 3 + 2   # 中间必须要有空格
+expr 3 \* 20 # *号必须转义
+expr 1.2 + 2.2 # error expr只能计算整数
 
-* 仅当另一个命令返回零退出状态时才运行某个命令
-`cd tmp/a/b/c &amp;&amp; tar xvf ~/archive.tar`
-
-* 仅当另一个命令返回非零退出状态时才运行某个命令
-`cd tmp/a/b/c || mkdir -p tmp/a/b/c`
-
-* 将命令与控制操作符组合使用
-`cd tmp/a/b/c || mkdir -p tmp/a/b/c &amp;&amp; tar xvf -C tmp/a/b/c ~/archive.tar`
-
-*  在子shell执行命令, 在当前shell执行命令</code></pre>
-<h1>在子shell执行命令</h1>
-<p>(cd ~/bin; ll)</p>
-<h1>在当前shell执行命令</h1>
-<p>{ cd ~/bin; ll }</p>
-<pre><code>
-*  使用git clone googlecode项目
-`git svn clone http://ccons.googlecode.com/svn -T trunk -b branches -t tags`
-将`ccons`替换为其他项目名称即可
-
-* awk if判断</code></pre>
-<p>ret=<code>echo $1 | awk &#39;{if(index($1,&quot;.&quot;)==0) {print 0;} else {print 1;}}&#39;</code></p>
-<pre><code>
-* shell 算数运算</code></pre>
-<p>expr 3 + 2   # 中间必须要有空格
-expr 3 * 20 # *号必须转义
-expr 1.2 + 2.2 # error expr只能计算整数</p>
-<p>echo (( 3 + 2 ))
+echo (( 3 + 2 ))
 echo (( 3+2 ))
-echo ((3+2))</p>
-<h1>以上3种方式均可</h1>
-<pre><code>
-* awk 语法</code></pre>
-<p>if (expression) statement [ else statement ]
+echo ((3+2))
+以上3种方式均可</code></pre>
+<h3>awk 语法</h3>
+<pre><code>if (expression) statement [ else statement ]
 while (expression) statement
 for (expression; expression; expression) statement
 for (var in array) statement
@@ -166,9 +147,9 @@ next
 nextfile
 delete array[expression]
 delete array
-exit [ expression ]</p>
-<pre><code>* awk 特殊变量</code></pre>
-<p>$0          当前行
+exit [ expression ]</code></pre>
+<h3>awk 特殊变量</h3>
+<pre><code>$0          当前行
 $na         第n个域
 FILENAME    当前文件名
 NR          当前行的行号,从1开始
@@ -176,58 +157,40 @@ NF          当前行有多少个域
 RS          输入记录的分隔符,默认为换行
 ORS         输出记录的分隔符,默认也是换行
 FS          域分隔符,默认是空格或TAB
-OFS         输出域分隔符,默认是空格</p>
-<pre><code>
-* curl使用代理
-`curl -x 127.0.0.1:8087 http://ip.taobao.com/service/getIpInfo.php\?ip\=218.195.250.123`
-
-* wget使用代理
-`wget -e &quot;http_proxy=127.0.0.1:8087&quot; http://www.taobao.com`
-
-* imagemagick 批量压缩图片
-`ls -1 | xargs -I {} convert -quality 20% {} ../2/{}`  
-`convert favicon.png favicon.ico`
-
-* shell算数运算
-`$(( 1 + 1 ))` bash, ksh, zsh均支持  
-`$(( 1.1 + 1.1 ))` 只有ksh, zsh支持
-
-* shell 数组
-bash:</code></pre>
-<p>a=(a b c)
+OFS         输出域分隔符,默认是空格</code></pre>
+<h3>curl使用代理</h3>
+<p><code>curl -x 127.0.0.1:8087 http://ip.taobao.com/service/getIpInfo.php\?ip\=218.195.250.123</code></p>
+<h3>wget使用代理</h3>
+<p><code>wget -e &quot;http_proxy=127.0.0.1:8087&quot; http://www.taobao.com</code></p>
+<h3>imagemagick 批量压缩图片</h3>
+<p><code>ls -1 | xargs -I {} convert -quality 20% {} ../2/{}</code><br><code>convert favicon.png favicon.ico</code></p>
+<h3>shell算数运算</h3>
+<p><code>$(( 1 + 1 ))</code> bash, ksh, zsh均支持<br><code>$(( 1.1 + 1.1 ))</code> 只有ksh, zsh支持</p>
+<h3>shell 数组</h3>
+<p>bash:</p>
+<pre><code>a=(a b c)
 a[0]=&quot;a&quot;
 a[1]=&quot;b&quot;
-a[2]=&quot;c&quot;</p>
-<pre><code>zsh:</code></pre>
-<p>a=(a b c)
+a[2]=&quot;c&quot;</code></pre>
+<p>zsh:</p>
+<pre><code>a=(a b c)
 a[1]=&quot;a&quot;
 a[2]=&quot;b&quot;
-a[3]=&quot;c&quot;</p>
-<pre><code>
-* 查看Makefile 的所有target
-类似`rake -T`  
-`env -i make -nRrp | grep -v &#39;^#&#39;`
-
-* rot13 使用tr
-`echo &#39;abc&#39; | tr A-Za-z N-ZA-Mn-za-m`
-
-* 错误重定向
-`$ kill -1 1234 &gt;killouterr.txt 2&gt;&amp;1`  
-将标准输出重定向到文件, 将标准错误输出重定向到和标准输出相同的地方  
-如果顺序有误, 不会按照预期那样工作  
-`$ kill -1 1234 &gt; /de/null 2&gt;&amp;1`  
-抛弃所有输出
-
-* 查看进程名字
-`$ ps –xo comm | sort | uniq | more`
-
-* here doc</code></pre>
-<p>cat &lt;&lt;-EOF
+a[3]=&quot;c&quot;</code></pre>
+<h3>查看Makefile 的所有target</h3>
+<p>类似<code>rake -T</code><br><code>env -i make -nRrp | grep -v &#39;^#&#39;</code></p>
+<h3>rot13 使用tr</h3>
+<p><code>echo &#39;abc&#39; | tr A-Za-z N-ZA-Mn-za-m</code></p>
+<h3>错误重定向</h3>
+<p><code>$ kill -1 1234 &gt;killouterr.txt 2&gt;&amp;1</code><br>将标准输出重定向到文件, 将标准错误输出重定向到和标准输出相同的地方<br>如果顺序有误, 不会按照预期那样工作<br><code>$ kill -1 1234 &gt; /de/null 2&gt;&amp;1</code><br>抛弃所有输出</p>
+<h3>查看进程名字</h3>
+<p><code>$ ps –xo comm | sort | uniq | more</code></p>
+<h3>here doc</h3>
+<pre><code>cat &lt;&lt;-EOF
 this is
 a
 test
-EOF
-```</p>
+EOF</code></pre>
 
 
               </div>

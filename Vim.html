@@ -30,47 +30,45 @@
                       <li><a href="/Emacs.html">Emacs</a></li>
                       <li><a href="/Data.html">Data</a></li>
                       <li><a href="/Haskell.html">Haskell</a></li>
+                      <li><a href="/Web.html">Web</a></li>
+                      <li><a href="/Life.html">Life</a></li>
+                      <li><a href="/Tips.html">Tips</a></li>
+                      <li><a href="/Algorithms.html">Algorithms</a></li>
                   </ul>
               </div>
               <div class="col-md-10">
-                  <h1>vim tips</h1>
-<ul>
-<li>NERD tree 快捷键</li>
-</ul>
-<p>o 在当前tab打开
+                  <h2>vim tips</h2>
+<h3>NERD tree 快捷键</h3>
+<pre><code>o 在当前tab打开
 t 在新tab打开
-T 在新tab后台打开</p>
-<p>p 切换到parrent
+T 在新tab后台打开
+
+p 切换到parrent
 P 切换到root
 C 已当前选择文件夹为root
 u 将root切换为此文件夹的parent 文件夹
 R 刷新root下所有文件夹
 cd 将pwd切换到所选文件夹
-I 是否显示隐藏文件</p>
-<ul>
-<li><p>替换^M
-:%s/^M//g 将全部的^M替换成空
+I 是否显示隐藏文件</code></pre>
+<h3>替换^M</h3>
+<p>:%s/^M//g 将全部的^M替换成空
 需要用ctrl+v 接下来ctrl+m 输入^M</p>
-</li>
-<li><p>visual mode下替换文本
-先使用<code>v</code>,或者<code>V</code>,或者<code>Ctrl+v</code>选择文本,
+<h3>visual mode下替换文本</h3>
+<p>先使用<code>v</code>,或者<code>V</code>,或者<code>Ctrl+v</code>选择文本,
 然后按<code>:</code>,然后输入<code>s/xxx/yyy/g</code>即可,
 最后的<code>g</code>表示替换所有匹配,如果去掉则表示只替换第1次匹配</p>
-</li>
-<li><p>屏幕左右滚动
-<code>zh, zl, zH, zL</code></p>
-</li>
-<li><p>surround
-<a href="https://github.com/tpope/vim-surround">https://github.com/tpope/vim-surround</a></p>
-<pre><code> Old text               Command     New text ~
-&quot;Hello *world!&quot;           ds&quot;         Hello world!
-[123+4*56]/2              cs])        (123+456)/2
-&quot;Look ma, I&#39;m *HTML!&quot;     cs&quot;&lt;q&gt;      &lt;q&gt;Look ma, I&#39;m HTML!&lt;/q&gt;
-if *x&gt;3 {                 ysW(        if ( x&gt;3 ) {
-my $str = *whee!;         vllllS&#39;     my $str = &#39;whee!&#39;;</code></pre>
-</li>
-<li><p>Tabularize
-<a href="https://github.com/godlygeek/tabular">https://github.com/godlygeek/tabular</a></p>
+<h3>屏幕左右滚动</h3>
+<p><code>zh, zl, zH, zL</code></p>
+<h3>surround</h3>
+<p><a href="https://github.com/tpope/vim-surround">https://github.com/tpope/vim-surround</a></p>
+<pre><code>   Old text               Command     New text ~
+  &quot;Hello *world!&quot;           ds&quot;         Hello world!
+  [123+4*56]/2              cs])        (123+456)/2
+  &quot;Look ma, I&#39;m *HTML!&quot;     cs&quot;&lt;q&gt;      &lt;q&gt;Look ma, I&#39;m HTML!&lt;/q&gt;
+  if *x&gt;3 {                 ysW(        if ( x&gt;3 ) {
+  my $str = *whee!;         vllllS&#39;     my $str = &#39;whee!&#39;;</code></pre>
+<h3>Tabularize</h3>
+<p><a href="https://github.com/godlygeek/tabular">https://github.com/godlygeek/tabular</a></p>
 <pre><code>;Hit Cmd-Shift-A then type a character you want to align by
 nmap &lt;D-A&gt; :Tabularize /
 vmap &lt;D-A&gt; :Tabularize /</code></pre>
@@ -79,18 +77,16 @@ vmap &lt;D-A&gt; :Tabularize /</code></pre>
 :Tab /:
 :Tab /:\zs
 :Tab /|</code></pre>
-</li>
-<li>vundle
-```
-Using Vundle:</li>
-</ul>
-<p>Just add this 2 lines to your ~/.vimrc:</p>
-<p>Bundle &#39;rizzatti/funcoo.vim&#39;
+<h3>vundle</h3>
+<pre><code>Using Vundle:
+
+Just add this 2 lines to your ~/.vimrc:
+
+Bundle &#39;rizzatti/funcoo.vim&#39;
 Bundle &#39;rizzatti/dash.vim&#39;
-And run :BundleInstall inside Vim.
-<code>``
-* 删除选中行中符合正则的行
-首先使用</code>v<code>后者</code>V<code>进入选择模式, 然后使用</code>j<code>`k</code> 选中行,然后按<code>:</code>, 然后输入命令:
+And run :BundleInstall inside Vim.</code></pre>
+<h3>删除选中行中符合正则的行</h3>
+<p>首先使用<code>v</code> 后者<code>V</code> 进入选择模式, 然后使用<code>j</code> <code>k</code> 选中行,然后按<code>:</code>, 然后输入命令:
 <code>g/\.$/d</code> 即可删除选中行中最后一个字符为<code>.</code>的行</p>
 
 

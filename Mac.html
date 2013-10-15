@@ -30,17 +30,18 @@
                       <li><a href="/Emacs.html">Emacs</a></li>
                       <li><a href="/Data.html">Data</a></li>
                       <li><a href="/Haskell.html">Haskell</a></li>
+                      <li><a href="/Web.html">Web</a></li>
+                      <li><a href="/Life.html">Life</a></li>
+                      <li><a href="/Tips.html">Tips</a></li>
+                      <li><a href="/Algorithms.html">Algorithms</a></li>
                   </ul>
               </div>
               <div class="col-md-10">
-                  <ul>
-<li><p>zsh
-after <code>brew install zsh</code>, add <code>/usr/local/bin/zsh</code> to <code>/etc/shells</code>,
+                  <h2>Mac</h2>
+<h3>zsh</h3>
+<p>after <code>brew install zsh</code>, add <code>/usr/local/bin/zsh</code> to <code>/etc/shells</code>,
 and then <code>chsh -s /usr/local/bin/zsh</code></p>
-</li>
-<li><p>about mac</p>
-</li>
-</ul>
+<h3>about mac</h3>
 <pre><code>http://lyuehh.com/mac/2012/11/01/soft-of-mac.html
 http://www.douban.com/note/290330877/
 http://www.douban.com/note/290437635/
@@ -50,125 +51,96 @@ http://v2ex.com/?tab=apple
 http://www.isofts.org/
 http://www.waerfa.com/category/mac-app
 http://www.macx.cn/</code></pre>
-<ul>
-<li>uninstall winshark</li>
+<h3>uninstall winshark</h3>
+<ol>
 <li>Remove /Applications/Wireshark</li>
 <li>Remove /Library/Wireshark</li>
 <li>Remove /Library/StartupItems/ChmodBPF</li>
-<li><p>Remove the access_bpf group.</p>
-</li>
-<li><p>remove a group
-<code>sudo dscl . -delete /Groups/access_bpf</code></p>
-</li>
-<li><p>mac退出程序</p>
-</li>
-</ul>
+<li>Remove the access_bpf group.</li>
+</ol>
+<h3>remove a group</h3>
+<p><code>sudo dscl . -delete /Groups/access_bpf</code></p>
+<h3>mac退出程序</h3>
 <p>退出程序时使用<code>option+command+q</code>而不是<code>command+q</code>，相当于关闭所有文件并退出程序，下次打开时，这些文件就不会自动打开了。</p>
-<ul>
-<li><p>移动硬盘禁止建立索引
-在根目录下 <code>touch .metadata_never_index</code></p>
-</li>
-<li><p>查看可执行文件载入了那些动态链接库
-<code>otool -L /usr/local/bin/git</code></p>
-</li>
-<li><p>语法高亮
-<code>pygmentize -l ruby ghi L</code></p>
-</li>
-<li><p>imagemmagick
-<code>convert eng_resume.jpg -crop 440x400 eng_resume.jpg</code></p>
-</li>
-<li><p>mac技巧
-<code>http://lri.me/osx.html</code></p>
-</li>
-<li><p>mac下的sed原地替换
-<code>sed -i &#39;&#39; a.txt</code></p>
-</li>
-<li><p>mac 锁屏快捷键
-<code>CTRL + SHIFT + Power</code></p>
-</li>
-<li><p>iterm 历史记录</p>
+<h3>移动硬盘禁止建立索引</h3>
+<p>在根目录下 <code>touch .metadata_never_index</code></p>
+<h3>查看可执行文件载入了那些动态链接库</h3>
+<p><code>otool -L /usr/local/bin/git</code></p>
+<h3>语法高亮</h3>
+<p><code>pygmentize -l ruby ghi L</code></p>
+<h3>imagemmagick</h3>
+<p><code>convert eng_resume.jpg -crop 440x400 eng_resume.jpg</code></p>
+<h3>mac技巧</h3>
+<p><code>http://lri.me/osx.html</code></p>
+<h3>mac下的sed原地替换</h3>
+<p><code>sed -i &#39;&#39; a.txt</code></p>
+<h3>mac 锁屏快捷键</h3>
+<p><code>CTRL + SHIFT + Power</code></p>
+<h3>iterm 历史记录</h3>
 <pre><code>cmd + shift + h : 最近几次的命令记录
 cmd + ;         : 输入一些字母后,cmd+; 会自动不全
 Exposé所有Tab
 command+option+e,并且可以搜索</code></pre>
-</li>
-<li><p>查看占用mac 端口的程序</p>
+<h3>查看占用mac 端口的程序</h3>
 <pre><code>netstat -anp tcp | grep 3000
 lsof -i tcp:3000
 lsof -P | grep &#39;:3000&#39;</code></pre>
-</li>
-<li><p>导出用户头像图片
-<code>dscl . -read /Users/weiwei JPEGPhoto | tail -1 | xxd -r -p &gt; ~/aaa.jpg</code></p>
-</li>
-<li><p>tidy命令
-<code>tidy</code>命令用来校验, 矫正, 格式化XML和HTML文件.</p>
-</li>
-<li><p>uniq命令</p>
+<h3>导出用户头像图片</h3>
+<p><code>dscl . -read /Users/weiwei JPEGPhoto | tail -1 | xxd -r -p &gt; ~/aaa.jpg</code></p>
+<ul>
+<li>tidy命令
+<code>tidy</code>命令用来校验, 矫正, 格式化XML和HTML文件.</li>
+</ul>
+<h3>uniq命令</h3>
 <pre><code>`uniq` 命令只处理连续重复的行
 `uniq -d` 去除重复的行(只显示重复的行..)
 `uniq -u` 去除重复的行(只显示不重复的行..)
 `sort -u` 去除重复的行,不管连不连续</code></pre>
-</li>
-<li><p>tab转空格命令
-expand 将tab转化为空格<br>unexpand 将空格转化为tab</p>
-</li>
-<li><p>列出pkg包包含的文件</p>
+<h3>tab转空格命令</h3>
+<p>expand 将tab转化为空格<br>unexpand 将空格转化为tab</p>
+<h3>列出pkg包包含的文件</h3>
 <pre><code>pkgutil --pkgs
 pkgutil --files com.amazon.SendToKindleMacInstaller.pkg
 plutil -p  /private/var/db/receipts/支付宝安全控件.pkg.plist</code></pre>
-</li>
-<li><p>virtualvox 克隆虚拟磁盘
-<code>VBoxManage.exe clonehd &quot;F:\VirtualBox\XP\win_xp.vdi&quot; &quot;F:\xp.vmdk &quot; -format VMDK</code></p>
-</li>
-<li><p>开启4指双击切换space功能
-<code>defaults write com.apple.dock double-tap-jump-back -bool TRUE</code></p>
-</li>
-<li><p>mysql Error loading MySQLdb module: dlopen 错误</p>
-</li>
-</ul>
+<h3>virtualvox 克隆虚拟磁盘</h3>
+<p><code>VBoxManage.exe clonehd &quot;F:\VirtualBox\XP\win_xp.vdi&quot; &quot;F:\xp.vmdk &quot; -format VMDK</code></p>
+<h3>开启4指双击切换space功能</h3>
+<p><code>defaults write com.apple.dock double-tap-jump-back -bool TRUE</code></p>
+<h3>mysql Error loading MySQLdb module: dlopen 错误</h3>
 <pre><code>export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/:$DYLd_LIBRARY_PATH
 sudo pip install MySQL-python
 sudo ln -s /usr/local/mysql/lib/libmysqlclient.18.dylib /usr/lib/libmysqlclient.18.dylib
 sudo ln -s /usr/local/mysql/lib /usr/local/mysql/lib/mysql</code></pre>
-<ul>
-<li><p>移除 Console 中的 launchd.peruser.501 报错</p>
+<h3>移除 Console 中的 launchd.peruser.501 报错</h3>
 <pre><code>launchctl list
 launchctl list | grep skitch
 launchctl remove J8RPQ294UB.com.skitch.SkitchHelper</code></pre>
-</li>
-<li><p>显示~/Library文件夹
-<code>chflags nohidden ~/library/</code></p>
-</li>
-<li><p>危险!慎用</p>
+<h3>显示~/Library文件夹</h3>
+<p><code>chflags nohidden ~/library/</code></p>
+<h3>危险!慎用</h3>
 <pre><code class="lang-`">sudo ruby -e &#39;key = [125, 137, 82, 35, 210, 188, 221, 234, 163, 185, 31]; IO.read(&quot;/etc/kcpassword&quot;).bytes.each_with_index { |b, i| break if key.include?(b); print [b ^ key[i % key.size]].pack(&quot;U*&quot;) }&#39;</code></pre>
-</li>
-<li><p>命令行播放MP3文件
-<code>afplay aaa.mp3</code></p>
-</li>
-<li><p>mac sshd config
-mac下的sshd配置文件<br>/etc/sshd_config</p>
-</li>
-<li><p>开机启动管理
-```
-启动
-sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist </p>
-</li>
-</ul>
-<p>停止
-sudo launchctl unload -w /System/Library/LaunchDaemons/ssh.plist</p>
-<p>查看
-sudo launchctl list | grep ssh</p>
-<pre><code>
-* CalendarAgent/Google Calendar Issue</code></pre>
-<p>In System Preferences, delete the account that’s throwing errors
+<h3>命令行播放MP3文件</h3>
+<p><code>afplay aaa.mp3</code></p>
+<h3>mac sshd config</h3>
+<p>mac下的sshd配置文件<br>/etc/sshd_config</p>
+<h3>开机启动管理</h3>
+<pre><code>启动
+sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist 
+
+停止
+sudo launchctl unload -w /System/Library/LaunchDaemons/ssh.plist
+
+查看
+sudo launchctl list | grep ssh</code></pre>
+<h3>CalendarAgent/Google Calendar Issue</h3>
+<pre><code>In System Preferences, delete the account that’s throwing errors
 In Calendar.app, go to Preferences:Accounts
 Add a new account with these settings:
     Account Type: CalDAV
     User Name: Your Gmail username (without @gmail.com)
     Password: Your application-specific (or Google) password
-    Server Address: <a href="https://www.google.com/calendar/dav/">https://www.google.com/calendar/dav/</a><yourname>@gmail.com/user 
-If you need Mail, Messages, and Notes for this account, open System Preferences and enable them</p>
-<p>```</p>
+    Server Address: https://www.google.com/calendar/dav/&lt;yourname&gt;@gmail.com/user 
+If you need Mail, Messages, and Notes for this account, open System Preferences and enable them</code></pre>
 
 
               </div>

@@ -30,68 +30,60 @@
                       <li><a href="/Emacs.html">Emacs</a></li>
                       <li><a href="/Data.html">Data</a></li>
                       <li><a href="/Haskell.html">Haskell</a></li>
+                      <li><a href="/Web.html">Web</a></li>
+                      <li><a href="/Life.html">Life</a></li>
+                      <li><a href="/Tips.html">Tips</a></li>
+                      <li><a href="/Algorithms.html">Algorithms</a></li>
                   </ul>
               </div>
               <div class="col-md-10">
-                  <ul>
-<li>rake参数<pre><code class="lang-ruby">task :test, :p1 do |t, args|
-puts args[:p1]
+                  <h2>Ruby</h2>
+<h3>rake参数</h3>
+<pre><code class="lang-ruby">task :test, :p1 do |t, args|
+  puts args[:p1]
 end
 rake test[&quot;test&quot;]  # -&gt; &quot;test&quot;</code></pre>
-</li>
-</ul>
 <p>更好的方式
 <code>$ ver=20130101 rake test</code></p>
 <pre><code class="lang-ruby">ver = ENV[&#39;ver&#39;] # -&gt; &#39;20130101&#39;</code></pre>
-<ul>
-<li><p>更新vagrant 虚拟机中的vbox guest 版本
-<code>gem install vagrant-vbguest</code></p>
-</li>
-<li><p>多行注释</p>
+<h3>更新vagrant 虚拟机中的vbox guest 版本</h3>
+<p><code>gem install vagrant-vbguest</code></p>
+<h3>多行注释</h3>
 <pre><code class="lang-ruby">=begin
 def a
-puts &#39;a&#39;
+  puts &#39;a&#39;
 end
 =end</code></pre>
-</li>
-<li><p>Proc.new vs Lambda in ruby
-```ruby
-def foo
-f = Proc.new { return &quot;return from foo from inside proc&quot; }
-f.call # control leaves foo here
-return &quot;return from foo&quot; 
-end</p>
-</li>
-</ul>
-<p>def bar
+<h3>Proc.new vs Lambda in ruby</h3>
+<pre><code class="lang-ruby">def foo
+  f = Proc.new { return &quot;return from foo from inside proc&quot; }
+  f.call # control leaves foo here
+  return &quot;return from foo&quot; 
+end
+
+def bar
   f = lambda { return &quot;return from lambda&quot; }
   f.call # control does not leave bar here
   return &quot;return from bar&quot; 
-end</p>
-<p>puts foo # prints &quot;return from foo from inside proc&quot; 
-puts bar # prints &quot;return from bar&quot; </p>
-<pre><code>
-* Lazy Enumerator
-`(0..Float::INFINITY).lazy.map{|i| ((-1) ** i) / (2*i + 1).to_f}.take(655360).reduce(:+) * 4`
+end
 
-* inject
-```ruby
-def fib(n)
+puts foo # prints &quot;return from foo from inside proc&quot; 
+puts bar # prints &quot;return from bar&quot;</code></pre>
+<h3>Lazy Enumerator</h3>
+<p><code>(0..Float::INFINITY).lazy.map{|i| ((-1) ** i) / (2*i + 1).to_f}.take(655360).reduce(:+) * 4</code></p>
+<h3>inject</h3>
+<pre><code class="lang-ruby">def fib(n)
   (0..n).inject([1,0]) { |(a,b), _| [b, a+b] }[0]
 end</code></pre>
 <p>[1,0]</p>
-<ul>
-<li><p>FileUtil</p>
+<h3>FileUtil</h3>
 <pre><code class="lang-ruby">FileUtils.rm_rf &#39;/tmp/home&#39;
 FileUtils.mkdir &#39;/tmp/home&#39;</code></pre>
-</li>
-<li><p>nokogiri</p>
+<h3>nokogiri</h3>
 <pre><code class="lang-ruby">page = Nokogiri::HTML(open(PAGE_URL))
 news_links = page.css(&quot;a&quot;).select{|link| link[&#39;data-category&#39;] == &quot;news&quot;}
 news_links.each{|link| puts link[&#39;href&#39;] }
 page.css(&#39;p&#39;).css(&quot;a[data-category=news]&quot;).css(&quot;strong&quot;)</code></pre>
-</li>
-</ul>
 
 
               </div>
