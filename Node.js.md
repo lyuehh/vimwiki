@@ -1,4 +1,4 @@
-## nodejs
+* nodejs
 
 # 查看nodejs registry
 `brew install yajl`

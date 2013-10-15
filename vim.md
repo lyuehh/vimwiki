@@ -1,6 +1,6 @@
 # vim tips
 
-## NERD tree 快捷键
+* NERD tree 快捷键
 
 o 在当前tab打开
 t 在新tab打开
@@ -14,19 +14,19 @@ R 刷新root下所有文件夹
 cd 将pwd切换到所选文件夹
 I 是否显示隐藏文件
 
-## 替换^M
+* 替换^M
 :%s/^M//g 将全部的^M替换成空
 需要用ctrl+v 接下来ctrl+m 输入^M
 
-## visual mode下替换文本
+* visual mode下替换文本
 先使用`v`,或者`V`,或者`Ctrl+v`选择文本,
 然后按`:`,然后输入`s/xxx/yyy/g`即可,
 最后的`g`表示替换所有匹配,如果去掉则表示只替换第1次匹配
 
-## 屏幕左右滚动
+* 屏幕左右滚动
 `zh, zl, zH, zL`
 
-## surround
+* surround
 <https://github.com/tpope/vim-surround>
 ```
    Old text               Command     New text ~
@@ -37,7 +37,7 @@ I 是否显示隐藏文件
   my $str = *whee!;         vllllS'     my $str = 'whee!';
 ```
 
-## Tabularize
+* Tabularize
 <https://github.com/godlygeek/tabular>
 ```
 ;Hit Cmd-Shift-A then type a character you want to align by
@@ -51,7 +51,7 @@ vmap <D-A> :Tabularize /
 :Tab /:\zs
 :Tab /|
 ```
-## vundle
+* vundle
 ```
 Using Vundle:
 
@@ -61,6 +61,6 @@ Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 And run :BundleInstall inside Vim.
 ```
-## 删除选中行中符合正则的行
+* 删除选中行中符合正则的行
 首先使用`v` 后者`V` 进入选择模式, 然后使用`j` `k` 选中行,然后按`:`, 然后输入命令:
 `g/\.$/d` 即可删除选中行中最后一个字符为`.`的行

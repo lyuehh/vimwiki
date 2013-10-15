@@ -1,11 +1,11 @@
 # javascript tips
 
-## 常用类库
+* 常用类库
 * modernizr
 * momentjs
 * bower
 
-## jquery json的参数
+* jquery json的参数
 
 * `dataType` 参数需要设置为`jsonp`
 * jQuery默认生成的url为`?callback=jQuery191xxx`
@@ -17,7 +17,7 @@
 * 以上2个参数需要根据服务器的要求修改,有些服务器返回的格式不是标准的`bb({})`的形式,就不能用jquery封装后的jsonp请求,
 * 比如服务端返回`bb && bb({})`, jquery就不能正确处理,这时就需要自己手工写jsonp请求.
 
-## map 和 parseInt
+* map 和 parseInt
 ```javascript
 ["0", "0", "0"].map(parseInt);
 // -> [0, NaN, 0]
@@ -31,7 +31,7 @@ map方法接收的函数参数会接收到3个参数,分别为item, index, array
 `parseInt("0", 0, ["0","0","0"]); // -> 0`
 `parseInt("0", 1, ["0", "0", "0"]); // -> NaN`
 
-## jQuery的$用法
+* jQuery的$用法
 From: http://api.jquery.com/jQuery/
 ```javascript
 jQuery( selector [, context ] ); // 在context里选中带有selector的元素
@@ -45,14 +45,14 @@ jQuery( html, attributes ); // 根据attribute创建html
 jQuery( callback ); // exec the callback when dom is ready
 ```
 
-## window.open 的参数
+* window.open 的参数
 `window.open('http://www.qq.com','aa','height=400,width=400,location=no,resizable=no,menubar=no,scrollbars=no,status=no,toolbar=no,fullscreen=no,top=300,left=300')`
 
-## https下资源加载
+* https下资源加载
 https下加载http的资源时,浏览器一般都会有提示,或者会默认阻止,
 只要是https资源加载就没问题, 不管是不是本域的.
 
-## jQuery 2.0
+* jQuery 2.0
 ```
 <!--[if lt IE 9]>
     <script src="jquery-1.9.1.js"></script>
@@ -62,12 +62,12 @@ https下加载http的资源时,浏览器一般都会有提示,或者会默认阻
 <!--<![endif]-->
 ```
 
-## csrf
+* csrf
 1. 第三方页面使用form 会附带cookie，可以提交成功，但是拿不到post的响应，如果用iframe，那么iframe的domain是厂商的，没有权限访问到其中的内容
 2. 如果使用ajax发送post请求，浏览器不会附带cookie，不会通过后台的认证
 3. get请求的响应和post响应 只有受害者能看到，而攻击者看不到，get如果不更改后台的状态，可以不认证，post都要认证
 
-## why use apply
+* why use apply
 ```javascript
 var a = [1,2,3,4,5];
 console.log(Math.max(a)); // -> NaN
@@ -83,7 +83,7 @@ foo(anArray); // This will not work. value1 will be anArray, and value 2 and 3 w
 foo.apply(this, anArray); // This works, as anArray will be the arguments to foo.
 ```
 
-## substr和substring和slice的区别
+* substr和substring和slice的区别
 ```javascript
 var message = "Hello world!";
 
@@ -114,7 +114,7 @@ substring不包含indexB,substr包含indexB
 substr的第1个参数可以是负的,substring的参数不能为负的
 ```
 
-## + -
+* + -
 ```
 1 + '1' -> "11"
 1 - '1' -> 0
@@ -124,11 +124,11 @@ Number.MAX_VALUE -> 1.7976931348623157e+308
 Number.MIN_VALUE -> 5e-324
 ```
 
-## underscore include ,  indexOf
+* underscore include ,  indexOf
 underscore的include和indexOf都是给数组用的, 不是给字符串用的
 需要判断是否包含字符串, 需要使用str.indexOf
 
-## js关闭窗口
+* js关闭窗口
 <script type="text/javascript">
 function CloseWebPage() {
   if (navigator.userAgent.indexOf("MSIE") > 0) {
@@ -151,7 +151,7 @@ function CloseWebPage() {
 }
 </script>
 
-## Event
+* Event
 1. currentTarget 等于this, 是绑定事件的对象, 而target则是事件真正的目标
 2. IE取消默认行为, returnValue = false, 相当于其他浏览器的 preventDefault()方法
 3. IE阻止事件冒泡, calcelBubble = true, 相当于其他浏览器的stopPropagation()方法
@@ -165,7 +165,7 @@ function CloseWebPage() {
   document.readyState,为interactive时表示DOM树加载完毕,IE,firefox 4+, opera支持此事件
 8. 除非把动态的元素添加到页面中,否则浏览器不会开始下载外部资源.
 
-## 格式化json
+* 格式化json
 `curl -s 'http://geci.me/api/lyric/part of me' | python -mjson.tool`
 `curl -s 'http://geci.me/api/lyric/part of me' | json_reformat`
 `json_reformat`在`yajl`包中, `brew install yajl`
