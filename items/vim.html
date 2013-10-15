@@ -1,37 +1,42 @@
-<!DOCTYPE html>
-<html>
-
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset='utf-8' />
-<meta http-equiv="X-UA-Compatible" content="chrome=1" />
-<meta name="description" content="Project Euler : " />
-<link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/stylesheet.css">
-<title>vimwiki by lyuehh</title>
+    <meta charset="UTF-8">
+    <title>wiki by lyuehh</title>
+    <link type="text/css" rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.0.0/css/bootstrap-theme.min.css"/>
+    <link type="text/css" rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.0.0/css/bootstrap.min.css"/>
 </head>
-
 <body>
-
-<!-- HEADER -->
-<div id="header_wrap" class="outer">
-  <header class="inner">
-    <a id="forkme_banner" href="https://github.com/lyuehh/vimwiki">View on GitHub</a>
-
-    <h1 id="project_title"><a href="../index.html">vimwiki by lyuehh</a></h1>
-    <h2 id="project_tagline"></h2>
-
-    <section id="downloads">
-      <a class="zip_download_link" href="https://github.com/lyuehh/vimwiki/zipball/master">Download this project as a .zip file</a>
-      <a class="tar_download_link" href="https://github.com/lyuehh/vimwiki/tarball/master">Download this project as a tar.gz file</a>
-    </section>
-  </header>
-</div>
-
-<!-- MAIN CONTENT -->
-<div id="main_content_wrap" class="outer">
-  <section id="main_content" class="inner">
-    <article>
-      <h1>vim tips</h1>
-<h2>NERD tree 快捷键</h2>
+    <div class="container">
+        <div class="row">
+            <div class="page-header">
+              <h1>wiki by lyuehh<small></small></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row">
+              <div class="col-md-4">
+                  <ul>
+                      <li><a href="/">JavaScript</a></li>
+                      <li><a href="">Shell</a></li>
+                      <li><a href="">Mac</a></li>
+                      <li><a href="">Ruby</a></li>
+                      <li><a href="">Python</a></li>
+                      <li><a href="">Node.js</a></li>
+                      <li><a href="">CSS</a></li>
+                      <li><a href="">Vim</a></li>
+                      <li><a href="">Java</a></li>
+                      <li><a href="">Git</a></li>
+                      <li><a href="">Emacs</a></li>
+                      <li><a href="">Data</a></li>
+                      <li><a href="">Haskell</a></li>
+                  </ul>
+              </div>
+              <div class="col-md-8">
+                  <h1>vim tips</h1>
+<ul>
+<li>NERD tree 快捷键</li>
+</ul>
 <p>o 在当前tab打开
 t 在新tab打开
 T 在新tab后台打开</p>
@@ -42,25 +47,30 @@ u 将root切换为此文件夹的parent 文件夹
 R 刷新root下所有文件夹
 cd 将pwd切换到所选文件夹
 I 是否显示隐藏文件</p>
-<h2>替换^M</h2>
-<p>:%s/^M//g 将全部的^M替换成空
+<ul>
+<li><p>替换^M
+:%s/^M//g 将全部的^M替换成空
 需要用ctrl+v 接下来ctrl+m 输入^M</p>
-<h2>visual mode下替换文本</h2>
-<p>先使用<code>v</code>,或者<code>V</code>,或者<code>Ctrl+v</code>选择文本,
+</li>
+<li><p>visual mode下替换文本
+先使用<code>v</code>,或者<code>V</code>,或者<code>Ctrl+v</code>选择文本,
 然后按<code>:</code>,然后输入<code>s/xxx/yyy/g</code>即可,
 最后的<code>g</code>表示替换所有匹配,如果去掉则表示只替换第1次匹配</p>
-<h2>屏幕左右滚动</h2>
-<p><code>zh, zl, zH, zL</code></p>
-<h2>surround</h2>
-<p><a href="https://github.com/tpope/vim-surround">https://github.com/tpope/vim-surround</a></p>
-<pre><code>   Old text               Command     New text ~
-  &quot;Hello *world!&quot;           ds&quot;         Hello world!
-  [123+4*56]/2              cs])        (123+456)/2
-  &quot;Look ma, I&#39;m *HTML!&quot;     cs&quot;&lt;q&gt;      &lt;q&gt;Look ma, I&#39;m HTML!&lt;/q&gt;
-  if *x&gt;3 {                 ysW(        if ( x&gt;3 ) {
-  my $str = *whee!;         vllllS&#39;     my $str = &#39;whee!&#39;;</code></pre>
-<h2>Tabularize</h2>
-<p><a href="https://github.com/godlygeek/tabular">https://github.com/godlygeek/tabular</a></p>
+</li>
+<li><p>屏幕左右滚动
+<code>zh, zl, zH, zL</code></p>
+</li>
+<li><p>surround
+<a href="https://github.com/tpope/vim-surround">https://github.com/tpope/vim-surround</a></p>
+<pre><code> Old text               Command     New text ~
+&quot;Hello *world!&quot;           ds&quot;         Hello world!
+[123+4*56]/2              cs])        (123+456)/2
+&quot;Look ma, I&#39;m *HTML!&quot;     cs&quot;&lt;q&gt;      &lt;q&gt;Look ma, I&#39;m HTML!&lt;/q&gt;
+if *x&gt;3 {                 ysW(        if ( x&gt;3 ) {
+my $str = *whee!;         vllllS&#39;     my $str = &#39;whee!&#39;;</code></pre>
+</li>
+<li><p>Tabularize
+<a href="https://github.com/godlygeek/tabular">https://github.com/godlygeek/tabular</a></p>
 <pre><code>;Hit Cmd-Shift-A then type a character you want to align by
 nmap &lt;D-A&gt; :Tabularize /
 vmap &lt;D-A&gt; :Tabularize /</code></pre>
@@ -69,67 +79,27 @@ vmap &lt;D-A&gt; :Tabularize /</code></pre>
 :Tab /:
 :Tab /:\zs
 :Tab /|</code></pre>
-<h2>vundle</h2>
-<pre><code>Using Vundle:
-
-Just add this 2 lines to your ~/.vimrc:
-
-Bundle &#39;rizzatti/funcoo.vim&#39;
+</li>
+<li>vundle
+```
+Using Vundle:</li>
+</ul>
+<p>Just add this 2 lines to your ~/.vimrc:</p>
+<p>Bundle &#39;rizzatti/funcoo.vim&#39;
 Bundle &#39;rizzatti/dash.vim&#39;
-And run :BundleInstall inside Vim.</code></pre>
-<h2>删除选中行中符合正则的行</h2>
-<p>首先使用<code>v</code> 后者<code>V</code> 进入选择模式, 然后使用<code>j</code> <code>k</code> 选中行,然后按<code>:</code>, 然后输入命令:
+And run :BundleInstall inside Vim.
+<code>``
+* 删除选中行中符合正则的行
+首先使用</code>v<code>后者</code>V<code>进入选择模式, 然后使用</code>j<code>`k</code> 选中行,然后按<code>:</code>, 然后输入命令:
 <code>g/\.$/d</code> 即可删除选中行中最后一个字符为<code>.</code>的行</p>
 
 
-    </article>
-    <aside>
-      <ul>
-          <li><a href="algorithms.html">algorithms</a></li>
-          <li><a href="css.html">css</a></li>
-          <li><a href="data.html">data</a></li>
-          <li><a href="emacs.html">emacs</a></li>
-          <li><a href="haskell.html">haskell</a></li>
-          <li><a href="java.html">java</a></li>
-          <li><a href="javascript.html">javascript</a></li>
-          <li><a href="life.html">life</a></li>
-          <li><a href="Mac.html">Mac</a></li>
-          <li><a href="nodejs.html">nodejs</a></li>
-          <li><a href="Python.html">Python</a></li>
-          <li><a href="ruby.html">ruby</a></li>
-          <li><a href="shell.html">shell</a></li>
-          <li><a href="temp.html">temp</a></li>
-          <li><a href="Tips.html">Tips</a></li>
-          <li><a href="vim.html">vim</a></li>
-          <li><a href="web.html">web</a></li>
-      </ul>
-    </aside>
-    <div class="cb"></div>
-    <div id="disqus_thread"></div>
-    <script type="text/javascript">
-/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-var disqus_shortname = 'vimwikibylyuehh'; // required: replace example with your forum shortname
-
-/* * * DON'T EDIT BELOW THIS LINE * * */
-(function() {
-  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    
-  </section>
-</div>
-
-<!-- FOOTER  -->
-<div id="footer_wrap" class="outer">
-  <footer class="inner">
-    <p class="copyright">Project Euler maintained by <a href="https://github.com/lyuehh">lyuehh</a></p>
-    <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-  </footer>
-</div>
-<script type='text/javascript' src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+              </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="http://cdn.staticfile.org/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/twitter-bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>

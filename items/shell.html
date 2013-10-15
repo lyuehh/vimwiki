@@ -1,92 +1,109 @@
-<!DOCTYPE html>
-<html>
-
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset='utf-8' />
-<meta http-equiv="X-UA-Compatible" content="chrome=1" />
-<meta name="description" content="Project Euler : " />
-<link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/stylesheet.css">
-<title>vimwiki by lyuehh</title>
+    <meta charset="UTF-8">
+    <title>wiki by lyuehh</title>
+    <link type="text/css" rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.0.0/css/bootstrap-theme.min.css"/>
+    <link type="text/css" rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.0.0/css/bootstrap.min.css"/>
 </head>
-
 <body>
-
-<!-- HEADER -->
-<div id="header_wrap" class="outer">
-  <header class="inner">
-    <a id="forkme_banner" href="https://github.com/lyuehh/vimwiki">View on GitHub</a>
-
-    <h1 id="project_title"><a href="../index.html">vimwiki by lyuehh</a></h1>
-    <h2 id="project_tagline"></h2>
-
-    <section id="downloads">
-      <a class="zip_download_link" href="https://github.com/lyuehh/vimwiki/zipball/master">Download this project as a .zip file</a>
-      <a class="tar_download_link" href="https://github.com/lyuehh/vimwiki/tarball/master">Download this project as a tar.gz file</a>
-    </section>
-  </header>
-</div>
-
-<!-- MAIN CONTENT -->
-<div id="main_content_wrap" class="outer">
-  <section id="main_content" class="inner">
-    <article>
-      <h1>shell tips</h1>
-<h2>ab测试</h2>
-<p><code>ab -q -c 50 -n 1000 http://www.qq.com</code></p>
-<h2>awk split</h2>
-<p><code>awk &#39;{split($0,a,&quot;/&quot;)</code></p>
-<h2>zmv</h2>
-<p><code>zmv -W &#39;*.cgi&#39; &#39;*.jpg&#39;</code>
+    <div class="container">
+        <div class="row">
+            <div class="page-header">
+              <h1>wiki by lyuehh<small></small></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row">
+              <div class="col-md-4">
+                  <ul>
+                      <li><a href="/">JavaScript</a></li>
+                      <li><a href="">Shell</a></li>
+                      <li><a href="">Mac</a></li>
+                      <li><a href="">Ruby</a></li>
+                      <li><a href="">Python</a></li>
+                      <li><a href="">Node.js</a></li>
+                      <li><a href="">CSS</a></li>
+                      <li><a href="">Vim</a></li>
+                      <li><a href="">Java</a></li>
+                      <li><a href="">Git</a></li>
+                      <li><a href="">Emacs</a></li>
+                      <li><a href="">Data</a></li>
+                      <li><a href="">Haskell</a></li>
+                  </ul>
+              </div>
+              <div class="col-md-8">
+                  <h1>shell tips</h1>
+<ul>
+<li><p>ab测试
+<code>ab -q -c 50 -n 1000 http://www.qq.com</code></p>
+</li>
+<li><p>awk split
+<code>awk &#39;{split($0,a,&quot;/&quot;)</code></p>
+</li>
+<li><p>zmv
+<code>zmv -W &#39;*.cgi&#39; &#39;*.jpg&#39;</code>
 <code>zmv *.txt.xml *.xml</code></p>
-<h2>sed 替换chrome书签</h2>
-<p><code>sed &#39;s/ICON=.*&quot;/ICON=&quot;&quot;/g&#39; bookmarks_13-9-13.html &gt; bookmark.html</code></p>
-<h2>convert 水平方向拼接图片</h2>
-<p><code>convert +append 1.jpg 2.jpg 3.jpg .... 0.jpg</code></p>
-<h2>convert 垂直方向拼接图片</h2>
-<p><code>convert -append 1.jpg 2.jpg 3.jpg .... 0.jpg</code></p>
-<h2>zsh tips</h2>
+</li>
+<li><p>sed 替换chrome书签
+<code>sed &#39;s/ICON=.*&quot;/ICON=&quot;&quot;/g&#39; bookmarks_13-9-13.html &gt; bookmark.html</code></p>
+</li>
+<li><p>convert 水平方向拼接图片
+<code>convert +append 1.jpg 2.jpg 3.jpg .... 0.jpg</code></p>
+</li>
+<li><p>convert 垂直方向拼接图片
+<code>convert -append 1.jpg 2.jpg 3.jpg .... 0.jpg</code></p>
+</li>
+<li><p>zsh tips</p>
 <pre><code>ll -l **/README
 chmod 700 **/(.) # Only files
 chmod 700 **/(/) # Only directories
 ls -l **/*.(js|css)</code></pre>
-<h2> </h2>
-<h2>shell 技巧</h2>
-<p><a href="http://lri.me/shell.txt">http://lri.me/shell.txt</a></p>
+</li>
+<li></li>
+<li><p>shell 技巧
+<a href="http://lri.me/shell.txt">http://lri.me/shell.txt</a></p>
+</li>
+</ul>
 <h1>bash, ksh, zsh语法比较</h1>
 <p><a href="http://hyperpolyglot.org/unix-shells#group-cmd">http://hyperpolyglot.org/unix-shells#group-cmd</a></p>
-<h2>文件是否存在</h2>
-<p><code>[[ -f ~/.ssh/id_rsa.pub ]] || ssh-keygen -t rsa</code></p>
-<h2>复制文本</h2>
-<p><code>[[ -f ~/.ssh/id_rsa.pub ]] &amp;&amp; cat ~/.ssh/id_rsa.pub | pbcopy ;# only on mac</code></p>
-<h2>参数相关</h2>
+<ul>
+<li><p>文件是否存在
+<code>[[ -f ~/.ssh/id_rsa.pub ]] || ssh-keygen -t rsa</code></p>
+</li>
+<li><p>复制文本
+<code>[[ -f ~/.ssh/id_rsa.pub ]] &amp;&amp; cat ~/.ssh/id_rsa.pub | pbcopy ;# only on mac</code></p>
+</li>
+<li><p>参数相关</p>
 <pre><code>$1 第1个参数
 $2 第2个参数
 ...
 $? 最后一条命令的结果
 $# 参数的个数
 $@ 所有的参数列表</code></pre>
-<h2>install ruby on ubuntu</h2>
-<pre><code>sudo vi /etc/apt/source.list
-:%s/us/cn/g
-
-sudo apt-get update
+</li>
+<li>install ruby on ubuntu
+```
+sudo vi /etc/apt/source.list
+:%s/us/cn/g</li>
+</ul>
+<p>sudo apt-get update
 sudo apt-get install git-core
 sudo apt-get install curl
 sudo apt-get install build-essential zlib1g zlib1g-dev libreadline5 libreadline5-dev libssl-dev
-curl -L https://get.rvm.io | bash -s stable
+curl -L <a href="https://get.rvm.io">https://get.rvm.io</a> | bash -s stable
 source /home/vagrant/.rvm/scripts/rvm
 rvm install 1.9.3
-sudo apt-get install zsh
-
-git clone https://github.com/skwp/dotfiles ~/.yadr
-cd ~/.yadr &amp;&amp; rake install
-
-chsh -s /bin/zsh
-password: vagrant</code></pre>
-<h2>创建目录树</h2>
-<p><code>mkdir -p project/{lib/ext,bin,src,doc/{html,info,pdf},demo/stat/a}</code>
-会在project下创建如下的目录树</p>
-<pre><code>├── bin
+sudo apt-get install zsh</p>
+<p>git clone <a href="https://github.com/skwp/dotfiles">https://github.com/skwp/dotfiles</a> ~/.yadr
+cd ~/.yadr &amp;&amp; rake install</p>
+<p>chsh -s /bin/zsh
+password: vagrant</p>
+<pre><code>
+* 创建目录树
+`mkdir -p project/{lib/ext,bin,src,doc/{html,info,pdf},demo/stat/a}`
+会在project下创建如下的目录树</code></pre>
+<p>├── bin
 ├── demo
 │   └── stat
 │       └── a
@@ -96,36 +113,44 @@ password: vagrant</code></pre>
 │   └── pdf
 ├── lib
 │   └── ext
-└── src</code></pre>
-<h2>使用-C命令解压文件</h2>
-<p><code>tar xvf -C tmp/a/b/c newarc.tar.gz</code></p>
-<h2>仅当另一个命令返回零退出状态时才运行某个命令</h2>
-<p><code>cd tmp/a/b/c &amp;&amp; tar xvf ~/archive.tar</code></p>
-<h2>仅当另一个命令返回非零退出状态时才运行某个命令</h2>
-<p><code>cd tmp/a/b/c || mkdir -p tmp/a/b/c</code></p>
-<h2>将命令与控制操作符组合使用</h2>
-<p><code>cd tmp/a/b/c || mkdir -p tmp/a/b/c &amp;&amp; tar xvf -C tmp/a/b/c ~/archive.tar</code></p>
-<h2>在子shell执行命令, 在当前shell执行命令</h2>
-<pre><code># 在子shell执行命令
-(cd ~/bin; ll)
-# 在当前shell执行命令
-{ cd ~/bin; ll }</code></pre>
-<h2>使用git clone googlecode项目</h2>
-<p><code>git svn clone http://ccons.googlecode.com/svn -T trunk -b branches -t tags</code>
-将<code>ccons</code>替换为其他项目名称即可</p>
-<h2>awk if判断</h2>
-<pre><code>ret=`echo $1 | awk &#39;{if(index($1,&quot;.&quot;)==0) {print 0;} else {print 1;}}&#39;`</code></pre>
-<h2>shell 算数运算</h2>
-<pre><code>expr 3 + 2   # 中间必须要有空格
-expr 3 \* 20 # *号必须转义
-expr 1.2 + 2.2 # error expr只能计算整数
+└── src</p>
+<pre><code>
+* 使用-C命令解压文件
+`tar xvf -C tmp/a/b/c newarc.tar.gz`
 
-echo (( 3 + 2 ))
+* 仅当另一个命令返回零退出状态时才运行某个命令
+`cd tmp/a/b/c &amp;&amp; tar xvf ~/archive.tar`
+
+* 仅当另一个命令返回非零退出状态时才运行某个命令
+`cd tmp/a/b/c || mkdir -p tmp/a/b/c`
+
+* 将命令与控制操作符组合使用
+`cd tmp/a/b/c || mkdir -p tmp/a/b/c &amp;&amp; tar xvf -C tmp/a/b/c ~/archive.tar`
+
+*  在子shell执行命令, 在当前shell执行命令</code></pre>
+<h1>在子shell执行命令</h1>
+<p>(cd ~/bin; ll)</p>
+<h1>在当前shell执行命令</h1>
+<p>{ cd ~/bin; ll }</p>
+<pre><code>
+*  使用git clone googlecode项目
+`git svn clone http://ccons.googlecode.com/svn -T trunk -b branches -t tags`
+将`ccons`替换为其他项目名称即可
+
+* awk if判断</code></pre>
+<p>ret=<code>echo $1 | awk &#39;{if(index($1,&quot;.&quot;)==0) {print 0;} else {print 1;}}&#39;</code></p>
+<pre><code>
+* shell 算数运算</code></pre>
+<p>expr 3 + 2   # 中间必须要有空格
+expr 3 * 20 # *号必须转义
+expr 1.2 + 2.2 # error expr只能计算整数</p>
+<p>echo (( 3 + 2 ))
 echo (( 3+2 ))
-echo ((3+2))
-# 以上3种方式均可</code></pre>
-<h2>awk 语法</h2>
-<pre><code>if (expression) statement [ else statement ]
+echo ((3+2))</p>
+<h1>以上3种方式均可</h1>
+<pre><code>
+* awk 语法</code></pre>
+<p>if (expression) statement [ else statement ]
 while (expression) statement
 for (expression; expression; expression) statement
 for (var in array) statement
@@ -141,9 +166,9 @@ next
 nextfile
 delete array[expression]
 delete array
-exit [ expression ]</code></pre>
-<h2>awk 特殊变量</h2>
-<pre><code>$0          当前行
+exit [ expression ]</p>
+<pre><code>* awk 特殊变量</code></pre>
+<p>$0          当前行
 $na         第n个域
 FILENAME    当前文件名
 NR          当前行的行号,从1开始
@@ -151,90 +176,66 @@ NF          当前行有多少个域
 RS          输入记录的分隔符,默认为换行
 ORS         输出记录的分隔符,默认也是换行
 FS          域分隔符,默认是空格或TAB
-OFS         输出域分隔符,默认是空格</code></pre>
-<h2>curl使用代理</h2>
-<p><code>curl -x 127.0.0.1:8087 http://ip.taobao.com/service/getIpInfo.php\?ip\=218.195.250.123</code></p>
-<h2>wget使用代理</h2>
-<p><code>wget -e &quot;http_proxy=127.0.0.1:8087&quot; http://www.taobao.com</code></p>
-<h2>imagemagick 批量压缩图片</h2>
-<p><code>ls -1 | xargs -I {} convert -quality 20% {} ../2/{}</code><br><code>convert favicon.png favicon.ico</code></p>
-<h2>shell算数运算</h2>
-<p><code>$(( 1 + 1 ))</code> bash, ksh, zsh均支持<br><code>$(( 1.1 + 1.1 ))</code> 只有ksh, zsh支持</p>
-<h2>shell 数组</h2>
-<p>bash:</p>
-<pre><code>a=(a b c)
+OFS         输出域分隔符,默认是空格</p>
+<pre><code>
+* curl使用代理
+`curl -x 127.0.0.1:8087 http://ip.taobao.com/service/getIpInfo.php\?ip\=218.195.250.123`
+
+* wget使用代理
+`wget -e &quot;http_proxy=127.0.0.1:8087&quot; http://www.taobao.com`
+
+* imagemagick 批量压缩图片
+`ls -1 | xargs -I {} convert -quality 20% {} ../2/{}`  
+`convert favicon.png favicon.ico`
+
+* shell算数运算
+`$(( 1 + 1 ))` bash, ksh, zsh均支持  
+`$(( 1.1 + 1.1 ))` 只有ksh, zsh支持
+
+* shell 数组
+bash:</code></pre>
+<p>a=(a b c)
 a[0]=&quot;a&quot;
 a[1]=&quot;b&quot;
-a[2]=&quot;c&quot;</code></pre>
-<p>zsh:</p>
-<pre><code>a=(a b c)
+a[2]=&quot;c&quot;</p>
+<pre><code>zsh:</code></pre>
+<p>a=(a b c)
 a[1]=&quot;a&quot;
 a[2]=&quot;b&quot;
-a[3]=&quot;c&quot;</code></pre>
-<h2>查看Makefile 的所有target</h2>
-<p>类似<code>rake -T</code><br><code>env -i make -nRrp | grep -v &#39;^#&#39;</code></p>
-<h2>rot13 使用tr</h2>
-<p><code>echo &#39;abc&#39; | tr A-Za-z N-ZA-Mn-za-m</code></p>
-<h2>错误重定向</h2>
-<p><code>$ kill -1 1234 &gt;killouterr.txt 2&gt;&amp;1</code><br>将标准输出重定向到文件, 将标准错误输出重定向到和标准输出相同的地方<br>如果顺序有误, 不会按照预期那样工作<br><code>$ kill -1 1234 &gt; /de/null 2&gt;&amp;1</code><br>抛弃所有输出</p>
-<h2>查看进程名字</h2>
-<p><code>$ ps –xo comm | sort | uniq | more</code></p>
-<h2>here doc</h2>
-<pre><code>cat &lt;&lt;-EOF
+a[3]=&quot;c&quot;</p>
+<pre><code>
+* 查看Makefile 的所有target
+类似`rake -T`  
+`env -i make -nRrp | grep -v &#39;^#&#39;`
+
+* rot13 使用tr
+`echo &#39;abc&#39; | tr A-Za-z N-ZA-Mn-za-m`
+
+* 错误重定向
+`$ kill -1 1234 &gt;killouterr.txt 2&gt;&amp;1`  
+将标准输出重定向到文件, 将标准错误输出重定向到和标准输出相同的地方  
+如果顺序有误, 不会按照预期那样工作  
+`$ kill -1 1234 &gt; /de/null 2&gt;&amp;1`  
+抛弃所有输出
+
+* 查看进程名字
+`$ ps –xo comm | sort | uniq | more`
+
+* here doc</code></pre>
+<p>cat &lt;&lt;-EOF
 this is
 a
 test
-EOF</code></pre>
+EOF
+```</p>
 
 
-    </article>
-    <aside>
-      <ul>
-          <li><a href="algorithms.html">algorithms</a></li>
-          <li><a href="css.html">css</a></li>
-          <li><a href="data.html">data</a></li>
-          <li><a href="emacs.html">emacs</a></li>
-          <li><a href="haskell.html">haskell</a></li>
-          <li><a href="java.html">java</a></li>
-          <li><a href="javascript.html">javascript</a></li>
-          <li><a href="life.html">life</a></li>
-          <li><a href="Mac.html">Mac</a></li>
-          <li><a href="nodejs.html">nodejs</a></li>
-          <li><a href="Python.html">Python</a></li>
-          <li><a href="ruby.html">ruby</a></li>
-          <li><a href="shell.html">shell</a></li>
-          <li><a href="temp.html">temp</a></li>
-          <li><a href="Tips.html">Tips</a></li>
-          <li><a href="vim.html">vim</a></li>
-          <li><a href="web.html">web</a></li>
-      </ul>
-    </aside>
-    <div class="cb"></div>
-    <div id="disqus_thread"></div>
-    <script type="text/javascript">
-/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-var disqus_shortname = 'vimwikibylyuehh'; // required: replace example with your forum shortname
-
-/* * * DON'T EDIT BELOW THIS LINE * * */
-(function() {
-  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    
-  </section>
-</div>
-
-<!-- FOOTER  -->
-<div id="footer_wrap" class="outer">
-  <footer class="inner">
-    <p class="copyright">Project Euler maintained by <a href="https://github.com/lyuehh">lyuehh</a></p>
-    <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-  </footer>
-</div>
-<script type='text/javascript' src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+              </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="http://cdn.staticfile.org/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/twitter-bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>

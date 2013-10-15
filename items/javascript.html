@@ -1,39 +1,49 @@
-<!DOCTYPE html>
-<html>
-
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset='utf-8' />
-<meta http-equiv="X-UA-Compatible" content="chrome=1" />
-<meta name="description" content="Project Euler : " />
-<link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/stylesheet.css">
-<title>vimwiki by lyuehh</title>
+    <meta charset="UTF-8">
+    <title>wiki by lyuehh</title>
+    <link type="text/css" rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.0.0/css/bootstrap-theme.min.css"/>
+    <link type="text/css" rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.0.0/css/bootstrap.min.css"/>
 </head>
-
 <body>
-
-<!-- HEADER -->
-<div id="header_wrap" class="outer">
-  <header class="inner">
-    <a id="forkme_banner" href="https://github.com/lyuehh/vimwiki">View on GitHub</a>
-
-    <h1 id="project_title"><a href="../index.html">vimwiki by lyuehh</a></h1>
-    <h2 id="project_tagline"></h2>
-
-    <section id="downloads">
-      <a class="zip_download_link" href="https://github.com/lyuehh/vimwiki/zipball/master">Download this project as a .zip file</a>
-      <a class="tar_download_link" href="https://github.com/lyuehh/vimwiki/tarball/master">Download this project as a tar.gz file</a>
-    </section>
-  </header>
-</div>
-
-<!-- MAIN CONTENT -->
-<div id="main_content_wrap" class="outer">
-  <section id="main_content" class="inner">
-    <article>
-      <h1>javascript tips</h1>
-<h2>jquery json的参数</h2>
+    <div class="container">
+        <div class="row">
+            <div class="page-header">
+              <h1>wiki by lyuehh<small></small></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row">
+              <div class="col-md-4">
+                  <ul>
+                      <li><a href="/">JavaScript</a></li>
+                      <li><a href="">Shell</a></li>
+                      <li><a href="">Mac</a></li>
+                      <li><a href="">Ruby</a></li>
+                      <li><a href="">Python</a></li>
+                      <li><a href="">Node.js</a></li>
+                      <li><a href="">CSS</a></li>
+                      <li><a href="">Vim</a></li>
+                      <li><a href="">Java</a></li>
+                      <li><a href="">Git</a></li>
+                      <li><a href="">Emacs</a></li>
+                      <li><a href="">Data</a></li>
+                      <li><a href="">Haskell</a></li>
+                  </ul>
+              </div>
+              <div class="col-md-8">
+                  <h1>javascript tips</h1>
 <ul>
-<li><code>dataType</code> 参数需要设置为<code>jsonp</code></li>
+<li>常用类库</li>
+<li>modernizr</li>
+<li>momentjs</li>
+<li><p>bower</p>
+</li>
+<li><p>jquery json的参数</p>
+</li>
+<li><p><code>dataType</code> 参数需要设置为<code>jsonp</code></p>
+</li>
 <li>jQuery默认生成的url为<code>?callback=jQuery191xxx</code></li>
 <li><code>jsonp</code> 参数设置为url里参数的key</li>
 <li>比如<code>jsonp: aa</code>会生成 <code>?aa=jQuery191xxx</code></li>
@@ -41,11 +51,13 @@
 <li><code>jsonpCallback</code> 参数设置url里参数的value</li>
 <li>比如<code>jsonpCallback: bb</code> 会生成<code>?callback=bb</code></li>
 <li>以上2个参数需要根据服务器的要求修改,有些服务器返回的格式不是标准的<code>bb({})</code>的形式,就不能用jquery封装后的jsonp请求,</li>
-<li>比如服务端返回<code>bb &amp;&amp; bb({})</code>, jquery就不能正确处理,这时就需要自己手工写jsonp请求.</li>
-</ul>
-<h2>map 和 parseInt</h2>
+<li><p>比如服务端返回<code>bb &amp;&amp; bb({})</code>, jquery就不能正确处理,这时就需要自己手工写jsonp请求.</p>
+</li>
+<li><p>map 和 parseInt</p>
 <pre><code class="lang-javascript">[&quot;0&quot;, &quot;0&quot;, &quot;0&quot;].map(parseInt);
 // -&gt; [0, NaN, 0]</code></pre>
+</li>
+</ul>
 <p>原因:
 map方法接收的函数参数会接收到3个参数,分别为item, index, array,
 分别为当前元素, 当前元素的索引, 整个array;
@@ -53,8 +65,9 @@ map方法接收的函数参数会接收到3个参数,分别为item, index, array
 所以当map方法接受的参数为parseInt时,会调用
 <code>parseInt(&quot;0&quot;, 0, [&quot;0&quot;,&quot;0&quot;,&quot;0&quot;]); // -&gt; 0</code>
 <code>parseInt(&quot;0&quot;, 1, [&quot;0&quot;, &quot;0&quot;, &quot;0&quot;]); // -&gt; NaN</code></p>
-<h2>jQuery的$用法</h2>
-<p>From: <a href="http://api.jquery.com/jQuery/">http://api.jquery.com/jQuery/</a></p>
+<ul>
+<li><p>jQuery的$用法
+From: <a href="http://api.jquery.com/jQuery/">http://api.jquery.com/jQuery/</a></p>
 <pre><code class="lang-javascript">jQuery( selector [, context ] ); // 在context里选中带有selector的元素
 jQuery( element ); // 将element wrap为jQuery对象
 jQuery( elementArray ); // An array containing a set of DOM elements to wrap in a jQuery object.
@@ -64,100 +77,107 @@ jQuery(); // 什么都不做...
 jQuery( html [, ownerDocument ] ); // A string of HTML to create on the fly. Note that this parses HTML, not XML.
 jQuery( html, attributes ); // 根据attribute创建html
 jQuery( callback ); // exec the callback when dom is ready</code></pre>
-<h2>window.open 的参数</h2>
-<p><code>window.open(&#39;http://www.qq.com&#39;,&#39;aa&#39;,&#39;height=400,width=400,location=no,resizable=no,menubar=no,scrollbars=no,status=no,toolbar=no,fullscreen=no,top=300,left=300&#39;)</code></p>
-<h2>https下资源加载</h2>
-<p>https下加载http的资源时,浏览器一般都会有提示,或者会默认阻止,
+</li>
+<li><p>window.open 的参数
+<code>window.open(&#39;http://www.qq.com&#39;,&#39;aa&#39;,&#39;height=400,width=400,location=no,resizable=no,menubar=no,scrollbars=no,status=no,toolbar=no,fullscreen=no,top=300,left=300&#39;)</code></p>
+</li>
+<li><p>https下资源加载
+https下加载http的资源时,浏览器一般都会有提示,或者会默认阻止,
 只要是https资源加载就没问题, 不管是不是本域的.</p>
-<h2>jQuery 2.0</h2>
+</li>
+<li><p>jQuery 2.0</p>
 <pre><code>&lt;!--[if lt IE 9]&gt;
-    &lt;script src=&quot;jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
 &lt;![endif]--&gt;
 &lt;!--[if gte IE 9]&gt;&lt;!--&gt;
-    &lt;script src=&quot;jquery-2.0.0b2.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;jquery-2.0.0b2.js&quot;&gt;&lt;/script&gt;
 &lt;!--&lt;![endif]--&gt;</code></pre>
-<h2>csrf</h2>
-<ol>
+</li>
+<li><p>csrf</p>
+</li>
 <li>第三方页面使用form 会附带cookie，可以提交成功，但是拿不到post的响应，如果用iframe，那么iframe的domain是厂商的，没有权限访问到其中的内容</li>
 <li>如果使用ajax发送post请求，浏览器不会附带cookie，不会通过后台的认证</li>
-<li>get请求的响应和post响应 只有受害者能看到，而攻击者看不到，get如果不更改后台的状态，可以不认证，post都要认证</li>
-</ol>
-<h2>why use apply</h2>
+<li><p>get请求的响应和post响应 只有受害者能看到，而攻击者看不到，get如果不更改后台的状态，可以不认证，post都要认证</p>
+</li>
+<li><p>why use apply</p>
 <pre><code class="lang-javascript">var a = [1,2,3,4,5];
 console.log(Math.max(a)); // -&gt; NaN
 console.log(Math.max.apply(null, a)); // -&gt; 5 // This is what you want
 // ---
 function foo(value1, value2, value3) {
-    alert(&quot;Value 1 is &quot;+value1+&quot;.&quot;);
-    alert(&quot;Value 2 is &quot;+value2+&quot;.&quot;);
-    alert(&quot;Value 3 is &quot;+value3+&quot;.&quot;);
+  alert(&quot;Value 1 is &quot;+value1+&quot;.&quot;);
+  alert(&quot;Value 2 is &quot;+value2+&quot;.&quot;);
+  alert(&quot;Value 3 is &quot;+value3+&quot;.&quot;);
 }
 var anArray=[1, 2, 3];
 foo(anArray); // This will not work. value1 will be anArray, and value 2 and 3 will be undefined.
 foo.apply(this, anArray); // This works, as anArray will be the arguments to foo.</code></pre>
-<h2>substr和substring和slice的区别</h2>
-<pre><code class="lang-javascript">var message = &quot;Hello world!&quot;;
-
-message.substring(1, 4)   -&gt; &quot;ell&quot;
+</li>
+<li><p>substr和substring和slice的区别
+```javascript
+var message = &quot;Hello world!&quot;;</p>
+</li>
+</ul>
+<p>message.substring(1, 4)   -&gt; &quot;ell&quot;
 message.substring(1)      -&gt; &quot;ello world&quot;
 message.substring(1, -4)  -&gt; &quot;H&quot;
 message.substring(-1)     -&gt; &quot;Hello world&quot;
-message.substring(-1,-4)  -&gt; &quot;&quot;
-
-message.substr(1,4)      -&gt; &quot;ello&quot;
+message.substring(-1,-4)  -&gt; &quot;&quot;</p>
+<p>message.substr(1,4)      -&gt; &quot;ello&quot;
 message.substr(1)        -&gt; &quot;ello world&quot;
 message.substr(1, -4)    -&gt; &quot;&quot;
 message.substr(-1)       -&gt; &quot;d&quot;
-message.substr(-1,-4)    -&gt; &quot;&quot;
-
-message.slice(1,4)       -&gt; &quot;ell&quot;
+message.substr(-1,-4)    -&gt; &quot;&quot;</p>
+<p>message.slice(1,4)       -&gt; &quot;ell&quot;
 message.slice(1)         -&gt; &quot;ello world&quot;
 message.slice(1, -4)     -&gt; &quot;ello w&quot;
 message.slice(-1)        -&gt; &quot;d&quot;
-message.slice(-1,-4)     -&gt; &quot;&quot;
-
-string.substring(indexA[, indexB])
+message.slice(-1,-4)     -&gt; &quot;&quot;</p>
+<p>string.substring(indexA[, indexB])
 string.substr(start[, length])
-string.slice(beginslice[, endSlice])
-
-substring和substr的区别
+string.slice(beginslice[, endSlice])</p>
+<p>substring和substr的区别
 substring不包含indexB,substr包含indexB
-substr的第1个参数可以是负的,substring的参数不能为负的</code></pre>
-<h2>+ -</h2>
-<pre><code>1 + &#39;1&#39; -&gt; &quot;11&quot;
+substr的第1个参数可以是负的,substring的参数不能为负的</p>
+<pre><code>
+* + -</code></pre>
+<p>1 + &#39;1&#39; -&gt; &quot;11&quot;
 1 - &#39;1&#39; -&gt; 0
 01 + &#39;01&#39; -&gt; &#39;101&#39;
 010 + &#39;010&#39; -&gt; &quot;8010&quot; // 0开头的是八进制
 Number.MAX_VALUE -&gt; 1.7976931348623157e+308
-Number.MIN_VALUE -&gt; 5e-324</code></pre>
-<h2>underscore include ,  indexOf</h2>
-<p>underscore的include和indexOf都是给数组用的, 不是给字符串用的
+Number.MIN_VALUE -&gt; 5e-324
+```</p>
+<ul>
+<li><p>underscore include ,  indexOf
+underscore的include和indexOf都是给数组用的, 不是给字符串用的
 需要判断是否包含字符串, 需要使用str.indexOf</p>
-<h2>js关闭窗口</h2>
+</li>
+<li><p>js关闭窗口</p>
 <script type="text/javascript">
 function CloseWebPage() {
-  if (navigator.userAgent.indexOf("MSIE") > 0) {
-    if (navigator.userAgent.indexOf("MSIE 6.0") > 0) {
-      window.opener = null; window.close();
-    }
-    else {
-      window.open('', '_top'); window.top.close();
-    }
-  }
-  else if (navigator.userAgent.indexOf("Firefox") > 0) {
-    window.location.href = 'about:blank '; //火狐默认状态非window.open的页面window.close是无效的
-    //window.history.go(-2);
+if (navigator.userAgent.indexOf("MSIE") > 0) {
+  if (navigator.userAgent.indexOf("MSIE 6.0") > 0) {
+    window.opener = null; window.close();
   }
   else {
-    window.opener = null;
-    window.open('', '_self', '');
-    window.close();
+    window.open('', '_top'); window.top.close();
   }
 }
+else if (navigator.userAgent.indexOf("Firefox") > 0) {
+  window.location.href = 'about:blank '; //火狐默认状态非window.open的页面window.close是无效的
+  //window.history.go(-2);
+}
+else {
+  window.opener = null;
+  window.open('', '_self', '');
+  window.close();
+}
+}
 </script>
-
-<h2>Event</h2>
-<ol>
+</li>
+<li><p>Event</p>
+</li>
 <li>currentTarget 等于this, 是绑定事件的对象, 而target则是事件真正的目标</li>
 <li>IE取消默认行为, returnValue = false, 相当于其他浏览器的 preventDefault()方法</li>
 <li>IE阻止事件冒泡, calcelBubble = true, 相当于其他浏览器的stopPropagation()方法</li>
@@ -169,62 +189,22 @@ DOMMouseScroll事件, detail的值为正表示向下滚动 -&gt; 火狐</li>
 版本不支持此事件</li>
 <li>readystatechange事件, 很不稳定, 一般监听readystatechange事件,然后判断
 document.readyState,为interactive时表示DOM树加载完毕,IE,firefox 4+, opera支持此事件</li>
-<li>除非把动态的元素添加到页面中,否则浏览器不会开始下载外部资源.</li>
-</ol>
-<h2>格式化json</h2>
-<p><code>curl -s &#39;http://geci.me/api/lyric/part of me&#39; | python -mjson.tool</code>
+<li><p>除非把动态的元素添加到页面中,否则浏览器不会开始下载外部资源.</p>
+</li>
+<li><p>格式化json
+<code>curl -s &#39;http://geci.me/api/lyric/part of me&#39; | python -mjson.tool</code>
 <code>curl -s &#39;http://geci.me/api/lyric/part of me&#39; | json_reformat</code>
 <code>json_reformat</code>在<code>yajl</code>包中, <code>brew install yajl</code></p>
+</li>
+</ul>
 
 
-    </article>
-    <aside>
-      <ul>
-          <li><a href="algorithms.html">algorithms</a></li>
-          <li><a href="css.html">css</a></li>
-          <li><a href="data.html">data</a></li>
-          <li><a href="emacs.html">emacs</a></li>
-          <li><a href="haskell.html">haskell</a></li>
-          <li><a href="java.html">java</a></li>
-          <li><a href="javascript.html">javascript</a></li>
-          <li><a href="life.html">life</a></li>
-          <li><a href="Mac.html">Mac</a></li>
-          <li><a href="nodejs.html">nodejs</a></li>
-          <li><a href="Python.html">Python</a></li>
-          <li><a href="ruby.html">ruby</a></li>
-          <li><a href="shell.html">shell</a></li>
-          <li><a href="temp.html">temp</a></li>
-          <li><a href="Tips.html">Tips</a></li>
-          <li><a href="vim.html">vim</a></li>
-          <li><a href="web.html">web</a></li>
-      </ul>
-    </aside>
-    <div class="cb"></div>
-    <div id="disqus_thread"></div>
-    <script type="text/javascript">
-/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-var disqus_shortname = 'vimwikibylyuehh'; // required: replace example with your forum shortname
-
-/* * * DON'T EDIT BELOW THIS LINE * * */
-(function() {
-  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    
-  </section>
-</div>
-
-<!-- FOOTER  -->
-<div id="footer_wrap" class="outer">
-  <footer class="inner">
-    <p class="copyright">Project Euler maintained by <a href="https://github.com/lyuehh">lyuehh</a></p>
-    <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-  </footer>
-</div>
-<script type='text/javascript' src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+              </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="http://cdn.staticfile.org/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/twitter-bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
