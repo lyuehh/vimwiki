@@ -44,7 +44,7 @@ task :page do
   input = File.read('template/p.html.erb')
   eruby = Erubis::Eruby.new(input)
 
-  p_content = `cat #{p}.md | marked`
+  p_content = `cat #{p}.md | marked --gfm`
 
   # 3 write html to file
   Dir.chdir('gh-pages/');

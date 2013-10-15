@@ -1,7 +1,8 @@
-# emacs
+## emacs
 
-* 基础快捷键
+### 基础快捷键
 
+```
 C-q char : 输入控制字符
 C-q C-j : 插入新行
 M-/ : 自动不全
@@ -88,3 +89,4 @@ ido 暂时忽略..
  TAB : indent line?
  M-q : 当前段落内合并行
  C-x r o :  当前段落 indent right ??
+ ```

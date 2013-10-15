@@ -1,25 +1,26 @@
-# shell tips
+## Shell
 
-* ab测试
+### ab测试
 `ab -q -c 50 -n 1000 http://www.qq.com`
 
-* awk split
+### awk split
 `awk '{split($0,a,"/")`
 
-* zmv
+### zmv
 `zmv -W '*.cgi' '*.jpg'`
 `zmv *.txt.xml *.xml`
 
-* sed 替换chrome书签
+### sed 替换chrome书签
 `sed 's/ICON=.*"/ICON=""/g' bookmarks_13-9-13.html > bookmark.html`
 
-* convert 水平方向拼接图片
+### convert 水平方向拼接图片
 `convert +append 1.jpg 2.jpg 3.jpg .... 0.jpg`
 
-* convert 垂直方向拼接图片
+### convert 垂直方向拼接图片
 `convert -append 1.jpg 2.jpg 3.jpg .... 0.jpg`
 
-* zsh tips
+### zsh tips
+
 ```
 ll -l **/README
 chmod 700 **/(.) # Only files
@@ -27,21 +28,20 @@ chmod 700 **/(/) # Only directories
 ls -l **/*.(js|css)
 ```
 
-* 
-
-* shell 技巧
+### shell 技巧
 <http://lri.me/shell.txt>
 
-# bash, ksh, zsh语法比较
+### bash, ksh, zsh语法比较
 <http://hyperpolyglot.org/unix-shells#group-cmd>
 
-* 文件是否存在
+### 文件是否存在
 `[[ -f ~/.ssh/id_rsa.pub ]] || ssh-keygen -t rsa`
 
-* 复制文本
+### 复制文本
 `[[ -f ~/.ssh/id_rsa.pub ]] && cat ~/.ssh/id_rsa.pub | pbcopy ;# only on mac`
 
-* 参数相关
+### 参数相关
+
 ```
 $1 第1个参数
 $2 第2个参数
@@ -50,7 +50,10 @@ $? 最后一条命令的结果
 $# 参数的个数
 $@ 所有的参数列表
 ```
-* install ruby on ubuntu
+
+
+### install ruby on ubuntu
+
 ```
 sudo vi /etc/apt/source.list
 :%s/us/cn/g
@@ -71,9 +74,10 @@ chsh -s /bin/zsh
 password: vagrant
 ```
 
-* 创建目录树
+### 创建目录树
 `mkdir -p project/{lib/ext,bin,src,doc/{html,info,pdf},demo/stat/a}`
 会在project下创建如下的目录树
+
 ```
 ├── bin
 ├── demo
@@ -88,19 +92,20 @@ password: vagrant
 └── src
 ```
 
-* 使用-C命令解压文件
+### 使用-C命令解压文件
 `tar xvf -C tmp/a/b/c newarc.tar.gz`
 
-* 仅当另一个命令返回零退出状态时才运行某个命令
+### 仅当另一个命令返回零退出状态时才运行某个命令
 `cd tmp/a/b/c && tar xvf ~/archive.tar`
 
-* 仅当另一个命令返回非零退出状态时才运行某个命令
+### 仅当另一个命令返回非零退出状态时才运行某个命令
 `cd tmp/a/b/c || mkdir -p tmp/a/b/c`
 
-* 将命令与控制操作符组合使用
+### 将命令与控制操作符组合使用
 `cd tmp/a/b/c || mkdir -p tmp/a/b/c && tar xvf -C tmp/a/b/c ~/archive.tar`
 
-*  在子shell执行命令, 在当前shell执行命令
+###  在子shell执行命令, 在当前shell执行命令
+
 ```
 # 在子shell执行命令
 (cd ~/bin; ll)
@@ -108,16 +113,18 @@ password: vagrant
 { cd ~/bin; ll }
 ```
 
-*  使用git clone googlecode项目
+###  使用git clone googlecode项目
 `git svn clone http://ccons.googlecode.com/svn -T trunk -b branches -t tags`
 将`ccons`替换为其他项目名称即可
 
-* awk if判断
+### awk if判断
+
 ```
 ret=`echo $1 | awk '{if(index($1,".")==0) {print 0;} else {print 1;}}'`
 ```
 
-* shell 算数运算
+### shell 算数运算
+
 ```
 expr 3 + 2   # 中间必须要有空格
 expr 3 \* 20 # *号必须转义
@@ -126,10 +133,11 @@ expr 1.2 + 2.2 # error expr只能计算整数
 echo (( 3 + 2 ))
 echo (( 3+2 ))
 echo ((3+2))
-# 以上3种方式均可
+以上3种方式均可
 ```
 
-* awk 语法
+### awk 语法
+
 ```
 if (expression) statement [ else statement ]
 while (expression) statement
@@ -149,7 +157,9 @@ delete array[expression]
 delete array
 exit [ expression ]
 ```
-* awk 特殊变量
+
+### awk 特殊变量
+
 ```
 $0          当前行
 $na         第n个域
@@ -162,29 +172,32 @@ FS          域分隔符,默认是空格或TAB
 OFS         输出域分隔符,默认是空格
 ```
 
-* curl使用代理
+### curl使用代理
 `curl -x 127.0.0.1:8087 http://ip.taobao.com/service/getIpInfo.php\?ip\=218.195.250.123`
 
-* wget使用代理
+### wget使用代理
 `wget -e "http_proxy=127.0.0.1:8087" http://www.taobao.com`
 
-* imagemagick 批量压缩图片
+### imagemagick 批量压缩图片
 `ls -1 | xargs -I {} convert -quality 20% {} ../2/{}`  
 `convert favicon.png favicon.ico`
 
-* shell算数运算
+### shell算数运算
 `$(( 1 + 1 ))` bash, ksh, zsh均支持  
 `$(( 1.1 + 1.1 ))` 只有ksh, zsh支持
 
-* shell 数组
+### shell 数组
 bash:
+
 ```
 a=(a b c)
 a[0]="a"
 a[1]="b"
 a[2]="c"
 ```
+
 zsh:
+
 ```
 a=(a b c)
 a[1]="a"
@@ -192,24 +205,25 @@ a[2]="b"
 a[3]="c"
 ```
 
-* 查看Makefile 的所有target
+### 查看Makefile 的所有target
 类似`rake -T`  
 `env -i make -nRrp | grep -v '^#'`
 
-* rot13 使用tr
+### rot13 使用tr
 `echo 'abc' | tr A-Za-z N-ZA-Mn-za-m`
 
-* 错误重定向
+### 错误重定向
 `$ kill -1 1234 >killouterr.txt 2>&1`  
 将标准输出重定向到文件, 将标准错误输出重定向到和标准输出相同的地方  
 如果顺序有误, 不会按照预期那样工作  
 `$ kill -1 1234 > /de/null 2>&1`  
 抛弃所有输出
 
-* 查看进程名字
+### 查看进程名字
 `$ ps –xo comm | sort | uniq | more`
 
-* here doc
+### here doc
+
 ```
 cat <<-EOF
 this is
