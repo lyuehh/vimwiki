@@ -9,6 +9,9 @@
 * modernizr
 * momentjs
 * bower
+* https://code.google.com/p/google-code-prettify/
+* gruntjs
+* yo
 ```
 
 ### jquery json的参数
