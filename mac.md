@@ -162,3 +162,9 @@ Add a new account with these settings:
 If you need Mail, Messages, and Notes for this account, open System Preferences and enable them
 
 ```
+
+###
+```
+sudo launchctl unload /Library/LaunchDaemons/org.goagent.macos.plist
+sudo launchctl load /Library/LaunchDaemons/org.goagent.macos.plist
+```

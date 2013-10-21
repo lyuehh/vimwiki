@@ -1,5 +1,8 @@
 ## Ruby
 
+### vim
+`# vim: set ft=ruby:`
+
 ### rake参数
 
 ```ruby
