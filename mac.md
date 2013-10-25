@@ -164,6 +164,7 @@ If you need Mail, Messages, and Notes for this account, open System Preferences 
 ```
 
 ### launchctl reload
+
 ```
 sudo launchctl unload /Library/LaunchDaemons/org.goagent.macos.plist
 sudo launchctl load /Library/LaunchDaemons/org.goagent.macos.plist
@@ -171,3 +172,18 @@ sudo launchctl load /Library/LaunchDaemons/org.goagent.macos.plist
 
 ### goagent update
 `http_proxy=127.0.0.1:8087 python uploader.zip`
+
+### uninstall pkg
+
+```
+$ pkgutil --pkgs # list all installed packages
+$ pkgutil --files the-package-name.pkg # list installed files
+
+$ pkgutil --pkg-info the-package-name.pkg # check the location
+$ cd / # assuming the package is rooted at /...
+$ pkgutil --only-files --files the-package-name.pkg | tr '\n' '\0' | xargs -n 1 -0 sudo rm -i
+$ pkgutil --only-dirs --files the-package-name.pkg | tr '\n' '\0' | xargs -n 1 -0 sudo rm -ir
+
+$ sudo pkgutil --forget the-package-name.pkg
+$ lsbom -f -l -s -pf /var/db/receipts/com.foo.bar.myapp.pkg.bom
+```
