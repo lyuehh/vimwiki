@@ -76,3 +76,5 @@ And run :BundleInstall inside Vim.
 ### 循环粘贴复制过的东西
 `ctrl-p or ctrl-n`
 
+### change line ending to unix
+`:set ff=unix`
