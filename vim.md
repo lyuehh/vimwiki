@@ -78,3 +78,24 @@ And run :BundleInstall inside Vim.
 
 ### change line ending to unix
 `:set ff=unix`
+
+### command that useful
+<http://skwp.github.io/dotfiles/>
+
+
+* cmd + j, cmd + k    move cursor
+* ctrl + i, ctrl + o  last cursor position
+* K gitgrep
+* ,,w go where you want
+* ,b buffer selecter
+* ,ci change everything in pairs
+* ,qc close quick fix window
+* ctrl + \ show current file tree
+* crs crc cru
+* ,ig toggle visual indentation guides
+* ,vc run current line as vim command
+* ,ocf open changed files
+* ,w strip trailing whitespaces
+* ,hp html preview in safari
+* cmd + shift + A align things by a character
+* :ColorToggle for css
