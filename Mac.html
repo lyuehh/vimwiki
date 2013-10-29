@@ -141,6 +141,22 @@ Add a new account with these settings:
     Password: Your application-specific (or Google) password
     Server Address: https://www.google.com/calendar/dav/&lt;yourname&gt;@gmail.com/user 
 If you need Mail, Messages, and Notes for this account, open System Preferences and enable them</code></pre>
+<h3>launchctl reload</h3>
+<pre><code>sudo launchctl unload /Library/LaunchDaemons/org.goagent.macos.plist
+sudo launchctl load /Library/LaunchDaemons/org.goagent.macos.plist</code></pre>
+<h3>goagent update</h3>
+<p><code>http_proxy=127.0.0.1:8087 python uploader.zip</code></p>
+<h3>uninstall pkg</h3>
+<pre><code>$ pkgutil --pkgs # list all installed packages
+$ pkgutil --files the-package-name.pkg # list installed files
+
+$ pkgutil --pkg-info the-package-name.pkg # check the location
+$ cd / # assuming the package is rooted at /...
+$ pkgutil --only-files --files the-package-name.pkg | tr &#39;\n&#39; &#39;\0&#39; | xargs -n 1 -0 sudo rm -i
+$ pkgutil --only-dirs --files the-package-name.pkg | tr &#39;\n&#39; &#39;\0&#39; | xargs -n 1 -0 sudo rm -ir
+
+$ sudo pkgutil --forget the-package-name.pkg
+$ lsbom -f -l -s -pf /var/db/receipts/com.foo.bar.myapp.pkg.bom</code></pre>
 
 
               </div>
