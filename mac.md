@@ -187,3 +187,23 @@ $ pkgutil --only-dirs --files the-package-name.pkg | tr '\n' '\0' | xargs -n 1 -
 $ sudo pkgutil --forget the-package-name.pkg
 $ lsbom -f -l -s -pf /var/db/receipts/com.foo.bar.myapp.pkg.bom
 ```
+
+### gdb for mac
+
+```
+Creating a certificate
+
+Start Keychain Access application (/Applications/Utilities/Keychain Access.app)
+
+Open menu /Keychain Access/Certificate Assistant/Create a Certificate...
+
+Choose a name (gdb-cert in the example), set Identity Type to Self Signed Root, set Certificate Type to Code Signing and select the Let me override defaults. Click several times on Continue until you get to the Specify a Location For The Certificate screen, then set Keychain to System.
+
+If you can't store the certificate in the System keychain, create it in the login keychain, then exported it. You can then imported it into the System keychain.
+
+Finally, using the contextual menu for the certificate, select Get Info, open the Trust item, and set Code Signing to Always Trust.
+
+You must quit Keychain Access application in order to use the certificate and restart taskgated service by killing the current running taskgated process (so before using gdb).
+
+then: `$ codesign -s gdb-cert gdb`
+```
