@@ -287,3 +287,10 @@ Bang (!) 命令
     ^blah^foo：将上一条命令中的 blah 替换为 foo
     ^blah^foo^：将上一条命令中所有的 blah 都替换为 foo
 ```
+### find
+
+如何查找在/home/work/log/路径下，修改时间在3天以前的文件，并将这些文件mv到/home/work/log/backup下？
+
+```
+find  /home/work/log/  -type f -mtime -3 -exec mv {}  /home/work/log/backup   \;
+```
