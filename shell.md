@@ -294,3 +294,7 @@ Bang (!) 命令
 ```
 find  /home/work/log/  -type f -mtime -3 -exec mv {}  /home/work/log/backup   \;
 ```
+
+### 随机数
+
+`seq -f %.0f 1 100 | gshuf > data2`
