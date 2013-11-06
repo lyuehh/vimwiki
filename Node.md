@@ -26,3 +26,19 @@ var text = fs.readFileSync(file, 'utf8');
 * https://github.com/LearnBoost/Socket.IO/wiki/Configuring-Socket.IO
 * https://github.com/LearnBoost/socket.io/wiki/Authorizing
 * https://github.com/LearnBoost/socket.io-spec
+
+
+### package.json
+
+```
+  "dependencies": {
+    "request": "*",
+    "underscore": "*"
+  },
+  "scripts": {
+    "test": "grunt"
+  },
+  "bin": {
+    "qdict": "./bin/qdict"
+  },
+```
