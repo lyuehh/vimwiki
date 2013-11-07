@@ -42,3 +42,15 @@ var text = fs.readFileSync(file, 'utf8');
     "qdict": "./bin/qdict"
   },
 ```
+
+### .travis.yml
+
+```
+before_install:
+  - "npm install -g grunt-cli"
+  - "npm install grunt"
+language: node_js
+node_js:
+  - '0.10'
+  - '0.8'
+```
