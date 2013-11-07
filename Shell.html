@@ -248,6 +248,8 @@ Bang (!) 命令
 <h3>find</h3>
 <p>如何查找在/home/work/log/路径下，修改时间在3天以前的文件，并将这些文件mv到/home/work/log/backup下？</p>
 <pre><code>find  /home/work/log/  -type f -mtime -3 -exec mv {}  /home/work/log/backup   \;</code></pre>
+<h3>随机数</h3>
+<p><code>seq -f %.0f 1 100 | gshuf &gt; data2</code></p>
 
 
               </div>

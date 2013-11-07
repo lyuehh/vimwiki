@@ -61,6 +61,25 @@ var text = fs.readFileSync(file, &#39;utf8&#39;);</code></pre>
 <li><a href="https://github.com/LearnBoost/socket.io/wiki/Authorizing">https://github.com/LearnBoost/socket.io/wiki/Authorizing</a></li>
 <li><a href="https://github.com/LearnBoost/socket.io-spec">https://github.com/LearnBoost/socket.io-spec</a></li>
 </ul>
+<h3>package.json</h3>
+<pre><code>  &quot;dependencies&quot;: {
+    &quot;request&quot;: &quot;*&quot;,
+    &quot;underscore&quot;: &quot;*&quot;
+  },
+  &quot;scripts&quot;: {
+    &quot;test&quot;: &quot;grunt&quot;
+  },
+  &quot;bin&quot;: {
+    &quot;qdict&quot;: &quot;./bin/qdict&quot;
+  },</code></pre>
+<h3>.travis.yml</h3>
+<pre><code>before_install:
+  - &quot;npm install -g grunt-cli&quot;
+  - &quot;npm install grunt&quot;
+language: node_js
+node_js:
+  - &#39;0.10&#39;
+  - &#39;0.8&#39;</code></pre>
 
 
               </div>
