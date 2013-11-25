@@ -78,6 +78,15 @@ cond 2 i==5 该断点仅在i等于5时有效
 watch a wa a 在修改变量a时停下来
 awatch a 在变量a读写时都会停下来
 rwatch a 在变量a读取时停下来</code></pre>
+<h2>gets</h2>
+<pre><code class="lang-c">char * gets(char *str); // 不包含换行符
+char * fgets(char * restrict str, int size, FILE * restrict stream); // 读取size-1个字符保存在str中，</code></pre>
+<h2>scanf</h2>
+<pre><code class="lang-c">int scanf(const char *restrict format, ...);
+// 读取时，遇到空格，tab，等就会停止</code></pre>
+<h2>fropen</h2>
+<pre><code class="lang-c">freopen(&quot;input.txt&quot;, &quot;r&quot;, stdin);
+freopen(&quot;output.txt&quot;, &quot;w&quot;, stdout);</code></pre>
 
 
               </div>
