@@ -42,3 +42,24 @@ watch a wa a 在修改变量a时停下来
 awatch a 在变量a读写时都会停下来
 rwatch a 在变量a读取时停下来
 ```
+
+## gets
+
+```c
+char * gets(char *str); // 不包含换行符
+char * fgets(char * restrict str, int size, FILE * restrict stream); // 读取size-1个字符保存在str中，
+```
+
+## scanf
+
+```c
+int scanf(const char *restrict format, ...);
+// 读取时，遇到空格，tab，等就会停止
+```
+
+## fropen
+
+```c
+freopen("input.txt", "r", stdin);
+freopen("output.txt", "w", stdout);
+```
