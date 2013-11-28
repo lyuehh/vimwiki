@@ -1,5 +1,8 @@
 ## C
 
+## links
+<http://learn.akae.cn/media/index.html>
+
 ### GDB表示基本语法 
 
 ```
@@ -62,4 +65,8 @@ int scanf(const char *restrict format, ...);
 ```c
 freopen("input.txt", "r", stdin);
 freopen("output.txt", "w", stdout);
+
+## I/O缓冲
+
+全缓冲，航缓冲和无缓冲，
 ```
