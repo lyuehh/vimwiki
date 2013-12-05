@@ -38,18 +38,18 @@
                   </ul>
               </div>
               <div class="col-md-10">
-                  <h2>javascript tips</h2>
+                  <h2 id="javascript-tips">javascript tips</h2>
 <p><link type="text/css" rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.0.0/css/bootstrap-theme.min.css"/></p>
 <link type="text/css" rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.0.0/css/bootstrap.min.css"/>
 
-<h3>常用类库</h3>
+<h3 id="-">常用类库</h3>
 <pre><code>* modernizr
 * momentjs
 * bower
 * https://code.google.com/p/google-code-prettify/
 * gruntjs
 * yo</code></pre>
-<h3>jquery json的参数</h3>
+<h3 id="jquery-json-">jquery json的参数</h3>
 <ul>
 <li><code>dataType</code> 参数需要设置为<code>jsonp</code></li>
 <li>jQuery默认生成的url为<code>?callback=jQuery191xxx</code></li>
@@ -61,7 +61,7 @@
 <li>以上2个参数需要根据服务器的要求修改,有些服务器返回的格式不是标准的<code>bb({})</code>的形式,就不能用jquery封装后的jsonp请求,</li>
 <li>比如服务端返回<code>bb &amp;&amp; bb({})</code>, jquery就不能正确处理,这时就需要自己手工写jsonp请求.</li>
 </ul>
-<h3>map 和 parseInt</h3>
+<h3 id="map-parseint">map 和 parseInt</h3>
 <pre><code class="lang-javascript">[&quot;0&quot;, &quot;0&quot;, &quot;0&quot;].map(parseInt);
 // -&gt; [0, NaN, 0]</code></pre>
 <p>原因:
@@ -71,7 +71,7 @@ map方法接收的函数参数会接收到3个参数,分别为item, index, array
 所以当map方法接受的参数为parseInt时,会调用
 <code>parseInt(&quot;0&quot;, 0, [&quot;0&quot;,&quot;0&quot;,&quot;0&quot;]); // -&gt; 0</code>
 <code>parseInt(&quot;0&quot;, 1, [&quot;0&quot;, &quot;0&quot;, &quot;0&quot;]); // -&gt; NaN</code></p>
-<h3>jQuery的$用法</h3>
+<h3 id="jquery-">jQuery的$用法</h3>
 <p>From: <a href="http://api.jquery.com/jQuery/">http://api.jquery.com/jQuery/</a></p>
 <pre><code class="lang-javascript">jQuery( selector [, context ] ); // 在context里选中带有selector的元素
 jQuery( element ); // 将element wrap为jQuery对象
@@ -82,9 +82,9 @@ jQuery(); // 什么都不做...
 jQuery( html [, ownerDocument ] ); // A string of HTML to create on the fly. Note that this parses HTML, not XML.
 jQuery( html, attributes ); // 根据attribute创建html
 jQuery( callback ); // exec the callback when dom is ready</code></pre>
-<h3>window.open 的参数</h3>
+<h3 id="window-open-">window.open 的参数</h3>
 <p><code>window.open(&#39;http://www.qq.com&#39;,&#39;aa&#39;,&#39;height=400,width=400,location=no,resizable=no,menubar=no,scrollbars=no,status=no,toolbar=no,fullscreen=no,top=300,left=300&#39;)</code></p>
-<h3>https下资源加载</h3>
+<h3 id="https-">https下资源加载</h3>
 <p>https下加载http的资源时,浏览器一般都会有提示,或者会默认阻止,
 只要是https资源加载就没问题, 不管是不是本域的.</p>
 <ul>
@@ -96,13 +96,13 @@ jQuery( callback ); // exec the callback when dom is ready</code></pre>
 &lt;!--[if gte IE 9]&gt;&lt;!--&gt;
     &lt;script src=&quot;jquery-2.0.0b2.js&quot;&gt;&lt;/script&gt;
 &lt;!--&lt;![endif]--&gt;</code></pre>
-<h3>csrf</h3>
+<h3 id="csrf">csrf</h3>
 <ol>
 <li>第三方页面使用form 会附带cookie，可以提交成功，但是拿不到post的响应，如果用iframe，那么iframe的domain是厂商的，没有权限访问到其中的内容</li>
 <li>如果使用ajax发送post请求，浏览器不会附带cookie，不会通过后台的认证</li>
 <li>get请求的响应和post响应 只有受害者能看到，而攻击者看不到，get如果不更改后台的状态，可以不认证，post都要认证</li>
 </ol>
-<h3>why use apply</h3>
+<h3 id="why-use-apply">why use apply</h3>
 <pre><code class="lang-javascript">var a = [1,2,3,4,5];
 console.log(Math.max(a)); // -&gt; NaN
 console.log(Math.max.apply(null, a)); // -&gt; 5 // This is what you want
@@ -115,7 +115,7 @@ function foo(value1, value2, value3) {
 var anArray=[1, 2, 3];
 foo(anArray); // This will not work. value1 will be anArray, and value 2 and 3 will be undefined.
 foo.apply(this, anArray); // This works, as anArray will be the arguments to foo.</code></pre>
-<h3>substr和substring和slice的区别</h3>
+<h3 id="substr-substring-slice-">substr和substring和slice的区别</h3>
 <pre><code class="lang-javascript">var message = &quot;Hello world!&quot;;
 
 message.substring(1, 4)   -&gt; &quot;ell&quot;
@@ -143,17 +143,17 @@ string.slice(beginslice[, endSlice])
 substring和substr的区别
 substring不包含indexB,substr包含indexB
 substr的第1个参数可以是负的,substring的参数不能为负的</code></pre>
-<h3>+ -</h3>
+<h3 id="-">+ -</h3>
 <pre><code>1 + &#39;1&#39; -&gt; &quot;11&quot;
 1 - &#39;1&#39; -&gt; 0
 01 + &#39;01&#39; -&gt; &#39;101&#39;
 010 + &#39;010&#39; -&gt; &quot;8010&quot; // 0开头的是八进制
 Number.MAX_VALUE -&gt; 1.7976931348623157e+308
 Number.MIN_VALUE -&gt; 5e-324</code></pre>
-<h3>underscore include ,  indexOf</h3>
+<h3 id="underscore-include-indexof">underscore include ,  indexOf</h3>
 <p>underscore的include和indexOf都是给数组用的, 不是给字符串用的
 需要判断是否包含字符串, 需要使用str.indexOf</p>
-<h3>js关闭窗口</h3>
+<h3 id="js-">js关闭窗口</h3>
 <pre><code class="lang-html">&lt;script type=&quot;text/javascript&quot;&gt;
 function CloseWebPage() {
   if (navigator.userAgent.indexOf(&quot;MSIE&quot;) &gt; 0) {
@@ -175,7 +175,7 @@ function CloseWebPage() {
   }
 }
 &lt;/script&gt;</code></pre>
-<h3>Event</h3>
+<h3 id="event">Event</h3>
 <ol>
 <li>currentTarget 等于this, 是绑定事件的对象, 而target则是事件真正的目标</li>
 <li>IE取消默认行为, returnValue = false, 相当于其他浏览器的 preventDefault()方法</li>
@@ -190,22 +190,22 @@ DOMMouseScroll事件, detail的值为正表示向下滚动 -&gt; 火狐</li>
 document.readyState,为interactive时表示DOM树加载完毕,IE,firefox 4+, opera支持此事件</li>
 <li>除非把动态的元素添加到页面中,否则浏览器不会开始下载外部资源.</li>
 </ol>
-<h3>格式化json</h3>
+<h3 id="-json">格式化json</h3>
 <p><code>curl -s &#39;http://geci.me/api/lyric/part of me&#39; | python -mjson.tool</code>
 <code>curl -s &#39;http://geci.me/api/lyric/part of me&#39; | json_reformat</code>
 <code>json_reformat</code>在<code>yajl</code>包中, <code>brew install yajl</code></p>
 <hr />
 
-<h3>数据类型</h3>
+<h3 id="-">数据类型</h3>
 <p>Undefined, Null, Boolean, String, Number, Object</p>
-<h3>undefined</h3>
+<h3 id="undefined">undefined</h3>
 <pre><code class="lang-javascript">var a;
 alert(a); // &quot;undefined&quot;
 alert(b); // error
 
 alert(typeof a); // &quot;undefined&quot;
 alert(typeof b); // &quot;undefined&quot;</code></pre>
-<h3>Number</h3>
+<h3 id="number">Number</h3>
 <pre><code class="lang-javascript">var a1 = 070; // 八进制的70等于十进制的56
 var a2 = 079; // 无效的八进制，解析为十进制的79
 // 进行算数计算时，八进制和十进制都被转换成十进制数值</code></pre>
@@ -214,14 +214,14 @@ var a2 = 079; // 无效的八进制，解析为十进制的79
 <li>5e-324 &lt; n &lt; 1.79…e+308</li>
 <li>超出这个范围的负数为 -Infinity, 正数为 Infinity</li>
 </ul>
-<h3>NaN</h3>
+<h3 id="nan">NaN</h3>
 <ul>
 <li>NaN表示非数值</li>
 <li>NaN参与的操作，都会返回NaN</li>
 <li>isNaN(x)，如果x不能被转换为数值， 返回true，(10, &quot;10&quot;, true)都返回false，(NaN, &quot;asdf&quot;)返回true</li>
 <li>isNan(x), 如果x是object，则先调用x.valueOf(), 然后根据测试返回值，如果不能，调用x.toString()，测试返回值</li>
 </ul>
-<h3>Number(x)</h3>
+<h3 id="number-x-">Number(x)</h3>
 <ul>
 <li>Boolean true 1, false 0</li>
 <li>数字 直接返回</li>
@@ -230,7 +230,7 @@ var a2 = 079; // 无效的八进制，解析为十进制的79
 <li>字符串, 只包含数字; 包含有效的浮点数; 包含有效的十六进制; 空字符串; 其他的</li>
 <li>对象 valueOf(), toString()</li>
 </ul>
-<h3>parseInt(x, base)</h3>
+<h3 id="parseint-x-base-">parseInt(x, base)</h3>
 <ul>
 <li>忽略空格，然后找到第1个非空格字符，如果不是数字或负号，返回NaN</li>
 <li>转换数字字符</li>
@@ -238,13 +238,13 @@ var a2 = 079; // 无效的八进制，解析为十进制的79
 <li>一般设置base为10</li>
 <li>会识别八进制，和十六进制, parseInt(&#39;070&#39;);// 56 in ECMAScript, 70 in ECMAScript</li>
 </ul>
-<h3>parseFloat(x)</h3>
+<h3 id="parsefloat-x-">parseFloat(x)</h3>
 <ul>
 <li>第1个小数点是有效的</li>
 <li>十六进制字符串会被转换为0</li>
 <li>会忽略前导的0</li>
 </ul>
-<h3>String</h3>
+<h3 id="string">String</h3>
 <ul>
 <li>\xnn 以十六进制代码nn表示一个字符</li>
 <li>\unnnn 已十六进制nnnn表示一个字符</li>
@@ -252,13 +252,13 @@ var a2 = 079; // 无效的八进制，解析为十进制的79
 <li>null和undefined没有 toString()方法</li>
 <li>如果x可能是null或undefined, 可以使用 String(x)，null -&gt; &#39;null&#39;, undefined -&gt; &#39;undefined&#39;</li>
 </ul>
-<h3>操作符</h3>
+<h3 id="-">操作符</h3>
 <ul>
 <li>一元操作符，++, --</li>
 <li>一元加减操作符，+, -</li>
 <li>位操作符，-18.toString(2); -&gt; -10010</li>
 </ul>
-<h3>位操作符</h3>
+<h3 id="-">位操作符</h3>
 <ul>
 <li>非, ~, ~25 = -26, 操作数的负值 - 1</li>
 <li>与, &amp;, 25&amp;3 = 1, 11为1,其他为0</li>
@@ -269,7 +269,7 @@ var a2 = 079; // 无效的八进制，解析为十进制的79
 <li>无符号右移, &gt;&gt;&gt;, -64&gt;&gt;&gt;5 = 134217726, 影响符号位</li>
 <li>没有无符号左移</li>
 </ul>
-<h3>逻辑非</h3>
+<h3 id="-">逻辑非</h3>
 <ul>
 <li>!x</li>
 <li>!object -&gt; false</li>
@@ -283,7 +283,7 @@ var a2 = 079; // 无效的八进制，解析为十进制的79
 <li>!undefined -&gt; true</li>
 <li>!!x 会返回x本身对应的布尔值,相当于 Boolean(x)</li>
 </ul>
-<h3>逻辑与</h3>
+<h3 id="-">逻辑与</h3>
 <ul>
 <li>x &amp;&amp; y</li>
 <li>x是对象,返回y</li>
@@ -294,7 +294,7 @@ var a2 = 079; // 无效的八进制，解析为十进制的79
 <li>有1个是undefined,返回undefined</li>
 <li>短路,如果x是false,则不会计算y</li>
 </ul>
-<h3>逻辑或</h3>
+<h3 id="-">逻辑或</h3>
 <ul>
 <li>x || y</li>
 <li>x是对象,返回x</li>
@@ -305,7 +305,7 @@ var a2 = 079; // 无效的八进制，解析为十进制的79
 <li>x,y都是undefined,返回undefined</li>
 <li>短路,x求值为true,则不会计算y</li>
 </ul>
-<h3>乘法 *</h3>
+<h3 id="-">乘法 *</h3>
 <ul>
 <li>x * y</li>
 <li>x,y都是数字,按照正常的计算,如果结果超过表示范围,则返回Infinity或-Infinity</li>
@@ -314,7 +314,7 @@ var a2 = 079; // 无效的八进制，解析为十进制的79
 <li>Infinity 乘以 非0,结果是Infinity或-Infinity,取决于另一个数的符号</li>
 <li>如果有1个不是数字,则调用 Number(x),转换为数字</li>
 </ul>
-<h3>除法 /</h3>
+<h3 id="-">除法 /</h3>
 <ul>
 <li>x / y</li>
 <li>x,y都是数字,按照正常的计算,如果结果超过表示范围,则返回Infinity或-Infinity</li>
@@ -325,7 +325,7 @@ var a2 = 079; // 无效的八进制，解析为十进制的79
 <li>如果Infinity被任何非0数除,结果为Infinity或-Infinity,取决于那个数的符号</li>
 <li>如果有1个不是数字,则调用 Number(x),转换为数字</li>
 </ul>
-<h3>求模 %</h3>
+<h3 id="-">求模 %</h3>
 <ul>
 <li>x % y</li>
 <li>x,y都是数字,按照正常的计算,返回余数</li>
@@ -336,7 +336,7 @@ var a2 = 079; // 无效的八进制，解析为十进制的79
 <li>如果被除数是0,结果是0</li>
 <li>如果有1个不是数字,则调用 Number(x),转换为数字</li>
 </ul>
-<h3>加法 +</h3>
+<h3 id="-">加法 +</h3>
 <ul>
 <li>x + y</li>
 <li>有1个是NaN,返回NaN</li>
@@ -351,7 +351,7 @@ var a2 = 079; // 无效的八进制，解析为十进制的79
 <li>如果有1个是对象,数值后者布尔,则调用他们的toString(),取得相应的字符串,然后应用前面的规则</li>
 <li>null和undefined会调用String()方法得到&#39;null&#39;和&#39;undefined&#39;</li>
 </ul>
-<h3>减法 -</h3>
+<h3 id="-">减法 -</h3>
 <ul>
 <li>x - y</li>
 <li>有1个是NaN,返回NaN</li>
@@ -365,7 +365,7 @@ var a2 = 079; // 无效的八进制，解析为十进制的79
 <li>如果有1个是字符串,布尔,null或undefined,则调用Number(x),转换为数值,然后在计算,如果转换得到NaN,则结果是NaN</li>
 <li>如果有1个是对象,则调用valueOf(x),已取得数值,如果得到NaN,结果就是NaN,如果没有valueOf方法,则调用toString()方法,并将得到的字符串转化为数值</li>
 </ul>
-<h3>关系操作符 &lt;, &gt;, &lt;=, &gt;=</h3>
+<h3 id="-">关系操作符 &lt;, &gt;, &lt;=, &gt;=</h3>
 <ul>
 <li>如果都是数字，则执行数字比较</li>
 <li>如果都是字符串，比较字符串对应的字符编码值</li>
@@ -376,7 +376,7 @@ var a2 = 079; // 无效的八进制，解析为十进制的79
 <li>null &gt; 0; //false</li>
 <li>null &gt;= 0; // true</li>
 </ul>
-<h3>相等操作符 ==,!=</h3>
+<h3 id="-">相等操作符 ==,!=</h3>
 <ul>
 <li>如果有1个是布尔，则先转换为数值，true为1，false为0</li>
 <li>如果1个是字符串，另一个是数值，则先将字符串转换为数字</li>
@@ -386,7 +386,7 @@ var a2 = 079; // 无效的八进制，解析为十进制的79
 <li>如果1个是NaN,则判断相等时返回false，判断不相等时返回true，如果2个都是NaN，判断相等时也返回false</li>
 <li>如果都是对象，则判断是不是同一对象，如果都指向同一对象，则相等，否则不相等</li>
 </ul>
-<h3>全等操作符 ===， !==</h3>
+<h3 id="-">全等操作符 ===， !==</h3>
 <ul>
 <li>不进行转换，直接比较</li>
 </ul>

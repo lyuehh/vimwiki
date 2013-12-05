@@ -38,10 +38,10 @@
                   </ul>
               </div>
               <div class="col-md-10">
-                  <h2>Ruby</h2>
-<h3>vim</h3>
+                  <h2 id="ruby">Ruby</h2>
+<h3 id="vim">vim</h3>
 <p><code># vim: set ft=ruby:</code></p>
-<h3>rake参数</h3>
+<h3 id="rake-">rake参数</h3>
 <pre><code class="lang-ruby">task :test, :p1 do |t, args|
   puts args[:p1]
 end
@@ -49,15 +49,15 @@ rake test[&quot;test&quot;]  # -&gt; &quot;test&quot;</code></pre>
 <p>更好的方式
 <code>$ ver=20130101 rake test</code></p>
 <pre><code class="lang-ruby">ver = ENV[&#39;ver&#39;] # -&gt; &#39;20130101&#39;</code></pre>
-<h3>更新vagrant 虚拟机中的vbox guest 版本</h3>
+<h3 id="-vagrant-vbox-guest-">更新vagrant 虚拟机中的vbox guest 版本</h3>
 <p><code>gem install vagrant-vbguest</code></p>
-<h3>多行注释</h3>
+<h3 id="-">多行注释</h3>
 <pre><code class="lang-ruby">=begin
 def a
   puts &#39;a&#39;
 end
 =end</code></pre>
-<h3>Proc.new vs Lambda in ruby</h3>
+<h3 id="proc-new-vs-lambda-in-ruby">Proc.new vs Lambda in ruby</h3>
 <pre><code class="lang-ruby">def foo
   f = Proc.new { return &quot;return from foo from inside proc&quot; }
   f.call # control leaves foo here
@@ -72,17 +72,17 @@ end
 
 puts foo # prints &quot;return from foo from inside proc&quot; 
 puts bar # prints &quot;return from bar&quot;</code></pre>
-<h3>Lazy Enumerator</h3>
+<h3 id="lazy-enumerator">Lazy Enumerator</h3>
 <p><code>(0..Float::INFINITY).lazy.map{|i| ((-1) ** i) / (2*i + 1).to_f}.take(655360).reduce(:+) * 4</code></p>
-<h3>inject</h3>
+<h3 id="inject">inject</h3>
 <pre><code class="lang-ruby">def fib(n)
   (0..n).inject([1,0]) { |(a,b), _| [b, a+b] }[0]
 end</code></pre>
 <p>[1,0]</p>
-<h3>FileUtil</h3>
+<h3 id="fileutil">FileUtil</h3>
 <pre><code class="lang-ruby">FileUtils.rm_rf &#39;/tmp/home&#39;
 FileUtils.mkdir &#39;/tmp/home&#39;</code></pre>
-<h3>nokogiri</h3>
+<h3 id="nokogiri">nokogiri</h3>
 <pre><code class="lang-ruby">page = Nokogiri::HTML(open(PAGE_URL))
 news_links = page.css(&quot;a&quot;).select{|link| link[&#39;data-category&#39;] == &quot;news&quot;}
 news_links.each{|link| puts link[&#39;href&#39;] }
