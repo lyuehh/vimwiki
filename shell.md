@@ -302,3 +302,9 @@ find  /home/work/log/  -type f -mtime -3 -exec mv {}  /home/work/log/backup   \;
 ## mysql
 `cd /usr/local/var`
 `chown -R weiwei mysql55`
+
+## parallel
+`parallel gzip ::: *.html`
+`ls | grep −E ’\.log$’ | parallel mv {} destdir`
+`seq −w 0 9999 | parallel −X rm pict{}.jpg`
+`ls -1 *.jpg | parallel convert −geometry 120 {} thumb_{}`
