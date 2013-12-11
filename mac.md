@@ -227,3 +227,6 @@ then: `$ codesign -s gdb-cert gdb`
 选中当前位置到整个文档开头的文字 – Shift + Command + 上方向键↑
 选中当前位置到整个文档末尾的文字 – Shift + Command + 下方向键↓
 ```
+
+## select text in quick look
+`defaults write com.apple.finder QLEnableTextSelection -bool true && killall Finder`
