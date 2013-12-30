@@ -308,3 +308,6 @@ find  /home/work/log/  -type f -mtime -3 -exec mv {}  /home/work/log/backup   \;
 `ls | grep −E ’\.log$’ | parallel mv {} destdir`
 `seq −w 0 9999 | parallel −X rm pict{}.jpg`
 `ls -1 *.jpg | parallel convert −geometry 120 {} thumb_{}`
+
+## sed 替换
+`sed 's!assets/images/!/corpmail/sites/drupal.sce.sohu.com.corpmail/files/images/!'`
