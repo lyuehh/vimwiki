@@ -54,3 +54,6 @@ node_js:
   - '0.10'
   - '0.8'
 ```
+
+###
+`node --use_strict`
