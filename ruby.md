@@ -78,3 +78,14 @@ news_links = page.css("a").select{|link| link['data-category'] == "news"}
 news_links.each{|link| puts link['href'] }
 page.css('p').css("a[data-category=news]").css("strong")
 ```
+
+### gemspec辅助
+
+`jeweler`
+
+```ruby
+require 'optparse'
+
+$LOAD_PATH << File.join(File.dirname(__FILE__), '..', 'lib')
+require 'pru'
+```
