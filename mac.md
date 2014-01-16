@@ -230,3 +230,6 @@ then: `$ codesign -s gdb-cert gdb`
 
 ## select text in quick look
 `defaults write com.apple.finder QLEnableTextSelection -bool true && killall Finder`
+
+## dtrace
+`sudo dtruss node -e 'console.log("a")'`
