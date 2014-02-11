@@ -14,6 +14,10 @@
 * yo
 ```
 
+### 判断是否支持SVG
+
+`document.implementation.hasFeature("http:// www.w3.org/TR/SVG11/feature#Image", "1.1")`
+
 ### jquery json的参数
 
 * `dataType` 参数需要设置为`jsonp`
