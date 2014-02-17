@@ -50,8 +50,8 @@ C 已当前选择文件夹为root
 u 将root切换为此文件夹的parent 文件夹
 R 刷新root下所有文件夹
 cd 将pwd切换到所选文件夹
-I 是否显示隐藏文件</code></pre>
-<h3 id="-m">替换^M</h3>
+I 是否显示隐藏文件
+</code></pre><h3 id="-m">替换^M</h3>
 <p>:%s/^M//g 将全部的^M替换成空
 需要用ctrl+v 接下来ctrl+m 输入^M</p>
 <h3 id="visual-mode-">visual mode下替换文本</h3>
@@ -67,26 +67,26 @@ I 是否显示隐藏文件</code></pre>
   [123+4*56]/2              cs])        (123+456)/2
   &quot;Look ma, I&#39;m *HTML!&quot;     cs&quot;&lt;q&gt;      &lt;q&gt;Look ma, I&#39;m HTML!&lt;/q&gt;
   if *x&gt;3 {                 ysW(        if ( x&gt;3 ) {
-  my $str = *whee!;         vllllS&#39;     my $str = &#39;whee!&#39;;</code></pre>
-<h3 id="tabularize">Tabularize</h3>
+  my $str = *whee!;         vllllS&#39;     my $str = &#39;whee!&#39;;
+</code></pre><h3 id="tabularize">Tabularize</h3>
 <p><a href="https://github.com/godlygeek/tabular">https://github.com/godlygeek/tabular</a></p>
 <pre><code>;Hit Cmd-Shift-A then type a character you want to align by
 nmap &lt;D-A&gt; :Tabularize /
-vmap &lt;D-A&gt; :Tabularize /</code></pre>
-<pre><code>:Tabularize /:
+vmap &lt;D-A&gt; :Tabularize /
+</code></pre><pre><code>:Tabularize /:
 :Tabularize /=
 :Tab /:
 :Tab /:\zs
-:Tab /|</code></pre>
-<h3 id="vundle">vundle</h3>
+:Tab /|
+</code></pre><h3 id="vundle">vundle</h3>
 <pre><code>Using Vundle:
 
 Just add this 2 lines to your ~/.vimrc:
 
 Bundle &#39;rizzatti/funcoo.vim&#39;
 Bundle &#39;rizzatti/dash.vim&#39;
-And run :BundleInstall inside Vim.</code></pre>
-<h3 id="-">删除选中行中符合正则的行</h3>
+And run :BundleInstall inside Vim.
+</code></pre><h3 id="-">删除选中行中符合正则的行</h3>
 <p>首先使用<code>v</code> 后者<code>V</code> 进入选择模式, 然后使用<code>j</code> <code>k</code> 选中行,然后按<code>:</code>, 然后输入命令:
 <code>g/\.$/d</code> 即可删除选中行中最后一个字符为<code>.</code>的行</p>
 <h3 id="-">循环粘贴复制过的东西</h3>
