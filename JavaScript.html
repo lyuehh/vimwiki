@@ -48,7 +48,9 @@
 * bower
 * https://code.google.com/p/google-code-prettify/
 * gruntjs
-* yo</code></pre>
+* yo
+</code></pre><h3 id="-svg">判断是否支持SVG</h3>
+<p><code>document.implementation.hasFeature(&quot;http:// www.w3.org/TR/SVG11/feature#Image&quot;, &quot;1.1&quot;)</code></p>
 <h3 id="jquery-json-">jquery json的参数</h3>
 <ul>
 <li><code>dataType</code> 参数需要设置为<code>jsonp</code></li>
@@ -63,7 +65,8 @@
 </ul>
 <h3 id="map-parseint">map 和 parseInt</h3>
 <pre><code class="lang-javascript">[&quot;0&quot;, &quot;0&quot;, &quot;0&quot;].map(parseInt);
-// -&gt; [0, NaN, 0]</code></pre>
+// -&gt; [0, NaN, 0]
+</code></pre>
 <p>原因:
 map方法接收的函数参数会接收到3个参数,分别为item, index, array,
 分别为当前元素, 当前元素的索引, 整个array;
@@ -81,7 +84,8 @@ jQuery( jQuery object ); // An existing jQuery object to clone.
 jQuery(); // 什么都不做...
 jQuery( html [, ownerDocument ] ); // A string of HTML to create on the fly. Note that this parses HTML, not XML.
 jQuery( html, attributes ); // 根据attribute创建html
-jQuery( callback ); // exec the callback when dom is ready</code></pre>
+jQuery( callback ); // exec the callback when dom is ready
+</code></pre>
 <h3 id="window-open-">window.open 的参数</h3>
 <p><code>window.open(&#39;http://www.qq.com&#39;,&#39;aa&#39;,&#39;height=400,width=400,location=no,resizable=no,menubar=no,scrollbars=no,status=no,toolbar=no,fullscreen=no,top=300,left=300&#39;)</code></p>
 <h3 id="https-">https下资源加载</h3>
@@ -95,8 +99,8 @@ jQuery( callback ); // exec the callback when dom is ready</code></pre>
 &lt;![endif]--&gt;
 &lt;!--[if gte IE 9]&gt;&lt;!--&gt;
     &lt;script src=&quot;jquery-2.0.0b2.js&quot;&gt;&lt;/script&gt;
-&lt;!--&lt;![endif]--&gt;</code></pre>
-<h3 id="csrf">csrf</h3>
+&lt;!--&lt;![endif]--&gt;
+</code></pre><h3 id="csrf">csrf</h3>
 <ol>
 <li>第三方页面使用form 会附带cookie，可以提交成功，但是拿不到post的响应，如果用iframe，那么iframe的domain是厂商的，没有权限访问到其中的内容</li>
 <li>如果使用ajax发送post请求，浏览器不会附带cookie，不会通过后台的认证</li>
@@ -114,7 +118,8 @@ function foo(value1, value2, value3) {
 }
 var anArray=[1, 2, 3];
 foo(anArray); // This will not work. value1 will be anArray, and value 2 and 3 will be undefined.
-foo.apply(this, anArray); // This works, as anArray will be the arguments to foo.</code></pre>
+foo.apply(this, anArray); // This works, as anArray will be the arguments to foo.
+</code></pre>
 <h3 id="substr-substring-slice-">substr和substring和slice的区别</h3>
 <pre><code class="lang-javascript">var message = &quot;Hello world!&quot;;
 
@@ -142,15 +147,16 @@ string.slice(beginslice[, endSlice])
 
 substring和substr的区别
 substring不包含indexB,substr包含indexB
-substr的第1个参数可以是负的,substring的参数不能为负的</code></pre>
+substr的第1个参数可以是负的,substring的参数不能为负的
+</code></pre>
 <h3 id="-">+ -</h3>
 <pre><code>1 + &#39;1&#39; -&gt; &quot;11&quot;
 1 - &#39;1&#39; -&gt; 0
 01 + &#39;01&#39; -&gt; &#39;101&#39;
 010 + &#39;010&#39; -&gt; &quot;8010&quot; // 0开头的是八进制
 Number.MAX_VALUE -&gt; 1.7976931348623157e+308
-Number.MIN_VALUE -&gt; 5e-324</code></pre>
-<h3 id="underscore-include-indexof">underscore include ,  indexOf</h3>
+Number.MIN_VALUE -&gt; 5e-324
+</code></pre><h3 id="underscore-include-indexof">underscore include ,  indexOf</h3>
 <p>underscore的include和indexOf都是给数组用的, 不是给字符串用的
 需要判断是否包含字符串, 需要使用str.indexOf</p>
 <h3 id="js-">js关闭窗口</h3>
@@ -174,7 +180,8 @@ function CloseWebPage() {
     window.close();
   }
 }
-&lt;/script&gt;</code></pre>
+&lt;/script&gt;
+</code></pre>
 <h3 id="event">Event</h3>
 <ol>
 <li>currentTarget 等于this, 是绑定事件的对象, 而target则是事件真正的目标</li>
@@ -204,11 +211,13 @@ alert(a); // &quot;undefined&quot;
 alert(b); // error
 
 alert(typeof a); // &quot;undefined&quot;
-alert(typeof b); // &quot;undefined&quot;</code></pre>
+alert(typeof b); // &quot;undefined&quot;
+</code></pre>
 <h3 id="number">Number</h3>
 <pre><code class="lang-javascript">var a1 = 070; // 八进制的70等于十进制的56
 var a2 = 079; // 无效的八进制，解析为十进制的79
-// 进行算数计算时，八进制和十进制都被转换成十进制数值</code></pre>
+// 进行算数计算时，八进制和十进制都被转换成十进制数值
+</code></pre>
 <ul>
 <li>默认情况下, 小数点后带有6个0以上的浮点数值转换为科学技术法表示的形式</li>
 <li>5e-324 &lt; n &lt; 1.79…e+308</li>

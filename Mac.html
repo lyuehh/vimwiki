@@ -51,8 +51,8 @@ http://www.douban.com/note/291330107/
 http://v2ex.com/?tab=apple
 http://www.isofts.org/
 http://www.waerfa.com/category/mac-app
-http://www.macx.cn/</code></pre>
-<h3 id="uninstall-winshark">uninstall winshark</h3>
+http://www.macx.cn/
+</code></pre><h3 id="uninstall-winshark">uninstall winshark</h3>
 <ol>
 <li>Remove /Applications/Wireshark</li>
 <li>Remove /Library/Wireshark</li>
@@ -81,12 +81,12 @@ http://www.macx.cn/</code></pre>
 <pre><code>cmd + shift + h : 最近几次的命令记录
 cmd + ;         : 输入一些字母后,cmd+; 会自动不全
 Exposé所有Tab
-command+option+e,并且可以搜索</code></pre>
-<h3 id="-mac-">查看占用mac 端口的程序</h3>
+command+option+e,并且可以搜索
+</code></pre><h3 id="-mac-">查看占用mac 端口的程序</h3>
 <pre><code>netstat -anp tcp | grep 3000
 lsof -i tcp:3000
-lsof -P | grep &#39;:3000&#39;</code></pre>
-<h3 id="-">导出用户头像图片</h3>
+lsof -P | grep &#39;:3000&#39;
+</code></pre><h3 id="-">导出用户头像图片</h3>
 <p><code>dscl . -read /Users/weiwei JPEGPhoto | tail -1 | xxd -r -p &gt; ~/aaa.jpg</code></p>
 <ul>
 <li>tidy命令
@@ -96,14 +96,14 @@ lsof -P | grep &#39;:3000&#39;</code></pre>
 <pre><code>`uniq` 命令只处理连续重复的行
 `uniq -d` 去除重复的行(只显示重复的行..)
 `uniq -u` 去除重复的行(只显示不重复的行..)
-`sort -u` 去除重复的行,不管连不连续</code></pre>
-<h3 id="tab-">tab转空格命令</h3>
+`sort -u` 去除重复的行,不管连不连续
+</code></pre><h3 id="tab-">tab转空格命令</h3>
 <p>expand 将tab转化为空格<br>unexpand 将空格转化为tab</p>
 <h3 id="-pkg-">列出pkg包包含的文件</h3>
 <pre><code>pkgutil --pkgs
 pkgutil --files com.amazon.SendToKindleMacInstaller.pkg
-plutil -p  /private/var/db/receipts/支付宝安全控件.pkg.plist</code></pre>
-<h3 id="virtualvox-">virtualvox 克隆虚拟磁盘</h3>
+plutil -p  /private/var/db/receipts/支付宝安全控件.pkg.plist
+</code></pre><h3 id="virtualvox-">virtualvox 克隆虚拟磁盘</h3>
 <p><code>VBoxManage.exe clonehd &quot;F:\VirtualBox\XP\win_xp.vdi&quot; &quot;F:\xp.vmdk &quot; -format VMDK</code></p>
 <h3 id="-4-space-">开启4指双击切换space功能</h3>
 <p><code>defaults write com.apple.dock double-tap-jump-back -bool TRUE</code></p>
@@ -111,15 +111,16 @@ plutil -p  /private/var/db/receipts/支付宝安全控件.pkg.plist</code></pre>
 <pre><code>export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/:$DYLd_LIBRARY_PATH
 sudo pip install MySQL-python
 sudo ln -s /usr/local/mysql/lib/libmysqlclient.18.dylib /usr/lib/libmysqlclient.18.dylib
-sudo ln -s /usr/local/mysql/lib /usr/local/mysql/lib/mysql</code></pre>
-<h3 id="-console-launchd-peruser-501-">移除 Console 中的 launchd.peruser.501 报错</h3>
+sudo ln -s /usr/local/mysql/lib /usr/local/mysql/lib/mysql
+</code></pre><h3 id="-console-launchd-peruser-501-">移除 Console 中的 launchd.peruser.501 报错</h3>
 <pre><code>launchctl list
 launchctl list | grep skitch
-launchctl remove J8RPQ294UB.com.skitch.SkitchHelper</code></pre>
-<h3 id="-library-">显示~/Library文件夹</h3>
+launchctl remove J8RPQ294UB.com.skitch.SkitchHelper
+</code></pre><h3 id="-library-">显示~/Library文件夹</h3>
 <p><code>chflags nohidden ~/library/</code></p>
 <h3 id="-">危险!慎用</h3>
-<pre><code class="lang-`">sudo ruby -e &#39;key = [125, 137, 82, 35, 210, 188, 221, 234, 163, 185, 31]; IO.read(&quot;/etc/kcpassword&quot;).bytes.each_with_index { |b, i| break if key.include?(b); print [b ^ key[i % key.size]].pack(&quot;U*&quot;) }&#39;</code></pre>
+<pre><code class="lang-`">sudo ruby -e &#39;key = [125, 137, 82, 35, 210, 188, 221, 234, 163, 185, 31]; IO.read(&quot;/etc/kcpassword&quot;).bytes.each_with_index { |b, i| break if key.include?(b); print [b ^ key[i % key.size]].pack(&quot;U*&quot;) }&#39;
+</code></pre>
 <h3 id="-mp3-">命令行播放MP3文件</h3>
 <p><code>afplay aaa.mp3</code></p>
 <h3 id="mac-sshd-config">mac sshd config</h3>
@@ -132,8 +133,8 @@ sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/ssh.plist
 
 查看
-sudo launchctl list | grep ssh</code></pre>
-<h3 id="calendaragent-google-calendar-issue">CalendarAgent/Google Calendar Issue</h3>
+sudo launchctl list | grep ssh
+</code></pre><h3 id="calendaragent-google-calendar-issue">CalendarAgent/Google Calendar Issue</h3>
 <pre><code>In System Preferences, delete the account that’s throwing errors
 In Calendar.app, go to Preferences:Accounts
 Add a new account with these settings:
@@ -141,11 +142,11 @@ Add a new account with these settings:
     User Name: Your Gmail username (without @gmail.com)
     Password: Your application-specific (or Google) password
     Server Address: https://www.google.com/calendar/dav/&lt;yourname&gt;@gmail.com/user 
-If you need Mail, Messages, and Notes for this account, open System Preferences and enable them</code></pre>
-<h3 id="launchctl-reload">launchctl reload</h3>
+If you need Mail, Messages, and Notes for this account, open System Preferences and enable them
+</code></pre><h3 id="launchctl-reload">launchctl reload</h3>
 <pre><code>sudo launchctl unload /Library/LaunchDaemons/org.goagent.macos.plist
-sudo launchctl load /Library/LaunchDaemons/org.goagent.macos.plist</code></pre>
-<h3 id="goagent-update">goagent update</h3>
+sudo launchctl load /Library/LaunchDaemons/org.goagent.macos.plist
+</code></pre><h3 id="goagent-update">goagent update</h3>
 <p><code>http_proxy=127.0.0.1:8087 python uploader.zip</code></p>
 <h3 id="uninstall-pkg">uninstall pkg</h3>
 <pre><code>$ pkgutil --pkgs # list all installed packages
@@ -157,8 +158,8 @@ $ pkgutil --only-files --files the-package-name.pkg | tr &#39;\n&#39; &#39;\0&#3
 $ pkgutil --only-dirs --files the-package-name.pkg | tr &#39;\n&#39; &#39;\0&#39; | xargs -n 1 -0 sudo rm -ir
 
 $ sudo pkgutil --forget the-package-name.pkg
-$ lsbom -f -l -s -pf /var/db/receipts/com.foo.bar.myapp.pkg.bom</code></pre>
-<h3 id="gdb-for-mac">gdb for mac</h3>
+$ lsbom -f -l -s -pf /var/db/receipts/com.foo.bar.myapp.pkg.bom
+</code></pre><h3 id="gdb-for-mac">gdb for mac</h3>
 <pre><code>Creating a certificate
 
 Start Keychain Access application (/Applications/Utilities/Keychain Access.app)
@@ -173,8 +174,8 @@ Finally, using the contextual menu for the certificate, select Get Info, open th
 
 You must quit Keychain Access application in order to use the certificate and restart taskgated service by killing the current running taskgated process (so before using gdb).
 
-then: `$ codesign -s gdb-cert gdb`</code></pre>
-<h3 id="-">编辑器快捷键</h3>
+then: `$ codesign -s gdb-cert gdb`
+</code></pre><h3 id="-">编辑器快捷键</h3>
 <pre><code>
 跳到本行开头 – Command + 左方向键←
 跳到本行末尾 – Command + 右方向键→
@@ -189,7 +190,11 @@ then: `$ codesign -s gdb-cert gdb`</code></pre>
 选中当前位置到所在单词开头的文字 – Shift + Option + 左方向键←
 选中当前位置到所在单词末尾的文字 – Shift + Option + 右方向键→
 选中当前位置到整个文档开头的文字 – Shift + Command + 上方向键↑
-选中当前位置到整个文档末尾的文字 – Shift + Command + 下方向键↓</code></pre>
+选中当前位置到整个文档末尾的文字 – Shift + Command + 下方向键↓
+</code></pre><h2 id="select-text-in-quick-look">select text in quick look</h2>
+<p><code>defaults write com.apple.finder QLEnableTextSelection -bool true &amp;&amp; killall Finder</code></p>
+<h2 id="dtrace">dtrace</h2>
+<p><code>sudo dtruss node -e &#39;console.log(&quot;a&quot;)&#39;</code></p>
 
 
               </div>
