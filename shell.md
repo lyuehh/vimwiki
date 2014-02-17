@@ -1,5 +1,8 @@
 ## Shell
 
+### curl
+`curl --trace output.txt www.sina.com`
+
 ### ab测试
 `ab -q -c 50 -n 1000 http://www.qq.com`
 
