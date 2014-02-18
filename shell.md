@@ -1,5 +1,8 @@
 ## Shell
 
+### jq
+`cat json2.json | jq '.[] | .quniuPic'`
+
 ### curl
 `curl --trace output.txt www.sina.com`
 
