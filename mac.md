@@ -1,5 +1,8 @@
 ## Mac
 
+### zip
+`zip -er xxx.zip xxx` 给压缩包加上密码
+
 ### zsh
 after `brew install zsh`, add `/usr/local/bin/zsh` to `/etc/shells`,
 and then `chsh -s /usr/local/bin/zsh`
