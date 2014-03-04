@@ -1,5 +1,8 @@
 ## Mac
 
+### rtf to html
+`textutil -convert html foo.rtf`
+
 ### zip
 `zip -er xxx.zip xxx` 给压缩包加上密码
 
