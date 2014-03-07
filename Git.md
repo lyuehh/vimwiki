@@ -17,6 +17,7 @@ git checkout --orphan gh-pages
 rm -rf *
 cd ..
 jekyll build
+cd _site
 git add .
 git commit -a -m 'init gh-pages'
 git commit --amend --reset-author
